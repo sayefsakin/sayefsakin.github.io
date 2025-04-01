@@ -1,0 +1,52 @@
+---
+layout: post
+title: Restore boot manager after installing windows 7 over linux
+date: '2012-03-03T19:18:00.002+06:00'
+author: Sayef Azad Sakin
+tags:
+- linux
+- How to
+modified_time: '2012-03-03T19:18:39.408+06:00'
+blogger_id: tag:blogger.com,1999:blog-5269120713273282809.post-203800754882297981
+redirect_from: /2012/03/restore-boot-manager-after-installing.html
+---
+
+<br />
+<ul style="background-color: white; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 15px; line-height: 20px; list-style-image: initial; list-style-position: initial; margin-bottom: 0.5em; margin-left: 0px; margin-right: 0px; margin-top: 0.5em; padding-bottom: 0px; padding-left: 2.5em; padding-right: 2.5em; padding-top: 0px; text-align: left;">
+<li style="border-bottom-style: none; border-color: initial; border-image: initial; border-left-style: none; border-right-style: none; border-top-style: none; border-width: initial; margin-bottom: 0.25em; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;"><div align="LEFT" style="margin-bottom: 0in;">
+Boot from the ubuntu Live CD.</div>
+</li>
+<li style="border-bottom-style: none; border-color: initial; border-image: initial; border-left-style: none; border-right-style: none; border-top-style: none; border-width: initial; margin-bottom: 0.25em; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;"><div align="LEFT" style="margin-bottom: 0in;">
+Open the terminal from applications -&gt; Accessories -&gt; Terminal.</div>
+</li>
+<li style="border-bottom-style: none; border-color: initial; border-image: initial; border-left-style: none; border-right-style: none; border-top-style: none; border-width: initial; margin-bottom: 0.25em; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;"><div align="LEFT" style="margin-bottom: 0in;">
+Then find the partition of your Ubuntu OS from the list generated with the command,</div>
+<ul style="line-height: 1.4; list-style-image: initial; list-style-position: initial; list-style-type: disc; margin-bottom: 0.5em; margin-left: 0px; margin-right: 0px; margin-top: 0.5em; padding-bottom: 0px; padding-left: 2.5em; padding-right: 2.5em; padding-top: 0px;">
+<li style="border-bottom-style: none; border-color: initial; border-image: initial; border-left-style: none; border-right-style: none; border-top-style: none; border-width: initial; margin-bottom: 0.25em; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;"><div align="LEFT" style="margin-bottom: 0in;">
+sudo fdisk -l</div>
+</li>
+</ul>
+</li>
+<li style="border-bottom-style: none; border-color: initial; border-image: initial; border-left-style: none; border-right-style: none; border-top-style: none; border-width: initial; margin-bottom: 0.25em; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;"><div align="LEFT">
+&nbsp;If your ubuntu(linux) partion is sda6,</div>
+<ul style="line-height: 1.4; list-style-image: initial; list-style-position: initial; list-style-type: disc; margin-bottom: 0.5em; margin-left: 0px; margin-right: 0px; margin-top: 0.5em; padding-bottom: 0px; padding-left: 2.5em; padding-right: 2.5em; padding-top: 0px;">
+<li style="border-bottom-style: none; border-color: initial; border-image: initial; border-left-style: none; border-right-style: none; border-top-style: none; border-width: initial; margin-bottom: 0.25em; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;"><div align="LEFT">
+sudo mkdir /media/sda6</div>
+</li>
+<li style="border-bottom-style: none; border-color: initial; border-image: initial; border-left-style: none; border-right-style: none; border-top-style: none; border-width: initial; margin-bottom: 0.25em; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;"><div align="LEFT">
+sudo mount /dev/sda6 /media/sda6</div>
+</li>
+</ul>
+</li>
+<li style="border-bottom-style: none; border-color: initial; border-image: initial; border-left-style: none; border-right-style: none; border-top-style: none; border-width: initial; margin-bottom: 0.25em; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;"><div align="LEFT">
+After that you have to reinstall the GRUB</div>
+<ul style="line-height: 1.4; list-style-image: initial; list-style-position: initial; list-style-type: disc; margin-bottom: 0.5em; margin-left: 0px; margin-right: 0px; margin-top: 0.5em; padding-bottom: 0px; padding-left: 2.5em; padding-right: 2.5em; padding-top: 0px;">
+<li style="border-bottom-style: none; border-color: initial; border-image: initial; border-left-style: none; border-right-style: none; border-top-style: none; border-width: initial; margin-bottom: 0.25em; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;"><div align="LEFT">
+sudo grub-install --root-directory=/media/sda5 /dev/sda</div>
+</li>
+</ul>
+</li>
+<li style="border-bottom-style: none; border-color: initial; border-image: initial; border-left-style: none; border-right-style: none; border-top-style: none; border-width: initial; margin-bottom: 0.25em; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;"><div align="LEFT">
+If everything went alright you should be able to reach the GRUB boot menu when you restart the computer. You can find more information from&nbsp;<a href="http://ubuntuforums.org/showthread.php?t=1014708" style="color: #7eb8d4; text-decoration: none;">here</a>.</div>
+</li>
+</ul>

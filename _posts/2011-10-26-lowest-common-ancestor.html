@@ -1,0 +1,50 @@
+---
+layout: post
+title: Lowest Common Ancestor
+date: '2011-10-26T02:57:00.002+06:00'
+author: Sayef Azad Sakin
+tags:
+- Coding
+modified_time: '2011-10-27T12:32:07.203+06:00'
+blogger_id: tag:blogger.com,1999:blog-5269120713273282809.post-9149174572966756157
+redirect_from: /2011/10/lowest-common-ancestor.html
+---
+
+<pre class="brush:cpp; wrap-lines:false" >
+//&ltO(N logN, O(logN)&gt
+#define mx 10010
+#define logmx ceil(log(mx))
+#define pii pair &lt int, int &gt
+//#define i64 __int64
+#define inf 2147483647
+
+int L[mx], T[mx], P[mx][logmx];
+const int root = 1;
+bool color[mx];
+long long d[mx];
+vector &lt pii &gt G[mx];
+void preprocess(int n){
+    int i,j;
+    for(i = 1; i &lt= n; i++)for(j = 0; (1&lt&ltj) &lt n; j++)P[i][j] = -1;
+    for(i = 1; i &lt= n; i++)P[i][0] = T[i];
+    for (j = 1; (1&lt&ltj) &lt n; j++)for (i = 1; i &lt= n; i++)
+        if (P[i][j - 1] != -1)
+            P[i][j] = P[P[i][j - 1]][j - 1];
+}
+
+int getLCA(int p, int q){
+    int lg, i;
+    if (L[p] &lt L[q])swap(p,q);
+    for (lg = 1; (1&lt&ltlg) &lt= L[p]; lg++);
+    lg--;
+    for (i = lg; i &gt= 0; i--)
+        if (L[p] - (1 &lt&lt i) &gt= L[q])
+            p = P[p][i];
+    if (p == q)return p;
+    for (i = lg; i &gt= 0; i--)
+        if (P[p][i] != -1 && P[p][i] != P[q][i])
+            p = P[p][i], q = P[q][i];
+    return T[p];
+}
+</pre>
+<a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=lowestCommonAncestor">Tutorial of Topcoder</a>

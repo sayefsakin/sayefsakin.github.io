@@ -1,0 +1,51 @@
+---
+layout: post
+title: RMQ with Segment Tree
+date: '2011-10-26T02:43:00.005+06:00'
+author: Sayef Azad Sakin
+tags:
+- Coding
+modified_time: '2011-10-27T12:41:40.531+06:00'
+blogger_id: tag:blogger.com,1999:blog-5269120713273282809.post-8240466744930879021
+redirect_from: /2011/10/rmq-with-segment-tree.html
+---
+
+<pre class="brush:cpp; wrap-lines:false" >
+#define mx 1000010
+#define tmx 2000020
+
+int a[mx];
+int t[tmx];
+void init(int node, int i, int j){
+    if(i==j){
+        t[node] = a[i];
+        return;
+    }
+    int mid = (i+j)&gt&gt 1;
+    init(2*node, i, mid);
+    init((2*node)+1, mid+1, j);
+    t[node] = max(t[2*node], t[(2*node)+1]);
+}
+int query(int node, int i, int j, int si, int sj){
+    if(i == si && j == sj)return t[node];
+    int mid = (i+j)&gt&gt 1;
+    if(sj &lt= mid)return query(2*node, i, mid, si, sj);
+    else if(si &gt mid)return query((2*node)+1, mid+1, j, si, sj);
+    else{
+        int r1 = query(2*node, i, mid, si, mid);
+        int r2 = query((2*node)+1, mid+1, j, mid+1, sj);
+        return max(r1,r2);
+    }
+}
+void update(int node, int i, int j, int idx, int val){
+    if(i == j){
+        a[i] = val;
+        t[node] = val;
+        return;
+    }
+    int mid = (i+j)&gt&gt 1;
+    if(idx &lt= mid) update(2*node, i, mid, idx, val);
+    else update ((2*node)+1, mid+1, j, idx, val);
+    t[node] = max(t[2*node], t[(2*node)+1]);
+}
+</pre>

@@ -1,0 +1,30 @@
+---
+layout: post
+title: Generating Prime (Sieve)
+date: '2011-08-14T16:34:00.001+06:00'
+author: Sayef Azad Sakin
+tags:
+- Coding
+modified_time: '2011-08-14T16:34:59.517+06:00'
+blogger_id: tag:blogger.com,1999:blog-5269120713273282809.post-4751226055124395249
+redirect_from: /2011/08/generating-prime-sieve.html
+---
+
+<pre class="brush:cpp"> 
+#define mx 100000
+#define chkp(n) (prm[n&gt;&gt;6]&(1&lt;&lt;((n&gt;&gt;1)&31)))
+#define genp(n) (prm[n&gt;&gt;6]|=(1&lt;&lt;((n&gt;&gt;1)&31)))
+#define PrimeLimit 10000000
+int prm[PrimeLimit / 64], prime[mx], prlen;
+void GeneratePrime(){
+	int i,j,sqrtN;
+	prlen = 0;
+	prime[prlen++]=2;
+	sqrtN = ( int ) sqrt ( ( double ) PrimeLimit ) + 1;
+	for(i=3;i&lt;sqrtN;i+=2)if(!chkp(i)){
+			prime[prlen++] = i;
+			for(j=(i*i);j&lt;PrimeLimit;j+=(i&lt;&lt;1))genp(j);
+	}
+	for(;i&lt;PrimeLimit;i+=2)if(!chkp(i))prime[prlen++]=i;
+}
+</pre>

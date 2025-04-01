@@ -1,0 +1,94 @@
+---
+layout: post
+title: Max flow with min cut
+date: '2011-08-14T19:54:00.000+06:00'
+author: Sayef Azad Sakin
+tags:
+- Coding
+modified_time: '2011-08-14T19:56:37.731+06:00'
+blogger_id: tag:blogger.com,1999:blog-5269120713273282809.post-1756833922417900048
+redirect_from: /2011/08/max-flow-with-min-cut.html
+---
+
+<pre class="brush:cpp"> 
+vector &lt; int &gt; M[mx];
+i64 cap[mx][mx], CAP[mx][mx];
+int pre[mx];
+bool color[mx];
+i64 bfs(int s, int t){
+	int ok,u,v,sz,i;
+	i64 path_cap;
+	memset(pre,-1,sizeof(pre));
+	memset(color,0,sizeof(color));
+	queue &lt; int &gt; q;
+	
+	color[s] = 1;
+	q.push(s);
+	ok = 1;
+	while(!q.empty() && ok){
+		u = q.front();
+		q.pop();
+		sz = M[u].size();
+		for(i=0;i&lt;sz;i++){
+			v = M[u][i];
+			if(!color[v] && cap[u][v] &gt; 0){
+				q.push(v);
+				color[v] = 1;
+				pre[v] = u;
+				if(v==t){ok = 0;break;}
+			}
+		}
+	}
+	path_cap = inf;
+	u = t;
+	while(pre[u]!=-1){
+		v = pre[u];
+		path_cap = _min(path_cap, cap[v][u]);
+		u = v;
+	}
+	u = t;
+	while(pre[u]!=-1){
+		v = pre[u];
+		cap[v][u] -= path_cap;
+		cap[u][v] += path_cap;
+		u = v;
+	}
+	if(path_cap==inf)return 0;
+	return path_cap;
+}
+
+i64 max_flow(int s, int t){
+	i64 r,pcap;
+	r = 0;
+	while(true){
+		pcap = bfs(s,t);
+		if(!pcap)break;
+		r += pcap;
+	}
+	return r;
+}
+
+void dfs(int u){
+	int sz,i,v;
+	color[u] = 1;
+	sz = M[u].size();
+	for(i=0;i&lt;sz;i++){
+		v = M[u][i];
+		if(!color[v] && cap[u][v] && CAP[u][v])dfs(v);
+	}
+}
+
+void printMinCut(int s, int t, int n){
+	int u,sz,v,i;
+	u = max_flow(s,t);
+	memset(color,0,sizeof(color));
+	dfs(s);
+	for(u=1;u&lt;=n;u++)if(color[u]){
+		sz = M[u].size();
+		for(i=0;i&lt;sz;i++){
+			v = M[u][i];
+			if(!color[v] && !cap[u][v] && CAP[u][v])printf("%d %d\n",u,v);
+		}
+	}
+}
+</pre>

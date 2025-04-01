@@ -1,0 +1,1946 @@
+---
+layout: post
+title: Google Summer of Code 2020
+date: '2020-08-28T01:13:00.028+06:00'
+author: Sayef Azad Sakin
+tags:
+- Personal note
+- Summer Work
+- Coding
+modified_time: '2020-08-28T10:41:04.569+06:00'
+thumbnail: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJTM2kZ5TEbSeMqwCG3abSoYHnBnfHmNwIOhkOyM9VEZ4Ck33Fmott87JMvwbdIg_8_30sMp0iam9M3bYwAiAOY9ghnJsPF0r7gHrja0FT21P0fdd0RARWNpGaZPYAEeUXmwAlFmrBqfY/s72-c/gantt.PNG
+blogger_id: tag:blogger.com,1999:blog-5269120713273282809.post-7583422674058889776
+redirect_from: /2020/08/google-summer-of-code-2020.html
+---
+
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>sayef sakin</o:Author>
+  <o:LastAuthor>sayef sakin</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>1</o:TotalTime>
+  <o:Created>2020-08-27T18:12:00Z</o:Created>
+  <o:LastSaved>2020-08-27T18:12:00Z</o:LastSaved>
+  <o:Pages>6</o:Pages>
+  <o:Words>1528</o:Words>
+  <o:Characters>8715</o:Characters>
+  <o:Lines>72</o:Lines>
+  <o:Paragraphs>20</o:Paragraphs>
+  <o:CharactersWithSpaces>10223</o:CharactersWithSpaces>
+  <o:Version>16.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>BN-BD</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+  </w:Compatibility>
+  <w:DoNotOptimizeForBrowser/>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="376">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hashtag"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Unresolved Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Link"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536869121 1107305727 33554432 0 415 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-469750017 -1073732485 9 0 511 0;}
+@font-face
+	{font-family:Georgia;
+	panose-1:2 4 5 2 5 4 5 2 3 3;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:647 0 0 0 159 0;}
+@font-face
+	{font-family:Lato;
+	panose-1:2 15 5 2 2 2 4 3 2 3;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610612049 1073766474 0 0 415 0;}
+@font-face
+	{font-family:"Noto Sans Symbols";
+	mso-font-alt:Calibri;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:auto;
+	mso-font-signature:0 0 0 0 0 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-fareast-font-family:Calibri;}
+h1
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:107%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-font-kerning:0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:.25in;
+	margin-right:0in;
+	margin-bottom:4.0pt;
+	margin-left:0in;
+	line-height:107%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-bidi-font-weight:normal;}
+h3
+	{mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:14.0pt;
+	margin-right:0in;
+	margin-bottom:4.0pt;
+	margin-left:0in;
+	line-height:107%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:14.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-bidi-font-weight:normal;}
+h4
+	{mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	line-height:107%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-bidi-font-weight:normal;}
+h5
+	{mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:11.0pt;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	line-height:107%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-bidi-font-weight:normal;}
+h6
+	{mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	line-height:107%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:10.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-bidi-font-weight:normal;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-priority:10;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:107%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	font-size:36.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-fareast-font-family:Calibri;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{mso-style-priority:11;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:.25in;
+	margin-right:0in;
+	margin-bottom:4.0pt;
+	margin-left:0in;
+	line-height:107%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	font-size:24.0pt;
+	font-family:"Georgia",serif;
+	mso-fareast-font-family:Georgia;
+	mso-bidi-font-family:Georgia;
+	color:#666666;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	mso-bidi-font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-fareast-font-family:Calibri;
+	mso-hansi-font-family:Calibri;
+	mso-bidi-font-family:Calibri;}
+.MsoPapDefault
+	{mso-style-type:export-only;
+	margin-bottom:8.0pt;
+	line-height:107%;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:258224129;
+	mso-list-template-ids:-1886080390;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\25CF;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Noto Sans Symbols";
+	mso-fareast-font-family:"Noto Sans Symbols";
+	mso-hansi-font-family:"Noto Sans Symbols";
+	mso-bidi-font-family:"Noto Sans Symbols";}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-fareast-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\25AA;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Noto Sans Symbols";
+	mso-fareast-font-family:"Noto Sans Symbols";
+	mso-hansi-font-family:"Noto Sans Symbols";
+	mso-bidi-font-family:"Noto Sans Symbols";}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\25CF;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Noto Sans Symbols";
+	mso-fareast-font-family:"Noto Sans Symbols";
+	mso-hansi-font-family:"Noto Sans Symbols";
+	mso-bidi-font-family:"Noto Sans Symbols";}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-fareast-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\25AA;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Noto Sans Symbols";
+	mso-fareast-font-family:"Noto Sans Symbols";
+	mso-hansi-font-family:"Noto Sans Symbols";
+	mso-bidi-font-family:"Noto Sans Symbols";}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\25CF;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Noto Sans Symbols";
+	mso-fareast-font-family:"Noto Sans Symbols";
+	mso-hansi-font-family:"Noto Sans Symbols";
+	mso-bidi-font-family:"Noto Sans Symbols";}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-fareast-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\25AA;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Noto Sans Symbols";
+	mso-fareast-font-family:"Noto Sans Symbols";
+	mso-hansi-font-family:"Noto Sans Symbols";
+	mso-bidi-font-family:"Noto Sans Symbols";}
+@list l1
+	{mso-list-id:1337074336;
+	mso-list-template-ids:221276328;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\2212;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Noto Sans Symbols";
+	mso-fareast-font-family:"Noto Sans Symbols";
+	mso-hansi-font-family:"Noto Sans Symbols";
+	mso-bidi-font-family:"Noto Sans Symbols";}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-fareast-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\25AA;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Noto Sans Symbols";
+	mso-fareast-font-family:"Noto Sans Symbols";
+	mso-hansi-font-family:"Noto Sans Symbols";
+	mso-bidi-font-family:"Noto Sans Symbols";}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\25CF;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:1.75in;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Noto Sans Symbols";
+	mso-fareast-font-family:"Noto Sans Symbols";
+	mso-hansi-font-family:"Noto Sans Symbols";
+	mso-bidi-font-family:"Noto Sans Symbols";}
+@list l1:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:2.25in;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-fareast-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";}
+@list l1:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\25AA;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:2.75in;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Noto Sans Symbols";
+	mso-fareast-font-family:"Noto Sans Symbols";
+	mso-hansi-font-family:"Noto Sans Symbols";
+	mso-bidi-font-family:"Noto Sans Symbols";}
+@list l1:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\25CF;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:3.25in;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Noto Sans Symbols";
+	mso-fareast-font-family:"Noto Sans Symbols";
+	mso-hansi-font-family:"Noto Sans Symbols";
+	mso-bidi-font-family:"Noto Sans Symbols";}
+@list l1:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:3.75in;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Courier New";
+	mso-fareast-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";}
+@list l1:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\25AA;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:4.25in;
+	text-indent:-.25in;
+	mso-ascii-font-family:"Noto Sans Symbols";
+	mso-fareast-font-family:"Noto Sans Symbols";
+	mso-hansi-font-family:"Noto Sans Symbols";
+	mso-bidi-font-family:"Noto Sans Symbols";}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin-top:0in;
+	mso-para-margin-right:0in;
+	mso-para-margin-bottom:8.0pt;
+	mso-para-margin-left:0in;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:18.0pt;line-height:107%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato'>Time Series Updates for
+Traveler<o:p></o:p></span></b></p>
+  
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:14.0pt;line-height:107%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato'>Mentor - Kate Isaacs<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;text-align:justify'><span
+style='font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato'><span style='mso-tab-count:1'>               </span></span><span
+style='font-size:12.0pt;line-height:130%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato'>In this Google summer
+project, my goal is to make the Traveler interface more illustrative,
+interactive, and responsive by reducing visual lagging, adding new linked
+visualizations, and enhancing existing visualizations and interactivity. Older
+SVG views have been converted to HTML5 Canvas to make a responsive user
+interface with enhanced interactivity. A new chart containing a histogram of
+primitive duration has been created to filter out intervals of a specific
+duration. <span class=GramE>This supplements</span> the user experience in
+discovery of intervals having too long or too short duration. Interpretability
+of the Gantt chart has been augmented by the addition of traceback lines (from
+a child interval to its parent) and color highlighting which eventually helps
+to track down dependent and relevant intervals. The hardware performance
+counter values have been made more explicit by representing aggregated
+(minimum, maximum, average) values. The Traveler interface is now equipped with
+more options for explorative performance analysis, better feature detection,
+easier artifact isolation, and faster debugging.<o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:none;border-bottom:solid white 1.0pt;
+mso-border-bottom-alt:solid white .5pt;padding:0in 0in 1.0pt 0in'>
+
+<p class=MsoNormal style='border:none;mso-border-bottom-alt:solid black .5pt;
+padding:0in;mso-padding-alt:0in 0in 1.0pt 0in'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:13.0pt;line-height:107%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato'>First Phase:<o:p></o:p></span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;text-align:justify'><span
+style='font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato'><span style='mso-tab-count:1'>               </span></span><span
+style='font-size:12.0pt;line-height:130%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato'>In the aim of providing
+faster data browsing experience, I followed a three phased approach to
+eliminate the visual latency. In the first phase, I created several API calls (<span
+class=SpellE><i style='mso-bidi-font-style:normal'>drawValues</i></span>, <span
+class=SpellE><i style='mso-bidi-font-style:normal'>newMetricData</i></span>, <span
+class=SpellE><i style='mso-bidi-font-style:normal'>ganttChartValues</i></span>)
+to present the data for the frontend UI. The APIs are created as a wrapper over
+a previously designed library utilizing summed area table data structure.
+Second, data fetching mechanisms are implemented through those APIs using
+asynchronous calls and stored in a unified cache object. Third, in the frontend
+interface, the older implementation with SVG is totally overhauled with a newer
+implementation using HTML5 Canvas.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;
+mso-bidi-font-family:Lato'>The following charts have been created using HTML5
+Canvas:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;font-family:
+"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:Lato;
+mso-no-proof:yes'><img alt="GanttView" border="0" data-original-height="434" data-original-width="1843" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJTM2kZ5TEbSeMqwCG3abSoYHnBnfHmNwIOhkOyM9VEZ4Ck33Fmott87JMvwbdIg_8_30sMp0iam9M3bYwAiAOY9ghnJsPF0r7gHrja0FT21P0fdd0RARWNpGaZPYAEeUXmwAlFmrBqfY/s0/gantt.PNG"/></span><span style='font-size:12.0pt;
+line-height:107%;font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;
+mso-bidi-font-family:Lato'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato'>Figure: Gantt View<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lato",sans-serif;mso-fareast-font-family:
+Lato;mso-bidi-font-family:Lato;mso-no-proof:yes'><img alt="" border="0" data-original-height="418" data-original-width="1840" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgvAUveaHctJWI38Req4n6x7K9eYVd-vTV2EWyxcV6vnOwHg7-rI-qptV1jLGhhkGErd40WVWD3cqs_NtryzkWKc-EpDm3vsu26F-Ln62yN9NH1p94vtFp39YpBj_vko2T6AH7Mw4umXfY/s0/util.PNG"/></span><span style='font-size:12.0pt;
+line-height:107%;font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;
+mso-bidi-font-family:Lato'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato'>Figure: Utilization
+View<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;font-family:
+"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:Lato;
+mso-no-proof:yes'><img alt="" border="0" data-original-height="421" data-original-width="1838" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT1HiCkKybl65SMjSw4VLq0dzt_vVO_q25FnSYNYbUxxOcXBePv0vCodcOA0jOdKFyQr1wdm5BXkXwmV7CAUTtDarfHbNQdM4bIANO5l_8ehmmfbFUCyo-8QD9xK4svji86_8Ar2k3pK4/s0/papi.PNG"/></span><span style='font-size:12.0pt;
+line-height:107%;font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;
+mso-bidi-font-family:Lato'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato'>Figure: PAPI Metric
+(Total CPU Cycle)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;font-family:
+"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:Lato;
+mso-no-proof:yes'><img alt="" border="0" data-original-height="272" data-original-width="1836" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi4s71qJxsORYkxYimRQKDsrLITj-3AqHDlVHCEpURYQB3dQlvNyYIfbQQtyOEe257h7LJrd4XIGcQbNrlYUCbPREbt9RGfxS7hvRaQ8g8YGov7EaLe4lUoAv6_ADLzCo5g1kkibc0-KPY/s0/proc.PNG"/></span><span style='font-size:12.0pt;
+line-height:107%;font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;
+mso-bidi-font-family:Lato'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato'>Figure: PROC Metric
+(Available Memory)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;
+mso-bidi-font-family:Lato;color:white'><o:p>&nbsp;</o:p></span></p>
+
+<div style='mso-element:para-border-div;border:none;border-bottom:solid white 1.0pt;
+mso-border-bottom-alt:solid white .5pt;padding:0in 0in 1.0pt 0in'>
+
+<p class=MsoNormal style='border:none;mso-border-bottom-alt:solid black .5pt;
+padding:0in;mso-padding-alt:0in 0in 1.0pt 0in'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:13.0pt;line-height:107%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato'>Second Phase:<o:p></o:p></span></b></p>
+
+</div>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'><span
+style='font-size:12.0pt;line-height:130%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato'>In the
+beginning of this period, I completed writing code to handle synchronous
+function calls which generated consecutive same events in the same hardware
+locality. This problem is handled by storing a stack of previous events and
+inserting new logical leave event in the place of consecutive enter events and
+vice-versa.<span style='mso-spacerun:yes'>  </span>This enables Traveler to
+read, parse, and visualize OTF2 logs with synchronous function calls. I also
+fixed a legacy bug in our system, which is, previously, we considered that the
+PAPI metric values would be same for the events of a single interval. More
+specifically, we stored metric values in a single JSON object for an interval.
+But the metric values could be different for an interval’s enter and leave
+event. To resolve this issue, I used two separate JSON objects to store the
+metric values related to a single interval. This also helped to handle and
+manipulate the metric data more precisely since previously it was just losing
+metric events for leave events. On the frontend of the line charts, I have
+added dots to help users identify each value more precisely.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;
+mso-bidi-font-family:Lato;color:white;mso-no-proof:yes'><img alt="" border="0" data-original-height="436" data-original-width="1844" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgvRlohVHCNkPWALyr7O40lk6HaTF5Ecj6CpuIVrtgfUSORCV2XR76m-szzXh39T0FeQvx9q95RJO3G0QyYUDBZ5HPP2jLUMEiml_iTdZfR-xua2E82q1blzYaDCUqTIAjNHI_8Qi0Qc9M/s0/papi.PNG"/></span><span style='font-size:12.0pt;
+line-height:107%;font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;
+mso-bidi-font-family:Lato;color:white'><span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:6.0pt;text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato;color:white'>Figure:
+PAPI Metric (Total CPU Cycle)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'><span
+style='font-size:12.0pt;line-height:130%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato'>To filter
+out different intervals, I have designed a new chart to contain a histogram of</span><span
+style='font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;color:white'> </span><span style='font-size:12.0pt;line-height:130%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato'>primitive durations. The new Histogram view presents the
+count of intervals of a specific duration on a logarithmic scale. This new view
+is acting as an accessory to filter out and highlight data in the Gantt View.
+In the backend, I have reused the summed area table data structured to store
+and process relevant information for the interval-durations per primitive. In
+the frontend, the user interface has been designed using HTML5 canvas. A brush
+has been provided to let users navigate on different time spans. Users could
+easily</span><span style='font-family:"Lato",sans-serif;mso-fareast-font-family:
+Lato;mso-bidi-font-family:Lato;color:white'> </span><span style='font-size:12.0pt;line-height:130%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato'>find out the time duration which is
+taking higher to complete for a <span class=GramE>particular primitive</span>.
+Upon selection with the brush over the Histogram, intervals with related
+primitive is being highlighted with the same color in the Gantt View. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;
+mso-bidi-font-family:Lato;mso-no-proof:yes'><img alt="" border="0" data-original-height="877" data-original-width="1838" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYZHCYBPxETbfO_OtMXsRRlwiRElFLHcYuywO0-h3hVZ9wSWYkM3rhPMhtOtoRlsNFHSYeGKOMGf_6d-aCQ7_ECZCPKYp3vEImI4q6WKmIu4k4kcEydt4Kvy2z3vuB8WcMk6T0o9EI04g/s0/brushing.PNG"/></span><span style='font-size:12.0pt;
+line-height:107%;font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;
+mso-bidi-font-family:Lato'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:6.0pt;text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato'>Figure: Primitive
+Histogram View<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'><span
+style='font-size:12.0pt;line-height:130%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato'>I have also added a hamburger menu on the left sidebar to browser and
+select a primitive from a list. Upon selection of a primitive, respective
+Histogram view will appear on the interface.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;
+mso-bidi-font-family:Lato;mso-no-proof:yes'><img alt="" border="0" data-original-height="613" data-original-width="1918" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPy8wdPbDz2gAi0h1Hda8G4AWoM7Ej1pUV02viph-RPB0Il62W4WSE8gCy23hvV2NE2azt9-wyfu0m5qD67FYmQUEYp7Clp1MkCSfrVPU95Aqnc-azVXNM9qZZvC4312ts_SF1Ujeu7CA/s0/cascading_menu.PNG"/></span><span style='font-size:12.0pt;
+line-height:107%;font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;
+mso-bidi-font-family:Lato'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato'>Figure: Hamburger menu
+containing Primitive names<o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:none;border-bottom:solid white 1.0pt;
+mso-border-bottom-alt:solid white .5pt;padding:0in 0in 1.0pt 0in'>
+
+<p class=MsoNormal style='border:none;mso-border-bottom-alt:solid black .5pt;
+padding:0in;mso-padding-alt:0in 0in 1.0pt 0in'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:13.0pt;line-height:107%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='border:none;mso-border-bottom-alt:solid black .5pt;
+padding:0in;mso-padding-alt:0in 0in 1.0pt 0in'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:13.0pt;line-height:107%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato'>Final Phase:<o:p></o:p></span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;text-align:justify'><span
+style='font-size:12.0pt;line-height:130%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato'><span style='mso-tab-count:
+1'>               </span>At the beginning of this phase, my aim was to draw a
+series of lines between an interval with its parent interval, and so on, which
+will eventually help users to follow through a traceback line of dependent
+interval bars in the Gantt chart. I tried to find out timestamps for a series
+of dependent intervals. I ended up modifying a legacy implementation to fetch
+the data only with timestamp and thread locality information. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;text-align:justify;text-indent:
+.5in'><span style='font-size:12.0pt;line-height:130%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato'>After figuring out how
+to supply the data from the backend through a new API, the next challenge was
+to draw the lines with a single mouse click. The single mouse click event was
+bounded with highlighting intervals of the same primitive name. To highlight
+interval bars with the same primitive name, new color was being drawn over the
+existing canvas, while for the traceback lines, the whole canvas needed to be
+cleared and redrawn which eventually was removing the highlighted intervals.
+This was overcome by serializing the functions - first drawing the <span
+class=SpellE>tracback</span> line and then highlighting the interval bars.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;text-align:justify'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato;mso-no-proof:yes'><img alt="" border="0" data-original-height="685" data-original-width="1835" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiij4buQ5sAldEYdn8XEC8EotdaeCDQsXMsgaRiofBWWcUkzGQVkwqHWmh2dpIWAITT4vZ3RPd5YTYY4Ytb4RKT-zFTS0sIY9yHqoCXYeiHW33QMILu7fSkPpb7j-jAkGd3kLJ3hoFKgwY/s0/01.PNG"/></span><span style='font-size:12.0pt;
+line-height:107%;font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;
+mso-bidi-font-family:Lato'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:6.0pt;text-align:center'><a
+name="_gjdgxs"></a><span style='font-size:12.0pt;line-height:107%;font-family:
+"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:Lato'>Figure:
+Traceback line and highlighted interval bars on single mouse click<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;text-align:justify;text-indent:
+.5in'><span style='font-size:12.0pt;line-height:130%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato'>This figure
+demonstrates how the traceback line and highlighted interval bars are being
+drawn on single mouse click over any interval bar. The lines and highlighting
+also are being retained if the user <span class=GramE>starts</span> panning to
+the left. Only the lines are being retained on zoom in/out event. A possible
+future enhancement of this feature could be to draw forward trace lines (parent
+to its multiple children). <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;text-align:justify;text-indent:
+.5in'><span style='font-size:12.0pt;line-height:130%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato'>Additionally, the line
+chart view for the PAPI metrics has been modified to represent minimum, maximum
+and average value for each metric. Previously (implemented in the first phase),
+only one thread locality’s data was being drawn in this chart. In this phase,
+it has been modified to show aggregated data for all thread localities. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;text-align:justify'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato;mso-no-proof:yes'><img alt="" border="0" data-original-height="465" data-original-width="1839" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjAGeeW7hGUYCYJj5-dnqYovKx-uYaxwuixROgkK9hlujFRsNEx0Czhm4GvX5aDsAiWwnlSIWqdcJz_nDSr84poz2sb8CvOq2k3ypd4siKPiMbFp1tmlrd1F52Nj2dKccY4CkkrtGMdXw4/s0/02.PNG"/></span><span style='font-size:12.0pt;
+line-height:107%;font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;
+mso-bidi-font-family:Lato'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:6.0pt;text-align:center'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato'>Figure: Aggregated
+values for Floating Point Operation (PAPI_FP_OPS) change rate<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;text-align:justify;text-indent:
+.5in'><span style='font-size:12.0pt;line-height:130%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato'>In the figure above,
+grey lines are utilized to represent minimum and maximum values. A dotted black
+line is used to show the average values. To enable this feature, aggregated
+values (min, max, avg) in JSON format have been provided from the backend. With
+this, the UI does lose the actual value for each location. Therefore, it might
+need to be modified later if actual values are required. Again, the presented
+lines for minimum and maximum values are approximated values which might
+misrepresent what is happening in a specific timestamp. A shaded region
+(instead of straight lines) might be utilized here to reduce this confusion.
+Again, in future, more aggregated values like median, standard deviation,
+variance, etc. could be incorporated in this chart.<o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:none;border-bottom:solid white 1.0pt;
+mso-border-bottom-alt:solid white .5pt;padding:0in 0in 1.0pt 0in'>
+
+<p class=MsoNormal style='border:none;mso-border-bottom-alt:solid black .5pt;
+padding:0in;mso-padding-alt:0in 0in 1.0pt 0in'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:14.0pt;line-height:107%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato'>List of completed
+features:<o:p></o:p></span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level1 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Noto Sans Symbols";
+mso-fareast-font-family:"Noto Sans Symbols";mso-bidi-font-family:"Noto Sans Symbols";
+'><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:12.0pt;line-height:130%;
+font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;'>Newly included and modified APIs:</span><span
+style='font-size:12.0pt;line-height:130%;'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level2 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Courier New";mso-fareast-font-family:
+"Courier New";'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE><i style='mso-bidi-font-style:normal'><span style='font-size:12.0pt;
+line-height:130%;font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;
+mso-bidi-font-family:Lato;'>drawValues</span></i></span><span
+style='font-size:12.0pt;line-height:130%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato;'>
+(Utilization)</span><span style='font-size:12.0pt;line-height:130%;'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level2 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Courier New";mso-fareast-font-family:
+"Courier New";'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE><i style='mso-bidi-font-style:normal'><span style='font-size:12.0pt;
+line-height:130%;font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;
+mso-bidi-font-family:Lato;'>newMetricData</span></i></span><span
+style='font-size:12.0pt;line-height:130%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato;'> (PAPI and
+PROC metrics)</span><span style='font-size:12.0pt;line-height:130%;'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level2 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Courier New";mso-fareast-font-family:
+"Courier New";'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE><i style='mso-bidi-font-style:normal'><span style='font-size:12.0pt;
+line-height:130%;font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;
+mso-bidi-font-family:Lato;'>ganttChartValues</span></i></span><i
+style='mso-bidi-font-style:normal'><span style='font-size:12.0pt;line-height:
+107%;font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;'> </span></i><span style='font-size:12.0pt;line-height:130%;
+font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;'>(intervals for the Gantt chart)</span><span style='font-size:
+12.0pt;line-height:130%;'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level2 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Courier New";mso-fareast-font-family:
+"Courier New";'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE><i style='mso-bidi-font-style:normal'><span style='font-size:12.0pt;
+line-height:130%;font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;
+mso-bidi-font-family:Lato;'>getPrimitiveList</span></i></span><i
+style='mso-bidi-font-style:normal'><span style='font-size:12.0pt;line-height:
+107%;font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;'> </span></i><span style='font-size:12.0pt;line-height:130%;
+font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;'>(intervals of a selected primitive or GUID)</span><span
+style='font-size:12.0pt;line-height:130%;'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level2 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Courier New";mso-fareast-font-family:
+"Courier New";'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE><i style='mso-bidi-font-style:normal'><span style='font-size:12.0pt;
+line-height:130%;font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;
+mso-bidi-font-family:Lato;'>getIntervalInfo</span></i></span><i
+style='mso-bidi-font-style:normal'><span style='font-size:12.0pt;line-height:
+107%;font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;'> </span></i><span style='font-size:12.0pt;line-height:130%;
+font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;'>(Fetch all metadata for an interval)</span><span
+style='font-size:12.0pt;line-height:130%;'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level2 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Courier New";mso-fareast-font-family:
+"Courier New";'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE><i style='mso-bidi-font-style:normal'><span style='font-size:12.0pt;
+line-height:130%;font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;
+mso-bidi-font-family:Lato;'>getPrimitiveList</span></i></span><i
+style='mso-bidi-font-style:normal'><span style='font-size:12.0pt;line-height:
+107%;font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;'> </span></i><span style='font-size:12.0pt;line-height:130%;
+font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;'>(fetch primitive list for the hamburger menu)</span><span
+style='font-size:12.0pt;line-height:130%;'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level2 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Courier New";mso-fareast-font-family:
+"Courier New";'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE><i style='mso-bidi-font-style:normal'><span style='font-size:12.0pt;
+line-height:130%;font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;
+mso-bidi-font-family:Lato;'>getIntervalDuration</span></i></span><span
+style='font-size:12.0pt;line-height:130%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato;'> (histogram
+data of each primitive duration)</span><span style='font-size:12.0pt;
+line-height:130%;'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level2 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Courier New";mso-fareast-font-family:
+"Courier New";'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE><i style='mso-bidi-font-style:normal'><span style='font-size:12.0pt;
+line-height:130%;font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;
+mso-bidi-font-family:Lato;'>getIntervalList</span></i></span><span
+style='font-size:12.0pt;line-height:130%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato;'> (filtered
+data for the Gantt view) </span><span style='font-size:12.0pt;line-height:130%;
+'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level2 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Courier New";mso-fareast-font-family:
+"Courier New";'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE><i style='mso-bidi-font-style:normal'><span style='font-size:12.0pt;
+line-height:130%;font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;
+mso-bidi-font-family:Lato;'>getIntervalTraceList</span></i></span><span
+style='font-size:12.0pt;line-height:130%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato;'> (traceback
+data for the Gantt view) </span><span style='font-size:12.0pt;line-height:130%;
+'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level1 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Noto Sans Symbols";
+mso-fareast-font-family:"Noto Sans Symbols";mso-bidi-font-family:"Noto Sans Symbols";
+'><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:12.0pt;line-height:130%;
+font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;'>Summed area table technique implemented to fetch and organize
+data in the backend with the implementation of <i style='mso-bidi-font-style:
+normal'>sparseUtiliationList.py</i> class.</span><span style='font-size:12.0pt;
+line-height:130%;'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level1 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Noto Sans Symbols";
+mso-fareast-font-family:"Noto Sans Symbols";mso-bidi-font-family:"Noto Sans Symbols";
+'><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:12.0pt;line-height:130%;
+font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;'>Using HTML5 Canvas to draw the charts:</span><span
+style='font-size:12.0pt;line-height:130%;'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level2 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Courier New";mso-fareast-font-family:
+"Courier New";'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato;'>Gantt View</span><span
+style='font-size:12.0pt;line-height:130%;'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level2 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Courier New";mso-fareast-font-family:
+"Courier New";'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato;'>Utilization
+View</span><span style='font-size:12.0pt;line-height:130%;'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level2 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Courier New";mso-fareast-font-family:
+"Courier New";'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato;'>PAPI
+Metrics (PAPI_TOT_INS, PAPI_BR_MSP, etc.)</span><span style='font-size:12.0pt;
+line-height:130%;'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level2 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Courier New";mso-fareast-font-family:
+"Courier New";'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato;'>PROC
+Metrics (<span class=SpellE>MemAvailable</span>, Buffers, <span class=SpellE><span
+class=GramE>status:VmPeak</span></span>, etc.)</span><span style='font-size:
+12.0pt;line-height:130%;'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level1 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Noto Sans Symbols";
+mso-fareast-font-family:"Noto Sans Symbols";mso-bidi-font-family:"Noto Sans Symbols";
+'><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:12.0pt;line-height:130%;
+font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;'>Common mouse interaction implemented across all views:</span><span
+style='font-size:12.0pt;line-height:130%;'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level2 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Courier New";mso-fareast-font-family:
+"Courier New";'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato;'>Scrolling
+to zoom (in/out)</span><span style='font-size:12.0pt;line-height:130%;
+'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level2 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Courier New";mso-fareast-font-family:
+"Courier New";'><span style='mso-list:Ignore'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato;'>Panning to
+slide (left/right)</span><span style='font-size:12.0pt;line-height:130%;
+'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level1 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Noto Sans Symbols";
+mso-fareast-font-family:"Noto Sans Symbols";mso-bidi-font-family:"Noto Sans Symbols";
+'><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:12.0pt;line-height:130%;
+font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;'>Basic mouse interaction implemented in the Gantt View with a
+separate call to the backend for the metadata. (hover, single click, double
+click)</span><span style='font-size:12.0pt;line-height:130%;'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level1 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Noto Sans Symbols";
+mso-fareast-font-family:"Noto Sans Symbols";mso-bidi-font-family:"Noto Sans Symbols";
+'><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:12.0pt;line-height:130%;
+font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;'>An intermediate <i style='mso-bidi-font-style:normal'>cache</i>
+object utilized to store and maintain data.</span><span style='font-size:12.0pt;
+line-height:130%;'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level1 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Noto Sans Symbols";
+mso-fareast-font-family:"Noto Sans Symbols";mso-bidi-font-family:"Noto Sans Symbols";
+'><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:12.0pt;line-height:130%;
+font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;'>Sliding left pane window with the dataset list added.</span><span
+style='font-size:12.0pt;line-height:130%;'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level1 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Noto Sans Symbols";
+mso-fareast-font-family:"Noto Sans Symbols";mso-bidi-font-family:"Noto Sans Symbols";
+'><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:12.0pt;line-height:130%;
+font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;'>Locations ordered numerically on the Gantt View.</span><span
+style='font-size:12.0pt;line-height:130%;'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level1 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Noto Sans Symbols";
+mso-fareast-font-family:"Noto Sans Symbols";mso-bidi-font-family:"Noto Sans Symbols";
+'><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:12.0pt;line-height:130%;
+font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;'>Metric values for enter-leave events of an interval stored
+separately.</span><span style='font-size:12.0pt;line-height:130%;'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level1 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Noto Sans Symbols";
+mso-fareast-font-family:"Noto Sans Symbols";mso-bidi-font-family:"Noto Sans Symbols";
+'><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:12.0pt;line-height:130%;
+font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;'>New logical event added in place of each nested function
+calls.</span><span style='font-size:12.0pt;line-height:130%;'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level1 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Noto Sans Symbols";
+mso-fareast-font-family:"Noto Sans Symbols";mso-bidi-font-family:"Noto Sans Symbols";
+'><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:12.0pt;line-height:130%;
+font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;'>Summed area table technique reused (designed in the previous
+evaluation period) to fetch and organize data in the backend for the primitive
+histogram.</span><span style='font-size:12.0pt;line-height:130%;'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level1 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Noto Sans Symbols";
+mso-fareast-font-family:"Noto Sans Symbols";mso-bidi-font-family:"Noto Sans Symbols";
+'><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:12.0pt;line-height:130%;
+font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;'>New Primitive Histogram view created using HTML5 Canvas.</span><span
+style='font-size:12.0pt;line-height:130%;'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level1 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Noto Sans Symbols";
+mso-fareast-font-family:"Noto Sans Symbols";mso-bidi-font-family:"Noto Sans Symbols";
+'><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:12.0pt;line-height:130%;
+font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;'>Brush functionality implemented on the Histogram view.</span><span
+style='font-size:12.0pt;line-height:130%;'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level1 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Noto Sans Symbols";
+mso-fareast-font-family:"Noto Sans Symbols";mso-bidi-font-family:"Noto Sans Symbols";
+'><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:12.0pt;line-height:130%;
+font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;'>Related intervals highlighted in the Gantt View when brush
+modified.</span><span style='font-size:12.0pt;line-height:130%;'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level1 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Noto Sans Symbols";
+mso-fareast-font-family:"Noto Sans Symbols";mso-bidi-font-family:"Noto Sans Symbols";
+'><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:12.0pt;line-height:130%;
+font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;'>New locking mechanism implemented to synchronize interactive
+data highlighting in the Gantt view.</span><span style='font-size:12.0pt;
+line-height:130%;'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level1 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Noto Sans Symbols";
+mso-fareast-font-family:"Noto Sans Symbols";mso-bidi-font-family:"Noto Sans Symbols";
+'><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:12.0pt;line-height:130%;
+font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;'>A series of traceback lines from an interval to its parent
+interval bar are being drawn in the <span class=SpellE>gantt</span> view on a
+single mouse click event.</span><span style='font-size:12.0pt;line-height:130%;
+'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level1 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Noto Sans Symbols";
+mso-fareast-font-family:"Noto Sans Symbols";mso-bidi-font-family:"Noto Sans Symbols";
+'><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:12.0pt;line-height:130%;
+font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;'>Both the traceback line drawing and interval bar highlighting
+are being done on single mouse click event.</span><span style='font-size:12.0pt;
+line-height:130%;'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level1 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Noto Sans Symbols";
+mso-fareast-font-family:"Noto Sans Symbols";mso-bidi-font-family:"Noto Sans Symbols";
+'><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:12.0pt;line-height:130%;
+font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;'>The traceback line drawing and interval bar highlighting are
+being retained on mouse panning-left event. On mouse panning-right, the lines
+are being drawn up to the interval bar which was being clicked initially.</span><span
+style='font-size:12.0pt;line-height:130%;'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l0 level1 lfo1;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:130%;font-family:"Noto Sans Symbols";
+mso-fareast-font-family:"Noto Sans Symbols";mso-bidi-font-family:"Noto Sans Symbols";
+'><span style='mso-list:Ignore'>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:12.0pt;line-height:130%;
+font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;'>Line chart view modified to represent aggregated (min, max,
+avg) values.</span><span style='font-size:12.0pt;line-height:130%;'><o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:none;border-bottom:solid white 1.0pt;
+mso-border-bottom-alt:solid white .5pt;padding:0in 0in 1.0pt 0in'>
+
+<p class=MsoNormal style='border:none;mso-border-bottom-alt:solid black .5pt;
+padding:0in;mso-padding-alt:0in 0in 1.0pt 0in'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:14.0pt;line-height:107%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='border:none;mso-border-bottom-alt:solid black .5pt;
+padding:0in;mso-padding-alt:0in 0in 1.0pt 0in'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:14.0pt;line-height:107%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato'>List of my Pull
+Requests:<o:p></o:p></span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l1 level1 lfo2;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:107%;font-family:"Noto Sans Symbols";
+mso-fareast-font-family:"Noto Sans Symbols";mso-bidi-font-family:"Noto Sans Symbols";
+color:white'><span style='mso-list:Ignore'>&#8722;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span
+style='font-size:12.0pt;line-height:107%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato;color:white;text-decoration:
+none;text-underline:none'><a href="https://github.com/hdc-arizona/traveler-integrated/pull/49">https://github.com/hdc-arizona/traveler-integrated/pull/49</a></span><span
+style='font-size:12.0pt;line-height:107%;color:white'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l1 level1 lfo2;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:107%;font-family:"Noto Sans Symbols";
+mso-fareast-font-family:"Noto Sans Symbols";mso-bidi-font-family:"Noto Sans Symbols";
+color:white'><span style='mso-list:Ignore'>&#8722;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span
+style='font-size:12.0pt;line-height:107%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato;color:white;text-decoration:
+none;text-underline:none'><a href="https://github.com/hdc-arizona/traveler-integrated/pull/52">https://github.com/hdc-arizona/traveler-integrated/pull/52</a></span><span
+style='font-size:12.0pt;line-height:107%;color:white'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l1 level1 lfo2;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:107%;font-family:"Noto Sans Symbols";
+mso-fareast-font-family:"Noto Sans Symbols";mso-bidi-font-family:"Noto Sans Symbols";
+color:white'><span style='mso-list:Ignore'>&#8722;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span
+style='font-size:12.0pt;line-height:107%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato;color:white;text-decoration:
+none;text-underline:none'><a href="https://github.com/hdc-arizona/traveler-integrated/pull/57">https://github.com/hdc-arizona/traveler-integrated/pull/57</a></span><span
+style='font-size:12.0pt;line-height:107%;color:white'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l1 level1 lfo2;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:107%;font-family:"Noto Sans Symbols";
+mso-fareast-font-family:"Noto Sans Symbols";mso-bidi-font-family:"Noto Sans Symbols";
+color:white'><span style='mso-list:Ignore'>&#8722;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:12.0pt;line-height:107%;
+font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;color:white'><a href="https://github.com/hdc-arizona/traveler-integrated/pull/59">https://github.com/hdc-arizona/traveler-integrated/pull/59</a></span><span
+style='font-size:12.0pt;line-height:107%;color:white'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l1 level1 lfo2;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:107%;font-family:"Noto Sans Symbols";
+mso-fareast-font-family:"Noto Sans Symbols";mso-bidi-font-family:"Noto Sans Symbols";
+color:white'><span style='mso-list:Ignore'>&#8722;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span
+style='font-size:12.0pt;line-height:107%;font-family:"Lato",sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato;color:white;text-decoration:
+none;text-underline:none'><a href="https://github.com/hdc-arizona/traveler-integrated/pull/62">https://github.com/hdc-arizona/traveler-integrated/pull/62</a></span><span
+style='font-size:12.0pt;line-height:107%;color:white'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l1 level1 lfo2;
+border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:107%;font-family:"Noto Sans Symbols";
+mso-fareast-font-family:"Noto Sans Symbols";mso-bidi-font-family:"Noto Sans Symbols";
+color:white'><span style='mso-list:Ignore'>&#8722;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:12.0pt;line-height:107%;
+font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;color:white'><a href="https://github.com/hdc-arizona/traveler-integrated/pull/67">https://github.com/hdc-arizona/traveler-integrated/pull/67</a></span><span
+style='font-size:12.0pt;line-height:107%;color:white'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;
+margin-left:.25in;text-indent:-.25in;mso-list:l1 level1 lfo2;border:none;
+mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><![if !supportLists]><span
+style='font-size:12.0pt;line-height:107%;font-family:"Noto Sans Symbols";
+mso-fareast-font-family:"Noto Sans Symbols";mso-bidi-font-family:"Noto Sans Symbols";
+color:white'><span style='mso-list:Ignore'>&#8722;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:12.0pt;line-height:107%;
+font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+  Lato;color:white'><a href="https://github.com/hdc-arizona/traveler-integrated/pull/71">https://github.com/hdc-arizona/traveler-integrated/pull/71</a></span><span
+style='font-size:12.0pt;line-height:107%;color:white'><o:p></o:p></span></p>
+
+<div>
+
+<p class=MsoNormal style='text-align:justify;border:none;mso-border-bottom-alt:
+solid black .5pt;padding:0in;mso-padding-alt:0in 0in 1.0pt 0in'><b
+style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt;line-height:
+107%;font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;color:white'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='text-align:justify;border:none;padding:0in'><b
+style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt;line-height:
+107%;font-family:"Lato",sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato;color:white'><a href="https://github.com/hdc-arizona/traveler-integrated/commits/main?author=sayefsakin&amp;since=2020-05-01&amp;until=2020-08-31">
+  Contribution within the <span class=SpellE>GSoC</span> 2020<o:p></o:p>
+  </a></span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;border:none;
+mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><span
+style='font-size:12.0pt;line-height:107%;color:white'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

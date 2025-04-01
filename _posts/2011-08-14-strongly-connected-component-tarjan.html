@@ -1,0 +1,56 @@
+---
+layout: post
+title: Strongly Connected Component (Tarjan)
+date: '2011-08-14T20:00:00.001+06:00'
+author: Sayef Azad Sakin
+tags:
+- Coding
+modified_time: '2011-08-14T20:00:40.815+06:00'
+blogger_id: tag:blogger.com,1999:blog-5269120713273282809.post-8697784052084970597
+redirect_from: /2011/08/strongly-connected-component-tarjan.html
+---
+
+<pre class="brush:cpp"> 
+vector&lt; int &gt; M[MX];
+int color[MX],f[MX],low[MX],ftm,st[MX],top,scc;
+bool instack[MX];
+void dfs(int u){
+	int i,v,sz;
+	f[u] = ftm;
+	low[u] = ftm;
+	ftm++;
+	st[top] = u;top++;instack[u] = true;
+	sz = M[u].size();
+	color[u] = 1;
+	for(i=0;i&lt;sz;i++){
+		v = M[u][i];
+		if(!color[v]){
+			dfs(v);
+			low[u] = _min(low[u],low[v]);
+		}
+		else if(instack[v])low[u] = _min(low[u],f[v]);
+	}
+	if(f[u] == low[u]){
+		scc++;
+		do{
+			v = st[top-1];top--;instack[v] = false;
+			printf(" %d",v);
+		}while(top && v!=u);
+		printf("\n");
+	}
+}
+//n = no.of vertices, m = no.of edges
+void tarjanscc(int n){
+	int i;
+	ftm = top = 0;
+	memset(color,0,sizeof(color));
+	memset(f,0,sizeof(f));
+	memset(low,0,sizeof(low));
+	memset(instack,0,sizeof(instack));
+	for(i=0;i&lt;n;i++){
+		if(!color[i])dfs(i);
+	}
+	printf("total scc: %d\n",scc);
+	for(i=0;i&lt;=n;i++)M[i].clear();
+}
+</pre>

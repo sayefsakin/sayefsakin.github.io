@@ -1,0 +1,38 @@
+---
+layout: post
+title: Bridge Network
+date: '2011-08-14T16:50:00.001+06:00'
+author: Sayef Azad Sakin
+tags:
+- Coding
+modified_time: '2011-08-14T16:50:41.073+06:00'
+blogger_id: tag:blogger.com,1999:blog-5269120713273282809.post-8434127144398309185
+redirect_from: /2011/08/bridge-network.html
+---
+
+<pre class="brush:cpp"> 
+#define mx 110
+#define _min(i,j) ((i)&gt;(j)?(j):(i))
+
+int d[mx],low[mx],t;
+bool color[mx],artp[mx];
+vector &lt; int &gt; M[mx];
+vector &lt; pii &gt; bridge;
+void dfs(int par, int u){
+	int sz,i,v;
+	low[u] = d[u] = ++t;
+	color[u] = 1;
+	sz = M[u].size();
+	for(i=0;i&lt;sz;i++){
+		v = M[u][i];
+		if(v==par)continue;
+		if(!color[v]){
+			dfs(u,v);
+			low[u] = _min(low[u],low[v]);
+			if(low[v] &gt; d[u])
+				bridge.push_back(pii(u,v));
+		}
+		else low[u] = _min(low[u],d[v]);
+	}
+}
+</pre>

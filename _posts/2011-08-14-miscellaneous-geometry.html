@@ -1,0 +1,133 @@
+---
+layout: post
+title: Miscellaneous Geometry
+date: '2011-08-14T19:44:00.000+06:00'
+author: Sayef Azad Sakin
+tags:
+- Coding
+modified_time: '2011-08-14T19:46:45.283+06:00'
+blogger_id: tag:blogger.com,1999:blog-5269120713273282809.post-5330147252199035152
+redirect_from: /2011/08/miscellaneous-geometry.html
+---
+
+<pre class="brush:cpp"> 
+#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstdlib&gt;
+#include &lt;cmath&gt;
+#include &lt;vector&gt;
+#include &lt;map&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+#define mx 100
+#define pii pair &lt; int, int &gt;
+#define i64 long long
+#define eps 1e-9
+#define _min(i,j) ((i)&gt;(j+eps)?(j):(i))
+#define _max(i,j) ((i)&gt;(j+eps)?(i):(j))
+
+struct point{
+	i64 x,y;
+	point(){}
+	point(i64 xx, i64 yy){x = xx;y = yy;}
+};
+
+struct line { // Creates a line with equation ax + by + c = 0
+	i64 a, b, c;
+	line() {}
+	line( point p1,point p2 ) {
+		a=p1.y-p2.y;
+		b=p2.x-p1.x;
+		c=p1.x*p2.y-p2.x*p1.y;
+	}
+};
+
+struct segment{
+	point st,end;
+	segment(){}
+	segment(point a,point b){st = a;end = b;}
+};
+
+struct rect{
+	point ul,lr;
+	rect(){}
+	rect(point a, point b){ul = a;lr = b;}
+};
+
+struct tr{
+	point p[3];
+	tr(){}
+	tr(point a, point b, point c){p[0] = a; p[1] = b; p[2] = c;}
+};
+
+struct circle{
+	i64 r;
+	point center;
+	circle(){}
+	circle(point b,i64 a){r = a; center = b;}
+};
+
+struct polygon {
+	int n;
+	point P[mx];
+};
+
+inline bool feq(i64 a, i64 b){
+	return (fabs(a-b)&lt;eps);
+}
+inline i64 dist(point a, point b){
+	return ( (a.x-b.x) * (a.x-b.x) + (a.y-b.y) * (a.y-b.y) );
+}
+inline i64 isLeft(point a, point b, point c){
+	return ( (a.x*b.y) + (b.x*c.y) + (c.x*a.y) - (a.y*b.x) - (b.y*c.x) - (c.y*a.x) );
+}
+inline bool onSegment(point a,point b,point c){
+	if( (_min(a.x,b.x) &lt; c.x || feq(_min(a.x,b.x),c.x)) && (c.x &lt; _max(a.x,b.x) || feq(c.x,_max(a.x,b.x))) )
+		if( (_min(a.y,b.y) &lt; c.y || feq(_min(a.y,b.y),c.y) ) && (c.y &lt; _max(a.y,b.y) || feq(c.y,_max(a.y,b.y))) )return true;
+	return false;
+}
+inline bool isSegIntersect(point p1,point p2,point p3,point p4){
+	i64 d1,d2,d3,d4;
+	d1 = isLeft(p1,p2,p3);
+	d2 = isLeft(p1,p2,p4);
+	d3 = isLeft(p3,p4,p1);
+	d4 = isLeft(p3,p4,p2);
+	if( (d1*d2)&lt;0 && (d3*d4)&lt;0 )return true;
+	else if(feq(d1,(i64)0) && onSegment(p1,p2,p3))return true;
+	else if(feq(d2,(i64)0) && onSegment(p1,p2,p4))return true;
+	else if(feq(d3,(i64)0) && onSegment(p3,p4,p1))return true;
+	else if(feq(d4,(i64)0) && onSegment(p3,p4,p2))return true;
+	return false;
+}
+
+inline bool intersection( line L1, line L2, point &p ) {// If two line intersect each other
+	i64 det = L1.a * L2.b - L1.b * L2.a;
+	if( feq(det,(i64)0) ) return false;
+	p.x = ( L1.b * L2.c - L2.b * L1.c ) / det;
+	p.y = ( L1.c * L2.a - L2.c * L1.a ) / det;
+	return true;
+}
+
+inline bool inRect(rect r, point p){// If a point inside a rectangle
+	if( (p.x &gt; r.ul.x && p.x &lt; r.lr.x) && (p.y &lt; r.ul.y && p.y &gt; r.lr.y) ) return true;
+	return false;
+}
+
+inline bool inTr(tr t, point p){// If a point inside a triangle
+	i64 d,d1,d2,d3;
+	d = fabs( isLeft(t.p[0],t.p[1],t.p[2]) );
+	d1 = fabs( isLeft(t.p[0],t.p[1],p) );
+	if( feq(d1,(i64)0) && onSegment(t.p[0],t.p[1],p) )return false;
+	d2 = fabs( isLeft(t.p[1],t.p[2],p) );
+	if( feq(d2,(i64)0) && onSegment(t.p[1],t.p[2],p) )return false;
+	d3 = fabs( isLeft(t.p[2],t.p[0],p) );
+	if( feq(d3(i64)0) && onSegment(t.p[2],t.p[0],p) )return false;
+	return feq(d,d1+d2+d3);
+}
+
+inline bool inCircle(circle c,point p){// If a point inside a circle
+	if( dist(c.center,p)+eps &lt; c.r ) return true;
+	return false;
+}
+</pre>

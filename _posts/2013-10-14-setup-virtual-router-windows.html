@@ -1,0 +1,35 @@
+---
+layout: post
+title: Setup Virtual Router (Windows)
+date: '2013-10-14T19:32:00.000+06:00'
+author: Sayef Azad Sakin
+tags:
+- Virtual Router
+- Windows
+- How to
+modified_time: '2013-10-17T22:52:23.475+06:00'
+blogger_id: tag:blogger.com,1999:blog-5269120713273282809.post-2803632031460606008
+redirect_from: /2013/10/setup-virtual-router-windows.html
+---
+
+Set the network details:
+<pre class="brush:cpp; wrap-lines:false">
+netsh wlan set &lt;network_name&gt; mode=allow ssid=&lt;ssid&gt; key=&lt;password&gt;
+netsh wlan start &lt;network_name&gt;
+</pre>
+Example:
+<pre class="brush:cpp; wrap-lines:false">
+netsh wlan set hostednetwork mode=allow ssid=ss key=ssssss
+netsh wlan start hostednetwork
+</pre>
+To stop the Wireless Hosted Network:
+<pre class="brush:cpp; wrap-lines:false">
+netsh wlan stop &lt;network_name&gt;
+</pre>
+To see the Wireless Hosted Network details, including the MAC addresses of connected users:
+<pre class="brush:cpp; wrap-lines:false">
+netsh wlan show &lt;network_name&gt;
+</pre>
+
+
+N.B: Run these commands in administrative mode.

@@ -1,0 +1,53 @@
+---
+layout: post
+title: Template
+date: '2011-08-14T16:37:00.000+06:00'
+author: Sayef Azad Sakin
+tags:
+- Coding
+modified_time: '2011-08-14T16:39:21.589+06:00'
+blogger_id: tag:blogger.com,1999:blog-5269120713273282809.post-2648691496332284424
+redirect_from: /2011/08/template.html
+---
+
+<pre class="brush:cpp"> 
+//Bismillahir Rahmanir Rahim
+//#pragma warning(disable:4786)
+//#pragma comment(linker,"/STACK:514850816")
+#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstdlib&gt;
+#include &lt;cmath&gt;
+#include &lt;cctype&gt;
+#include &lt;cstring&gt;
+#include &lt;climits&gt;
+#include &lt;string&gt;
+#include &lt;sstream&gt;
+#include &lt;queue&gt;
+#include &lt;stack&gt;
+#include &lt;vector&gt;
+#include &lt;set&gt;
+#include &lt;map&gt;
+#include &lt;list&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+#define mx 100000
+#define pii pair &lt; int, int &gt;
+#define i64 __int64
+#define inf 2147483647
+#define eps 1e-11
+#define pi 2*acos(0.0)
+
+int gcd( int a, int b ) { return !b ? a : gcd ( b, a&b );}
+struct Euclid{
+	int x,y,d;
+	Euclid(){}
+	Euclid( int xx, int yy, int dd ) { x = xx, y = yy, d = dd; }
+};
+Euclid egcd( int a, int b){
+	if(!b)return Euclid(1,0,a);
+	Euclid r = egcd(b,a%b);
+	return Euclid( r.y, r.x - a / b * r.y, r.d);
+}
+</pre>

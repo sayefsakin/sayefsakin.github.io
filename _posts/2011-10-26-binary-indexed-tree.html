@@ -1,0 +1,61 @@
+---
+layout: post
+title: Binary Indexed Tree
+date: '2011-10-26T02:33:00.003+06:00'
+author: Sayef Azad Sakin
+tags:
+- Coding
+modified_time: '2011-10-27T12:39:40.926+06:00'
+blogger_id: tag:blogger.com,1999:blog-5269120713273282809.post-562867461026872302
+redirect_from: /2011/10/binary-indexed-tree.html
+---
+
+<pre class="brush:cpp; wrap-lines:false" >
+#define i64 long long
+i64 BIT[mx];
+int n;
+//1-D BIT
+i64 read(int idx){
+    i64 sum = 0;
+    while (idx &gt 0){
+        sum += BIT[idx];
+        idx -= (idx & -idx);
+    }
+    return sum;
+}
+
+void update(int idx, i64 val){
+    while (idx &lt= m){
+        BIT[idx] += val;
+        idx += (idx & -idx);
+    }
+}
+
+//2-D BIT
+void update(int x , int y , i64 val){
+    int y1;
+    while (x &lt= n){
+        y1 = y;
+        while (y1 &lt= n){
+            BIT[x][y1] += val;
+            y1 += (y1 & -y1); 
+        }
+        x += (x & -x); 
+    }
+}
+
+i64 read(int x, int y){
+    int y1;
+    i64 sum = 0;
+    while (x &gt 0){
+        y1 = y;
+        while (y1 &gt 0){
+            sum += BIT[x][y1];
+            y1 -= (y1 & -y1); 
+        }
+        x -= (x & -x);
+    }
+    return sum;
+}
+</pre>
+<a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=binaryIndexedTrees">Tutorial in Topcoder</a>

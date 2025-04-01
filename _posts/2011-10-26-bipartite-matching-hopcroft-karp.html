@@ -1,0 +1,80 @@
+---
+layout: post
+title: Bipartite Matching (Hopcroft-Karp)
+date: '2011-10-26T02:11:00.002+06:00'
+author: Sayef Azad Sakin
+tags:
+- Coding
+modified_time: '2011-10-27T12:51:42.508+06:00'
+blogger_id: tag:blogger.com,1999:blog-5269120713273282809.post-1414606727065099736
+redirect_from: /2011/10/bipartite-matching-hopcroft-karp.html
+---
+
+<pre class="brush:cpp; wrap-lines:false" >
+//Complexity: O(e√v)
+//n: number of nodes in left side n=[1,n]
+//m: number of nodes in right side m=[n+1,n+m]
+//G: NIL U G1[G[1,n]] U G2[G[n+1,n+m]]
+
+#define mx 100010
+#define inf (1<<28)
+vector &lt int &gt G[mx];
+int match[mx], dist[mx];
+const int NIL = 0;
+bool bfs(int n){
+    int i,u,v,sz;
+    queue &lt int &gt q;
+    for(i = 1;i<=n;i++){
+        if(match[i]==NIL){
+            dist[i] = 0;
+            q.push(i);
+        }
+        else dist[i] = inf;
+    }
+    dist[NIL] = inf;
+    while(!q.empty()){
+        u = q.front(); q.pop();
+        sz = G[u].size();
+        for(i=0;i &lt sz;i++){
+            v = G[u][i];
+            if(dist[match[v]]==inf){
+                dist[match[v]] = dist[u] + 1;
+                q.push(match[v]);
+            }
+        }
+    }
+    return (dist[NIL]!=inf);
+}
+
+bool dfs(int u){
+    int sz,v,i;
+    if(u!=NIL){
+        sz = G[u].size();
+        for(i=0;i &lt sz;i++){
+            v = G[u][i];
+            if((dist[match[v]] == dist[u]+1) && dfs(match[v])){
+                match[v] = u;
+                match[u] = v;
+                return true;
+            }
+        }
+        dist[u] = inf;
+        return false;
+    }
+    return true;
+}
+
+int Hopcroft_Karp(int n, int m){
+    int i,matching;
+    for(i=0;i &lt= (n+m+1);i++)match[i] = NIL;
+    matching = 0;
+    while(bfs(n)){
+        for(i=1;i &lt= n;i++){
+            if(match[i] == NIL && dfs(i))
+                matching++;
+        }
+    }
+    return matching;
+}
+
+</pre>

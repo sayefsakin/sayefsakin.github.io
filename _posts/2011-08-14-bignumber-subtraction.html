@@ -1,0 +1,28 @@
+---
+layout: post
+title: Bignumber Subtraction
+date: '2011-08-14T16:26:00.000+06:00'
+author: Sayef Azad Sakin
+tags:
+- Coding
+modified_time: '2011-08-14T16:31:26.275+06:00'
+blogger_id: tag:blogger.com,1999:blog-5269120713273282809.post-995673538451116048
+redirect_from: /2011/08/bignumber-subtraction.html
+---
+
+<pre class="brush:cpp"> 
+void Subtraction(char *f, char *s, char *ans){
+	int lenf,lens,a,carry,ind,b;
+	lenf = strlen(f)-1; lens = strlen(s)-1;
+	carry = ind = 0;
+	while(lens &gt;=0 || lenf &gt;=0){
+		b = ((lens &gt;=0)?(s[lens--]-'0'):0) + carry; 
+		if(f[lenf] &gt;=(b+'0')){a = f[lenf--]-'0';carry = 0;}
+		else{a = f[lenf--]-'0' + 10;carry = 1;}
+		ans[ind++] = (a - b) + '0';
+	}
+	for(ind--;ind &gt;=0;ind--)if(ans[ind]!='0')break;
+	ans[++ind] = 0;
+	reverse(ans,ans+ind);
+}
+</pre>

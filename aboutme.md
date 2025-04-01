@@ -1,16 +1,11 @@
 ---
 layout: page
-title: About me
-subtitle: Why you'd want to go on a date with me
+title: Sayef Azad Sakin
+subtitle: Graduate Research Assistant
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+I am a 5th year PhD student at the University of Utah. My advisor is [Professor Dr. Kate Isaacs](https://www.sci.utah.edu/people/kisaacs.html). My current research is focused on _Data Visualization, High Performance Computing, Parallel Computing, and Data Management._
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+Right now, with Dr. Isaacs, I am working in the [Traveler Project](https://github.com/hdc-arizona/traveler-integrated), an integrated graph visualization system for asynchronous multi-task execution. I am trying to improve the existing visualization of Traveler, incorporate additional performance data, and optimize backend data handling procedures. The performance data is collected from a sample run on [Phylanx](http://phylanx.stellar-group.org/), a general purpose computation system of distributed arrays to enhance operations over commodity cloud system, using OTF2 format and presented over WEB using D3.
 
-What else do you need?
-
-### My story
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+I was born in Dhaka, the capital city of Bangladesh, and grew up there. In 2013, I finished my undergraduate in Computer Science and Engineering from the University of Dhaka. I earned my MS in the same subject from the same university in 2016. During my MS study, I worked with Professor [Dr. Md. Abdur Razzaque](http://www.cse.du.ac.bd/profile/?faculty=AR) in his [Green Networking Research (GNR)](http://www.cse.du.ac.bd/research-group-details/?group_id=40) Lab on resource sharing problem of co-located cognitive radio networks. At the end of my MS research, I developed a dedicated NS3 (network simulator 3) module for wireless regional area network to simulate and test our solution methodology. While working on the NS3 module - distributed code execution, trace data accumulation with feature detection, and visualization problems piqued my intention to work further on these fields. After working in the industry - as a software engineer - for more than two years, I've got myself enrolled into the PhD program at the University of Arizona.

@@ -1,0 +1,22 @@
+---
+layout: post
+title: Bigmod (a^b%m)
+date: '2011-08-14T16:44:00.001+06:00'
+author: Sayef Azad Sakin
+tags:
+- Coding
+modified_time: '2011-08-14T16:44:53.573+06:00'
+blogger_id: tag:blogger.com,1999:blog-5269120713273282809.post-1050158255453195655
+redirect_from: /2011/08/bigmod-abm.html
+---
+
+<pre class="brush:cpp"> 
+i64 bigmod(i64 a,i64 b,i64 d) {
+	i64 r=1;
+	while(b) {
+		if(b&1) r=(r*a)%d;
+		b&gt;&gt;=1; a=(a*a)%d;
+	}
+	return r;
+}
+</pre>

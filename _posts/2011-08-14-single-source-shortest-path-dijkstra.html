@@ -1,0 +1,48 @@
+---
+layout: post
+title: Single Source Shortest Path (Dijkstra)
+date: '2011-08-14T16:45:00.000+06:00'
+author: Sayef Azad Sakin
+tags:
+- Coding
+modified_time: '2011-08-14T16:46:40.935+06:00'
+blogger_id: tag:blogger.com,1999:blog-5269120713273282809.post-5006416224371066210
+redirect_from: /2011/08/single-source-shortest-path-dijkstra.html
+---
+
+<pre class="brush:cpp"> 
+struct comp {
+    bool operator() (const pii &a, const pii &b) {
+        return a.second &gt; b.second;
+    }
+};
+int color[mx], d[mx], nodes;
+vector &lt; pii &gt; path[MX];
+int dijkstra(int source, int dest){
+	int u,v,sz,y,z;
+	priority_queue&lt; pii, vector&lt; pii &gt;,comp &gt; q;
+	for(v = 1; v&lt;=nodes; v++){
+		color[v] = 0;
+		d[v] = inf;
+	}
+	d[source] = 0;
+	q.push(pii(source, 0));
+	while(!q.empty()){
+		u = q.top().first;
+		if(u==dest)break;
+		q.pop();
+		if(color[u])continue;
+		sz = path[u].size();
+		for(v=0;v&lt;sz;v++){
+			y = path[u][v].first;
+			z = path[u][v].second;
+			if(!color[y] && d[u]+z &lt; d[y]){
+				d[y] = d[u]+z;
+				q.push(pii(y,d[y]));
+			}
+		}
+		color[u] = 1;
+	}
+	return d[dest];
+}
+</pre>

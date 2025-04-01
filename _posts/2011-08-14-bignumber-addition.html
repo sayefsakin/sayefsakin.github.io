@@ -1,0 +1,27 @@
+---
+layout: post
+title: Bignumber Addition
+date: '2011-08-14T12:10:00.000+06:00'
+author: Sayef Azad Sakin
+tags:
+- Coding
+modified_time: '2011-08-14T12:11:21.928+06:00'
+blogger_id: tag:blogger.com,1999:blog-5269120713273282809.post-3068900488452221635
+redirect_from: /2011/08/bignumber-addition.html
+---
+
+<pre class="brush:cpp"> 
+void Addition(char *f, char *s, char *ans){
+	int lenf,lens,a,carry,ind;
+	lenf = strlen(f)-1; lens = strlen(s)-1;
+	carry = ind = 0;
+	while(lens &gt; =0 || lenf &gt; =0){
+		a = ((lens &gt; =0) ? (s[lens--]-'0') : 0) + ((lenf &gt; =0) ? (f[lenf--]-'0') : 0) + carry;
+		ans[ind++] = (a%10) + '0';
+		carry = a/10;
+	}
+	if(carry)ans[ind++] = carry + '0';
+	ans[ind] = 0;
+	reverse(ans,ans+ind);
+}
+</pre>

@@ -1,0 +1,226 @@
+---
+layout: post
+title: Character Device Driver (for linux)
+date: '2011-10-06T21:04:00.009+06:00'
+author: Sayef Azad Sakin
+tags:
+- Personal note
+- linux
+- Coding
+- System Programming
+modified_time: '2011-10-17T12:18:21.823+06:00'
+thumbnail: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhxQAKjvNZN8NSJlyx5c9b8NS2YgV2vdyGiJl2Osf2zKHWZsANt7wkxTiRXFTrcWvbGD-d9ZB29zP2u4quUuO5TFJNAUAhdleZ3etSnv8ACj9nzB2SJitxqvSlXXgqtYdNnCGCflmQzpUnX/s72-c/assign.jpg
+blogger_id: tag:blogger.com,1999:blog-5269120713273282809.post-3834551695887613435
+redirect_from: /2011/10/character-device-driver-for-linux.html
+---
+
+<html>
+<head>
+ <style type="text/css">
+ @font-face
+ {
+ font-family: courier;
+ src: url('http://sayefsakin.netai.net/files/fonts/COURBD_0.TTF');
+ }
+ #funcmac dev{font-family:courier;}
+ </style>
+</head>
+<body>
+<h1>Little talk.....</h1>
+<p>
+ This was my 3rd assignment in System programming lab(3rd year undergrad course). The main task of this assignment is
+ to design a character driver which should exist in linux kernel. I make a kernel module which
+ module implements a driver that exposes two character devices to user-space. Lets clarify some topics about
+ this assignment.
+</p>
+<h1>Kernel Module</h1>
+<p>
+ Modules are pieces of code that can be loaded and unloaded into the kernel upon demand.
+ They extend the functionality of the kernel without the need to reboot the system.
+ For example, one type of module is the device driver, which allows the kernel to access hardware
+ connected to the system. Without modules, we would have to build monolithic kernels and add new
+ functionality directly into the kernel image. Besides having larger kernels, this has the
+ disadvantage of requiring us to rebuild and reboot the kernel every time we want new functionality.
+</p>
+<h1>The Driver</h1>
+<p>
+ Normally a device driver sits between some hardware and the kernel I/O subsystem.
+ Its purpose is to give the kernel a consistent interface to the type of hardware it "drives".
+ This way the kernel can communicate with all hardware of a given type through the same interface,
+ even though the actual hardware differs.
+</p>
+<h1>About the driver</h1>
+<table><tr>
+ <td>
+ <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhxQAKjvNZN8NSJlyx5c9b8NS2YgV2vdyGiJl2Osf2zKHWZsANt7wkxTiRXFTrcWvbGD-d9ZB29zP2u4quUuO5TFJNAUAhdleZ3etSnv8ACj9nzB2SJitxqvSlXXgqtYdNnCGCflmQzpUnX/s640/assign.jpg" title="Module overview" alt="sakin_dev" align="left" width="332" height="354" >
+ </td>
+ <td>
+ The figure to the left illustrates how my driver works. Basically it solves the producer-consumer problem.
+ Here the two processes can be both producers and consumers. This resembles the functionality of a real hardware
+ device driver, where both the hardware and the kernel can produce and consume data. </br>
+ When a process writes (produces) to character device /dev/sakin-0 the data is stored in bounded buffer 1.
+ If the buffer is full the process has to wait until another process has read from /dev/sakin-1.</br>
+ When a process reads (consumes) from character device /dev/sakin-0 the data is read from bounded buffer 0.
+ If the buffer is empty the process has to wait until another process has written to /dev/sakin-1.</br>
+ Writes and reads to and from /dev/sakin-1 are handled in the same way.
+ </td>
+</tr></table>
+<p>
+ <a href="http://pastebin.com/EufnHp6c" >Click this link to see my code.</a>
+</p>
+
+<h1>Compiling and inserting the module</h1>
+Makefile for compiling and creating the module sakin_dev.ko:
+<pre class="brush:bash; wrap-lines:false" >
+obj-m += sakin_dev.o
+all:
+ make -C /lib/modules/$(shell uname -r)/build M=$(shell pwd) modules
+clean:
+ make -C /lib/modules/$(shell uname -r)/build M=$(shell pwd) clean
+</pre>
+script for loading the module sakin_dev.ko and creating the device file:
+<pre class="brush:bash; wrap-lines:false" >
+#file name sakin_load
+#!/bin/sh
+module_name="sakin_dev"
+device_prefix="sakin-"
+mode="664"
+group="root"
+
+# invoke insmod
+# use a pathname, as newer modutils don't look in . by default
+insmod ./${module_name}.ko
+
+# retrieve major number
+major=$(awk "\$2==\"$module_name\" {print \$1}" /proc/devices)
+
+# Remove stale nodes and replace them, then give gid and perms
+# Usually the script is shorter, it's scull that has several devices in it.
+
+rm -f /dev/${device_prefix}[0-1]
+mknod /dev/${device_prefix}0 c $major 0
+mknod /dev/${device_prefix}1 c $major 1
+chgrp $group /dev/${device_prefix}[0-1]
+chmod $mode  /dev/${device_prefix}[0-1]
+</pre>
+script for unloading the module sakin_dev.o and removing the device file:
+<pre class="brush:bash; wrap-lines:false" >
+#file name sakin_unload
+#!/bin/sh
+module_name="sakin_dev"
+device_prefix="sakin-"
+
+# invoke rmmod with all arguments we got
+rmmod ${module_name}
+
+# Remove stale nodes
+rm -f /dev/${device_prefix}[0-1]
+</pre>
+Now compile the module by running make. If the compilation succeeds there will now be a file called sakin_dev.ko which is the module.
+Create the necessary devices and insert the module by executing
+<pre class="brush:bash; wrap-lines:false" >
+./sakin_load
+</pre>
+To remove the module and to delete the devices execute:
+<pre class="brush:bash; wrap-lines:false" >
+./sakin_unload
+</pre>
+<h1>Functions and Macros:</h1>
+<p id="funcmac">
+ <dev>int sakin_init_module( void ):</dev>
+  init_function, Called when module is loaded into the kernel. </br>
+ <dev>void sakin_cleanup_module( void ):</dev>
+  cleanup_function, Called when module is unloaded from the kernel. </br>
+ <dev>module_init(init_function):</dev>
+  Macros that designate a modules initialization, defined in &ltlinux/types.h&gt.</br>
+ <dev>module_exit(cleanup_function):</dev>
+  Macros that designate a modules cleanup functions, defined in &ltlinux/types.h&gt. </br>
+
+ </br>
+ <dev>static int sakin_open( struct inode*, struct file* ):</dev>
+  Called when a process tries to open the device file. </br>
+ <dev>static int sakin_release( struct inode*, struct file* ):</dev>
+  Called when a process closes the device file. </br>
+ </br>
+ <dev>static ssize_t sakin_read( struct file*, char*, size_t, loff_t* ):</dev>
+  Called when a process, which already opened the sakin_dev file, attempts to read from it. </br>
+ <dev>static int sakin_getwritespace(struct sakin_dev *dev, struct file *filp, const int c_minor):</dev>
+  Wait for space for writing. Caller must hold device semaphore.  On error the semaphore will be released before returning. </br>
+ <dev>static int spacefree(struct sakin_dev *dev, const int c_minor):</dev>
+  Return how much space is free. </br>
+ <dev>static ssize_t sakin_write( struct file*, const char*, size_t, loff_t* ):</dev>
+  Called when a process, which already opened the sakin_dev file, attempts to write to it. </br>
+ </br>
+ <dev>dev_t MKDEV(unsigned int major, unsigned int minor):</dev>
+  Macro that builds a dev_t data item from the major and minor numbers. Declared in &ltlinux/types.h&gt.</br>
+ <dev>int register_chrdev_region(dev_t first, unsigned int count, char *name):</dev>
+  Allocating the device number, which is declared in &ltlinux/fs.h&gt </br>
+ <dev>void unregister_chrdev_region(dev_t first, unsigned int count):</dev>
+  Freeing the device number, which is declared in &ltlinux/fs.h&gt </br>
+ <dev>container_of(pointer, type, field):</dev> A convenience macro that may be used to obtain a pointer to a structure from a
+pointer to some other structure contained within it. </br>
+ <dev>void *kmalloc(size_t size, int flags):</dev>
+  For allcating memory, which is declared in &ltlinux/slab.h&gt </br>
+ <dev>void kfree(void *ptr);</dev>
+  For freeing memory, which is declared in &ltlinux/slab.h&gt </br>
+ <dev>static void sakin_setup_cdev(struct sakin_dev *dev, int index):</dev>
+  Local function to setup the char device.</br>
+ <dev>void cdev_init(struct cdev *cdev, struct file_operations *fops):</dev>
+  Initializing and setting up the char device. Declared in &ltlinux/cdev.h&gt </br>
+ <dev>int cdev_add(struct cdev *dev, dev_t num, unsigned int count):</dev>
+  Tell the kernel about the char device. Declared in &ltlinux/cdev.h&gt </br>
+ <dev>void cdev_del(struct cdev *dev):</dev>
+  To remove a char device from the system. Declared in &ltlinux/cdev.h&gt </br>
+ <dev>unsigned int iminor(struct inode *inode),</br>
+ unsigned int imajor(struct inode *inode):</dev>
+  used to obtain the major and minor number from an inode. </br>
+ <dev>unsigned long copy_from_user (void *to, const void *from, unsigned long count),</br>
+ unsigned long copy_to_user (void *to, const void *from, unsigned long count):</dev>
+  Copy data between user space and kernel space. Declared in &ltasm/uaccess.h&gt </br>
+ <dev>void schedule(void):</dev>
+  Selects a runnable process from the run queue. The chosen process can be current or a different one.</br>
+ <dev>bool signal_pending(current):</dev>
+  Tells whether current were awakened by a signal.</br>
+ <dev>GFP_USER & GFP_KERNEL:</dev></br>
+ Flags that control how memory allocations are performed, from the least restrictive to the most.
+ The GFP_USER and GFP_KERNEL priorities allow the current process to be put to sleep to satisfy the request.</br>
+ </br>
+ <b style="font-size:1.5em;" ><u>Semaphore related functions defined in &ltasm/semaphore.h&gt</br></u></b>
+ <dev>void sema_init(struct semaphore *sem, int val):</dev> Semaphore initialization. </br>
+ <dev>void down(struct semaphore *sem):</dev>
+  down puts the calling process into an uninterruptible sleep if need be. </br>
+ <dev>int down_interruptible(struct semaphore *sem):</dev>
+  down_interruptible, instead, can be interrupted by a signal. </br>
+ <dev>int down_trylock(struct semaphore *sem):</dev>
+  down_trylock does not sleep; instead, it returns immediately if the semaphore is unavailable. </br>
+ <dev>void up(struct semaphore *sem):</dev>
+  Code that locks a semaphore must eventually unlock it with up. </br>
+ </br>
+ <b style="font-size:1.5em;" ><u>Sleep related functions defined in &ltlinux/wait.h&gt</br></u></b>
+ <dev>void init_waitqueue_head(wait_queue_head_t *queue);</br>
+ DECLARE_WAIT_QUEUE_HEAD(queue):</dev></br>
+  The defined type for Linux wait queues. A wait_queue_head_t must be explicitly
+  initialized with either init_waitqueue_head at runtime or DECLARE_WAIT_QUEUE_HEAD at compile time.</br>
+ <dev>void wait_event(wait_queue_head_t q, int condition);</dev> //uninterruptible wait</br>
+ <dev>int wait_event_interruptible(wait_queue_head_t q, int condition);</dev> //interruptible wait</br>
+ <dev>int wait_event_timeout(wait_queue_head_t q, int condition, int time);</dev> //uninterruptible timeout wait</br>
+ <dev>int wait_event_interruptible_timeout(wait_queue_head_t q, int condition, int time):</dev> //interruptible timeout wait</br>
+  Cause the process to sleep on the given queue until the given condition evaluates to a true value.</br>
+ <dev>void prepare_to_wait(wait_queue_head_t *queue, wait_queue_t *wait, int state),</br>
+ void finish_wait(wait_queue_head_t *queue, wait_queue_t *wait):</br></dev>
+  Helper functions that can be used to code a manual sleep.</br>
+ <dev>void wake_up(struct wait_queue **q);</dev> //uninterruptible</br>
+ <dev>void wake_up_interruptible(struct wait_queue **q);</dev> //interruptible</br>
+ <dev>void wake_up_nr(struct wait_queue **q, int nr);</br>
+ void wake_up_interruptible_nr(struct wait_queue **q, int nr);</br>
+ void wake_up_all(struct wait_queue **q);</br>
+ void wake_up_interruptible_all(struct wait_queue **q):</dev></br>
+  Wake processes that are sleeping on the queue q. The _interruptible form wakes
+  only interruptible processes. Normally, only one exclusive waiter is awakened,
+  but that behavior can be changed with the _nr or _all forms.</br>
+</p>
+<h1>Externel References:</h1>
+<a href="http://www.tldp.org/LDP/lkmpg/2.6/html/lkmpg.html" >The Linux Kernel Module Programming Guide</a></br>
+<a href="http://lwn.net/Kernel/LDD3/" >Linux Device Driver (Ch:2,3,5,6)</a>
+</body>
+</html>

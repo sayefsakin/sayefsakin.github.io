@@ -1,0 +1,34 @@
+---
+layout: post
+title: Bignumber Multiplication
+date: '2011-08-14T16:22:00.000+06:00'
+author: Sayef Azad Sakin
+tags:
+- Coding
+modified_time: '2011-08-14T16:30:55.888+06:00'
+blogger_id: tag:blogger.com,1999:blog-5269120713273282809.post-2068498766212020302
+redirect_from: /2011/08/void-multiplicationchar-f-char-s-char.html
+---
+
+<pre class="brush:cpp"> 
+void Multiplication(char *f, char *s, char *sum){
+	int lenf,lens,i,j,k,carry,a;
+	memset(sum,0,sizeof(sum));
+	lenf = strlen(f);lens = strlen(s);
+	reverse(f,f+lenf);reverse(s,s+lens);
+	for(i=0;i &lt; lens;i++){
+		carry = 0;k = i;
+		for(j=0;j &lt; lenf;j++){
+			a = ( (f[j]-'0') * (s[i]-'0') ) + carry;
+			if(i) a += (sum[k]-'0');
+			sum[k++] = (a%10) + '0';
+			carry = a/10;
+		}
+		if(carry)sum[k++] = carry + '0';
+		sum[k++] = '0';
+	}
+	for(k--;k &gt;=0;k--)if(sum[k]!='0')break;
+	sum[++k] = 0;
+	reverse(sum,sum+k);
+}
+</pre>

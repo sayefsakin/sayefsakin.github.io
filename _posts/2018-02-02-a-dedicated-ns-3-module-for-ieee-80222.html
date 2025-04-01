@@ -1,0 +1,247 @@
+---
+layout: post
+title: A dedicated NS-3 Module for IEEE 802.22 standard
+date: '2018-02-02T22:08:00.005+06:00'
+author: Sayef Azad Sakin
+tags:
+- Thesis work
+- Personal note
+modified_time: '2020-02-13T01:49:27.282+06:00'
+thumbnail: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikW9y90I0SmuiZr18inr6HNBOtuiDxWjI1dulUriPIR5eZx02Os2Z6OX5DSUJVMJAd15tRMBlU0ZjeolwmpLuEYuaSpHU4eEt3JjuHwM7aEySizsYDGbFNrW4-Kc4Svi_-PXgHhzA0jPs/s72-c/network_modelw.jpg
+blogger_id: tag:blogger.com,1999:blog-5269120713273282809.post-4110540296124328179
+redirect_from: /2018/02/a-dedicated-ns-3-module-for-ieee-80222.html
+---
+
+<style>
+table.fancy_table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.fancy_table td, table.fancy_table th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+pre {
+    background-color: #000000;
+}
+</style>
+
+<br />
+<h2>
+Little bit of ranting</h2>
+During my MS Thesis work in 2015, I researched on the resource (subchannel, power) scheduling problem in wireless regional area network (WRAN). IEEE 802.22 standard is considered as the first wireless standard based on CR technology for WRAN. I worked under the supervision of professor Dr. Md. Abdur Razzaque in the <a href="http://www.cse.du.ac.bd/research-group-details/?group_id=40">GNR group of CSEDU</a>. We used NS-3 for assessing and monitoring different aspects of network models. While trying to implement a WRAN environment in NS-3, NS-3 betrayed us by having no dedicated module for WRAN. So what, we wrote our own WRAN module in NS-3.<br />
+<br />
+<h2>
+Rolling in the IEEE 802.22</h2>
+Now, I am going to dive deeper into the IEEE 802.22, not much deeper, just what is needed to know for our WRAN module. For more enthusiast readers, I highly encourage to go through this <a href="http://ieeexplore.ieee.org/document/6823051/" target="_blank">official IEEE draft</a>.<br />
+<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody>
+<tr><td style="text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikW9y90I0SmuiZr18inr6HNBOtuiDxWjI1dulUriPIR5eZx02Os2Z6OX5DSUJVMJAd15tRMBlU0ZjeolwmpLuEYuaSpHU4eEt3JjuHwM7aEySizsYDGbFNrW4-Kc4Svi_-PXgHhzA0jPs/s1600/network_modelw.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img alt="IEEE 802.22 network architecture" border="0" data-original-height="522" data-original-width="717" height="290" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikW9y90I0SmuiZr18inr6HNBOtuiDxWjI1dulUriPIR5eZx02Os2Z6OX5DSUJVMJAd15tRMBlU0ZjeolwmpLuEYuaSpHU4eEt3JjuHwM7aEySizsYDGbFNrW4-Kc4Svi_-PXgHhzA0jPs/s400/network_modelw.jpg" title="IEEE 802.22 network architecture" width="400" /></a></td></tr>
+<tr><td class="tr-caption" style="text-align: center;">Figure 1 : IEEE 802.22 network architecture</td></tr>
+</tbody></table>
+IEEE 802.22 is proposed for infrastructure based WRAN where a base station (BS) controls fixed wireless subscribers called customer premise equipment (CPE). Each BS forms a single wireless network (CR cell) and it manages the medium access in its own WRAN. The core technology of the IEEE 802.22 standard is based on cognitive radio, primarily designed to operate in the TV White Spaces form 54-862MHz, on a non-interfering basis with the primary users (incumbents). The operation on VHF and UHF TV band typically allows long range propagation and cell radius of 17-33 km. The VHF / UHF Bands. Frequency Allocation for the United States are 54 - 60, 76 - 88, 174 - 216, 470 – 608 and 614 - 698 MHz, Total of 282 MHz or 47 Channels.<br />
+<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody>
+<tr><td style="text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi0JDA0vv57RGeRTu81G3OPLK2NzLjm7l9E8hzHu1EQ-M3I6uW6neYdyMfYlrFSd7kI4r7MA1SDi6f6fbD8rRIhijWJZGRqZ_jfVv1q0wQk5jtUuxEV4N6Q0cuOK3Zx6t07YukK5y0uWZw/s1600/ref_model802.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img alt="IEEE 802.22 reference architecture" border="0" data-original-height="349" data-original-width="662" height="210" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi0JDA0vv57RGeRTu81G3OPLK2NzLjm7l9E8hzHu1EQ-M3I6uW6neYdyMfYlrFSd7kI4r7MA1SDi6f6fbD8rRIhijWJZGRqZ_jfVv1q0wQk5jtUuxEV4N6Q0cuOK3Zx6t07YukK5y0uWZw/s400/ref_model802.jpg" title="IEEE 802.22 reference architecture" width="400" /></a></td></tr>
+<tr><td class="tr-caption" style="text-align: center;">Figure 2 : IEEE 802.22 reference architecture</td></tr>
+</tbody></table>
+The reference architecture of IEEE 802.22 consists of three components- Data Plane, Management/Control Plane and Cognitive plane.<br />
+<b><br /></b>
+<b>Data Plane</b><br />
+It consists of the physical layer (PHY), the medium access control (MAC) layer and the convergence<br />
+sublayer (CS). Service Access Points (SAPs) are added in between these layers to allow modularization of the system where different components may be disjointed and/or from different vendors. The Data &amp; Control/Management plane of the MAC is comprised of three sublayers: service-specific CS, the MAC Common Part sublayer (CPS), and the security sublayer. The MAC Common Part sublayer shall provide the core MAC functionality of system access, connection establishment, and connection maintenance.<br />
+<b><br /></b>
+<b>Management/Control Plane</b><br />
+The management/control plane consists of the Management Information Base (MIB). The MIB primitives is used for system configuration, monitoring statistics, notifications, triggers, CPE and session management, Radio Resources Management (RRM), communication with the database service, spectrum sensing and geolocation reporting, etc.<br />
+<br />
+<b>Cognitive plane</b><br />
+The cognitive plane is composed of the Spectrum Sensing Function (SSF), the Geolocation (GL) function, the Spectrum Manager/Spectrum Sensing Automaton (SM/SSA) and a dedicated security sublayer 2. The SSF implements spectrum sensing algorithms and the GL module provides the information to determine the location of the IEEE 802.22 device (BS or CPE). The key functionalities of Spectrum Manager covers -&nbsp;maintaining spectrum availability Information,&nbsp;channel classification and selection, channel set management, making channel move decision, self-coexistence, etc.<br />
+<br />
+<h2>
+All about the NS-3</h2>
+NS-3 has 4 basic abstraction level for maintaining different network entities.<br />
+<ol>
+<li><b>Node:</b> A node is simply a computing device or a network host that is connected to the network. At the beginning of writing NS-3 codes, one or more node should be created, in which network devices like peripheral cards will be added followed by implementing protocol stacks and different applications. NS-3 provides a basic c++ class - <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">Node</span>, having basic methods to control the node during simulation.</li>
+<li><b>Application:</b> An application holds the user program or algorithm which generates some activity to be simulated in the network environment. NS-3 provides a basic c++ class - <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">Application</span>, having basic methods for controlling an application. It can be extended to write customized user application to monitor in the network environment.&nbsp;</li>
+<li><b>Channel: </b>A channel is an entity over which the data will be flowed. A basic c++ class - <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">Channel </span>provides methods for typical channel handling. It can be extended and customized by users according to their needs to match the real work wired or wireless channels.</li>
+<li><b>Net Device:</b> Net devices resembles the network device driver that will be attached to a Node. It provides an abstraction of Network Interface Card (NIC) with device driver to control the NIC. The&nbsp;<span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">NetDevice </span>c++ basic class contains the basic functionality of an NIC card.</li>
+<li><b>Topology Helper: </b>In addition to the above 4 components, topology helper class provides convenient way to handle these components. For example, a <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">NetDevice </span>will always connect to a <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">Node</span>, one or more <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">Channel&nbsp;</span>are assigned to a <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">NetDevice </span>with IP address, mac address, mobility models, etc, and at last an <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">Application </span>is attached to it. These common procedures are handled collectively by the topology helper.</li>
+</ol>
+<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody>
+<tr><td style="text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiulSFnscBGigiJQ4SjL17ojFzJ63ttM1BTDxK3UtW17WtRDXTfAXAh4bTT4Dw-JS0hLBFp6eHLuCgeh2rglwreVmTKjRKWri6hIc1g4cBfPs58g9WyzhRdmclK38o-eTOBud8GlDema2k/s1600/ns3sim.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img alt="NS-3 basic components in operation" border="0" data-original-height="321" data-original-width="624" height="205" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiulSFnscBGigiJQ4SjL17ojFzJ63ttM1BTDxK3UtW17WtRDXTfAXAh4bTT4Dw-JS0hLBFp6eHLuCgeh2rglwreVmTKjRKWri6hIc1g4cBfPs58g9WyzhRdmclK38o-eTOBud8GlDema2k/s400/ns3sim.jpg" title="NS-3 basic components in operation" width="400" /></a></td></tr>
+<tr><td class="tr-caption" style="text-align: center;">Figure 3 : NS-3 basic components in operation</td></tr>
+</tbody></table>
+An abstract of any real world network objects, devices, protocols are represented by different&nbsp;<i>NS-3 models</i>. For example,&nbsp;<span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">MobilityModel&nbsp;</span>represents how network nodes will be placed and distributed across the network.&nbsp;<span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">ConstantPosition&nbsp;</span>model places the nodes with definite coordinates,&nbsp;<span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">RandomWaypoint&nbsp;</span>use position allocator (grid, list, box, disc etc.) for the node placements. One or more&nbsp;<i>models&nbsp;</i>are combined into one&nbsp;<i>NS-3 module</i>&nbsp;representing a separate software library. For example, the&nbsp;<i>wifi module</i>&nbsp;contains&nbsp;<span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">YansWifiPhy</span>,&nbsp;<span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">YansWifiChannel</span>,&nbsp;<span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">YansErrorRateModel&nbsp;</span>models and many more. The following figure represents the components of NS-3, a demonstration of their action and contribution in network communication during any simulation.<br />
+<h2>
+Something like - The WRAN Module</h2>
+<div>
+<div>
+No dedicated module for the IEEE 802.22 standard or wireless regional area networks (WRAN) is available in NS-3 (At least as of during our research work in the July, 2015). There is a module for WiMAX which is based on IEEE 802.16 standard for broadband wireless access (BWA) networks. Some similarities can be found between the core functionalities of WiMAX and WRAN - in fact, IEEE 802.22 MAC is totally based on IEEE 802.16 MAC. The key differences between them have been listed in the table.<br />
+<br /></div>
+</div>
+<div>
+<table class="fancy_table">
+<tbody>
+<tr><th></th><th>IEEE 802.22 (WRAN)</th><th>IEEE 802.16 (WiMAX)</th></tr>
+<tr><td>Frequency Usage</td><td>54 to 862 MHz</td><td>2 to 11 GHz</td></tr>
+<tr><td>Air Interface</td><td>OFDMA</td><td>OFDMA, Single Carrier.</td></tr>
+<tr><td>OFDMA Channel Profile (Bandwidth)</td><td>6,7,8 (according to regulatory domain)</td><td>28, 20, 17.5, 14, 10, 8.75, 7, 3.5, 1.25</td></tr>
+<tr><td>MAC frame structure</td><td>Superframe-frame. Frame Size: 10ms</td><td>No Superframe. Frame Size: 2,5,10,20 ms</td></tr>
+<tr><td>Self-Coexistence</td><td>DRRO, AODCC etc.</td><td>Master frame Assignment</td></tr>
+<tr><td>Data Rate</td><td>27Mbps (Average) 75Mbps (Aggregate)</td><td>54Mbps (Average) 75Mbps (Aggregate)</td></tr>
+<tr><td>Distance</td><td>30-100 km</td><td>4 km or less</td></tr>
+</tbody></table>
+</div>
+<div>
+<br /></div>
+<div>
+<br />
+In developing the <i>WRAN </i>module, we cloned the <i>WiMAX </i>module and changed respective models with appropriate specification of the IEEE 802.22 standards. In Figure. 4, the basic architecture for the developed <i>WRAN </i>module is presented. Note that, only key models is used to depict the architecture in this figure. We also had to design a separate cognitive plane - depicted in Figure. 5, since the&nbsp;<i>WiMAX </i>module doesn’t have any cognitive plane by design. The design of the cognitive plane is based on the cognitive radio extension for NS-3 developed by&nbsp;<a href="http://www.coe.neu.edu/Research/krclab/crens3/" target="_blank">Kaushik et. al</a>. It was developed over wifi channel, We modified it to run over our custom OFDMA based TV channels. This cognitive plane is used by&nbsp;<span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">WranPhy&nbsp;</span>to choose the next channel for communication.<br />
+<br />
+<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody>
+<tr><td style="text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgkn5oM2WJyuzTrpDwdr4kn8bXohfkbVhS0-2cwA_Q1_leDlz0X-u-PXHoKQN54mTvYaFU9gcGKzJCAQ-F-N-oKGtvzG5gbIM4xlhzyQqHTGpbycTGR26YezFyxNkRJEdw9HJloE84HQ2w/s1600/wranarch.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img alt="WRAN Module Architecture" border="0" data-original-height="456" data-original-width="652" height="277" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgkn5oM2WJyuzTrpDwdr4kn8bXohfkbVhS0-2cwA_Q1_leDlz0X-u-PXHoKQN54mTvYaFU9gcGKzJCAQ-F-N-oKGtvzG5gbIM4xlhzyQqHTGpbycTGR26YezFyxNkRJEdw9HJloE84HQ2w/s400/wranarch.jpg" title="WRAN Module Architecture" width="400" /></a></td></tr>
+<tr><td class="tr-caption" style="text-align: center;">Figure 4 : WRAN Module Architecture</td></tr>
+</tbody></table>
+The&nbsp;<i>WRAN&nbsp;</i>module is focused on infrastructure based IEEE 802.22 standards, therefore, separate models are also developed for two types of secondary users - base stations (BS) and subscriber stations (SS). For example, By extending the base class&nbsp;<span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">WranNetDevice&nbsp;</span>two separate models is developed -&nbsp;<span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">WranBaseStationNetDevice&nbsp;</span>and&nbsp;<span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">WranSubscriberStationNetDevice</span>. The IEEE 802.22 standards use TDMA for accessing channel. Therefore, a 50ms frame is divided into fixed length time frame for uplink and downlink communication. The length of the uplink and downlink frame is know to both BS and SS. During a downlink communication, A BS creates a packet and sends it within the downlink frame duration. An SS senses the channel and picked up the packet sent by BS. During uplink communication, same process is reversed from SS to BS within uplink frame duration.<br />
+<br />
+Here, the <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">WranNetDevice </span>model creates a transparent layer between the application layer and the MAC layer. Its responsibility is to define downlink and uplink frames, generate service flow and schedule packets to sends via lower level MAC layer related models. The <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">WranServiceFlowManager </span>creates and handles services for the communication. Depending on the services needed to provide, it uses <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">WranSSScheduler </span>and <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">WranBSScheduler </span>for scheduling packets between net devices. These schedulers are also responsible for creating MAC massages and send them through <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">WranPhy </span>using different types of uplink schedulers - <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">WranUplinkSchedulerSimple</span>, <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">WranUplinkSchedulerRtps</span>, <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">WranUplinkSchedulerMBQoS</span>.<br />
+<br />
+<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody>
+<tr><td style="text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi1DrbG9pHQY7Ke8q32jaJ9MkwADQXyP6siJr-BG-xknXyR5DBjR-S3XxorlALPD5yJn0Ju_Qb8_lpKWMVIh4hamW5Jx0yyxjLl0dqo5bqZC8ibxlWrokIgdM4LS7ckl3YV-ljf9x_Tse0/s1600/cognitive_plane.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img alt="Cognitive Plane Architecture" border="0" data-original-height="296" data-original-width="583" height="202" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi1DrbG9pHQY7Ke8q32jaJ9MkwADQXyP6siJr-BG-xknXyR5DBjR-S3XxorlALPD5yJn0Ju_Qb8_lpKWMVIh4hamW5Jx0yyxjLl0dqo5bqZC8ibxlWrokIgdM4LS7ckl3YV-ljf9x_Tse0/s400/cognitive_plane.jpg" title="Cognitive Plane Architecture" width="400" /></a></td></tr>
+<tr><td class="tr-caption" style="text-align: center;">Figure 5 : Cognitive Plane Architecture</td></tr>
+</tbody></table>
+<br />
+The <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">WranPhy </span>creates a virtual physical layer by defining channel, frequency and bandwidth. A default <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">SimpleOfdmWranPhy </span>with <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">SimpleOfdmWranChannel</span> extension is provided to create OFDMA medium; since, OFDMA is the default air interface for the IEEE 802.22 standards. Upon receiving packets, <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">WranPhy </span>sends bursts message (collection of packets) to respective net devices. One communication link cycle ends by forwarding packets to the destination node by net<br />
+devices.<br />
+<h2>
+Hello from the WRAN Module</h2>
+We developed our module for NS-3 version 3.26 (it was the latest version during our research). It can be downloaded from&nbsp;<a href="https://www.nsnam.org/release/ns-allinone-3.26.tar.bz2" target="_blank">the official address linked here</a>.&nbsp;We installed it in Ubuntu 14.10. To run NS-3, some prerequisite packages are needed to be installed in the system. In Ubuntu system the following commands can be used to install them,<br />
+<br />
+<ul>
+<li>C++&nbsp;</li>
+</ul>
+<pre class="brush:cpp; wrap-lines:false">apt-get install gcc g++ python
+</pre>
+<ul>
+<li>Python (release)</li>
+</ul>
+<pre class="brush:cpp; wrap-lines:false">apt-get install gcc g++ python python-dev
+</pre>
+<div>
+<ul>
+<li>Python (development)</li>
+</ul>
+<pre class="brush:cpp; wrap-lines:false">apt-get install mercurial python-setuptools git
+</pre>
+</div>
+<div>
+<ul>
+<li>qt4 development tools for NetAnim</li>
+</ul>
+<pre class="brush:cpp; wrap-lines:false">apt-get install qt4-dev-tools libqt4-dev
+</pre>
+</div>
+<div>
+<div>
+A detailed instruction for installation can be found <a href="https://www.nsnam.org/wiki/Installation" target="_blank">here</a>. When the installation is successful, you can build and configure NS-3 using waf tools as follows:</div>
+</div>
+<pre class="brush:cpp; wrap-lines:false">./waf clean
+./waf configure --build-profile=optimized --enable-examples --enable-tests
+</pre>
+<div>
+After completion of configuration, run and test the hello-simulator as follows:</div>
+<pre class="brush:cpp; wrap-lines:false">./waf --run hello-simulator
+</pre>
+<div>
+<div>
+If everything goes perfectly, the following output will depict that your system is ready to run, test and do experiments in NS-3.</div>
+</div>
+<pre class="brush:cpp; wrap-lines:false">Hello Simulator
+</pre>
+<div>
+Our newly developed WRAN module included NS-3 codebase can be downloaded from <a href="https://github.com/sayefsakin/wran-ns3" target="_blank">this github source-base.</a>&nbsp;Usage of the WRAN module is depicted by <a href="https://github.com/sayefsakin/wran-ns3/blob/master/ns-3.21/scratch/wran.cc" target="_blank">this sample code</a>. A helper class <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">WranHelper </span>is developed to ease out the configurations. The following codes will read the primary users repository file and create a Repository for later use.</div>
+<div>
+<pre class="brush:cpp; wrap-lines:false">Ptr&lt;pumodel&gt; puModel = CreateObject&lt;pumodel&gt;();
+std::string map_file = "map PUs multiple.txt";
+puModel-&gt;SetPuMapFile((char *)map_file.c_str());
+
+Ptr&lt;repository&gt; repo = CreateObject&lt;repository&gt;();
+</pre>
+</div>
+<div>
+Then create <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">NodeContainer </span>for holding the BS and SS nodes as follows:</div>
+<div>
+<pre class="brush:cpp; wrap-lines:false">NodeContainer ssNodes;
+NodeContainer bsNodes;
+
+ssNodes.Create (mxSS);
+bsNodes.Create(mxBS);
+</pre>
+</div>
+<div>
+Now, use <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">WranHelper </span>class to create net devices and store those in net device containers.</div>
+<div>
+<pre class="brush:cpp; wrap-lines:false">WranHelper wran;
+NetDeviceContainer ssDevs , bsDevs;
+WranHelper::SchedulerType scheduler = WranHelper::SCHED_TYPE_SIMPLE;
+
+ssDevs = wran.Install (repo, puModel, ssNodes,
+            WranHelper::DEVICE_TYPE_SUBSCRIBER_STATION,
+            WranHelper::SIMPLE_PHY_TYPE_OFDM,
+            scheduler);
+
+bsDevs = wran.Install (repo, puModel, bsNodes,
+            WranHelper::DEVICE_TYPE_BASE_STATION,
+            WranHelper::SIMPLE_PHY_TYPE_OFDM,
+            scheduler);
+</pre>
+</div>
+<div>
+<div>
+Then we set the propagation loss model as FRIIS propagation model and modulation type as QAM16:</div>
+</div>
+<div>
+<pre class="brush:cpp; wrap-lines:false">wran.SetPropagationLossModel(SimpleOfdmWranChannel::FRIIS_PROPAGATION);
+Ptr&lt;WranSubscriberStationNetDevic&gt; ss[mxSS];
+for(int i=0; i&lt;mxss; i++){
+    ss[i] = ssDevs.Get(i)-&gt;GetObject&lt;WranSubscriberStationNetDevic&gt;();
+    ss[i]-&gt;SetModulationType(WranPhy::MODULATION_TYPE_QAM16_12);
+}
+</pre>
+</div>
+<div>
+After that, we install the InternetStackHelper and assign IP addresses to nodes as follows:</div>
+<div>
+<pre class="brush:cpp; wrap-lines:false">InternetStackHelper stack;
+stack.Install(bsNodes);
+stack.Install (ssNodes);
+
+Ipv4AddressHelper address;
+address.SetBase ("10.1.1.0" , "255.255.255.0");
+
+Ipv4InterfaceContainer SSinterfaces = address.Assign(ssDevs);
+Ipv4InterfaceContainer BSinterface = address.Assign(bsDevs);
+</pre>
+</div>
+<div>
+<div>
+Then, after installing any suitable mobility models to nodes, run the simulation by following commands from the terminal:</div>
+</div>
+<pre class="brush:cpp; wrap-lines:false">./waf --run "wran"
+</pre>
+<div>
+<div>
+Considering all log components disabled, after running the program the following output should be shown in the terminal:</div>
+</div>
+<div>
+<pre class="brush:cpp; wrap-lines:false">Starting simulation . . . . .
+Done.
+</pre>
+</div>
+<div>
+<div>
+The source code for this WRAN module and all related commits can be found in this <a href="https://github.com/sayefsakin/wran-ns3" target="_blank">github repository</a>. This is just a basic implementation of the module. Although It cannot handle all the features proposed by the IEEE 802.22, it provides a basic layout upon which different network features of 802.22 can be implemented and tested. For any question, query, feedback, clarification, correction, or update - feel free to contact me anytime.
+</div>
+</div>
+</div>

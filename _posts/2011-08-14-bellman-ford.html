@@ -1,0 +1,37 @@
+---
+layout: post
+title: Bellman Ford
+date: '2011-08-14T16:51:00.000+06:00'
+author: Sayef Azad Sakin
+tags:
+- Coding
+modified_time: '2011-08-14T16:52:56.008+06:00'
+blogger_id: tag:blogger.com,1999:blog-5269120713273282809.post-444818119119915215
+redirect_from: /2011/08/bellman-ford.html
+---
+
+<pre class="brush:cpp"> 
+vector &lt; pii &gt; M[mx];
+int d[mx];
+bool bellman_ford(int s,int n){
+	int i,u,j,sz,v,w;
+	bool done = false;
+	for(i=0;i&lt;n;i++)d[i] = inf;
+	d[s] = 0;
+	for(i=0;i&lt;n && !done;i++){
+		done = true;
+		for(u=0;u&lt;n;u++){
+			sz = M[u].size();
+			for(j=0;j&lt;sz;j++){
+				v = M[u][j].first;
+				w = M[u][j].second;
+				if(d[v] &gt; (d[u] + w)){
+					d[v] = d[u] + w;
+					done = false;
+				}
+			}
+		}
+	}
+	return done;
+}
+</pre>

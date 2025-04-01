@@ -1,0 +1,70 @@
+---
+layout: post
+title: MAKEFILE (at a glance)
+date: '2011-09-04T20:15:00.000+06:00'
+author: Sayef Azad Sakin
+tags:
+- linux
+- resources
+- How to
+modified_time: '2011-09-05T16:02:40.722+06:00'
+blogger_id: tag:blogger.com,1999:blog-5269120713273282809.post-4305273075993204805
+redirect_from: /2011/09/makefile-at-glance.html
+---
+
+<span class="Apple-style-span" style="font-size: x-large;"><b>Sample code</b></span><br />
+<pre class="brush:bash; wrap-lines:false"> 
+project1: data.o main.o io.o
+&nbsp; &nbsp; &nbsp; &nbsp; cc data.o main.o io.o -o project1
+data.o: data.c data.h
+&nbsp; &nbsp; &nbsp; &nbsp; cc -c data.c
+main.o: data.h io.h main.c
+&nbsp; &nbsp; &nbsp; &nbsp; cc -c main.c
+io.o: io.h io.c
+&nbsp; &nbsp; &nbsp; &nbsp; cc -c io.c #this is a comment
+</pre>
+<br />
+<span class="Apple-style-span" style="font-size: x-large;"><b>Syntex</b></span><br />
+target : source file(s)<br />
+command (must be preceded by a tab)<br />
+<br />
+<b>#command to use user defined makefile name</b><br />
+make -f mymakefile<br />
+<br />
+<span class="Apple-style-span" style="font-size: x-large;"><b>Macros in make</b></span><br />
+The make program allows to use macros, which are similar to variables, to store names of files. The format is as follows:<br />
+OBJECTS = data.o io.o main.o<br />
+Whenever you want to have make expand these macros out when it runs, type the following corresponding string $(OBJECTS).<br />
+<br />
+Here is sample Makefile again, using a macro.<br />
+<pre class="brush:bash; wrap-lines:false">
+OBJECTS = data.o main.o io.o
+project1: $(OBJECTS)
+&nbsp; &nbsp; &nbsp; &nbsp; cc $(OBJECTS) -o project1
+data.o: data.c data.h
+&nbsp; &nbsp; &nbsp; &nbsp; cc -c data.c
+main.o: data.h io.h main.c
+&nbsp; &nbsp; &nbsp; &nbsp; cc -c main.c
+io.o: io.h io.c
+&nbsp; &nbsp; &nbsp; &nbsp; cc -c io.c
+</pre>
+You can also specify a macro's value when running make, as follows:<br />
+make 'OBJECTS=data.o newio.o main.o' project1<br />
+This overrides the value of OBJECTS in the Makefile<br />
+<br />
+<span class="Apple-style-span" style="font-size: x-large;"><b>Special Macros</b></span><br />
+<b>CC:</b><br />
+Contains the current C compiler. Defaults to cc.<br />
+<b>CFLAGS:</b><br />
+Special options which are added to the built-in C rule.<br />
+<b>$@:</b><br />
+Full name of the current target.<br />
+<b>$?:</b><br />
+A list of files for current dependency which are out-of-date.<br />
+<b>$&lt;:</b><br />
+The source file of the current (single) dependency.<br />
+<br />
+<span class="Apple-style-span" style="font-size: x-large;"><b>External Links:</b></span><br />
+<a href="http://www.eng.hawaii.edu/Tutor/Make/1.html">http://www.eng.hawaii.edu/Tutor/Make/1.html</a><br />
+<a href="http://www.opussoftware.com/tutorial/TutMakefile.htm">http://www.opussoftware.com/tutorial/TutMakefile.htm</a><br />
+<br />

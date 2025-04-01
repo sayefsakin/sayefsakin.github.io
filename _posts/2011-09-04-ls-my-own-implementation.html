@@ -1,0 +1,396 @@
+---
+layout: post
+title: ls (my own implementation)
+date: '2011-09-04T21:32:00.003+06:00'
+author: Sayef Azad Sakin
+tags:
+- Personal note
+- linux
+- Coding
+- System Programming
+modified_time: '2020-11-06T09:26:18.298+06:00'
+blogger_id: tag:blogger.com,1999:blog-5269120713273282809.post-2139240900640004382
+redirect_from: /2011/09/ls-my-own-implementation.html
+---
+
+<div>
+<pre><span class="Apple-style-span" style="font-size: large;"><b>Little talk about 'ls' (since I have very small knowledge about it):</b></span></pre>
+<pre>ls - list directory contents.</pre>
+<pre></pre>
+</div>
+The&nbsp;'<samp><span class="command">ls'</span></samp>&nbsp;program lists information about files (of any type, including directories). Options and file arguments can be intermixed arbitrarily, as usual.<br />
+<div>
+Know details about 'ls' in linux man page:&nbsp;<a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?ls">http://unixhelp.ed.ac.uk/CGI/man-cgi?ls</a></div>
+<div>
+<br /></div>
+<div>
+<pre style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><span class="Apple-style-span" style="font-size: large;"><b>Little talk about coding:</b></span></pre>
+</div>
+<div>
+Probably I wouldn't write this code in my entire life unless I got it as my lab assignment :D. It was my 2nd year System Programming lab assignment. However, at first, it seemed very disgusting and painful task to me. But after started coding, it was fun to write the code.</div>
+<div>
+I tried to make my 'ls' as like as linux's 'ls' implementation. Since I was not very familiar with linux, before doing this assignment, firstly I checked out all the options provided by the 'ls' process. Actually, I had to learn about all the functionalities it has :D.</div>
+<div>
+<br /></div>
+<div>
+<span class="Apple-style-span" style="font-size: large;"><b>Implementation:</b></span></div>
+<div>
+I used c++ as the programming language. I have the name of a directory or file in dirent-&gt;d_name &amp; and by using lstat() function, I retrieved all the information about a file or directory.</div>
+<div>
+<ul>
+<li>I saved each file or directory name and statistics in a vector.</li>
+<li>Applying printing format given by the OPTIONS.</li>
+<li>Print the corresponding information.</li>
+</ul>
+A closer look at lstat() in linux man page:&nbsp;<a href="http://linux.die.net/man/2/lstat">http://linux.die.net/man/2/lstat</a></div>
+<div>
+Here is my coding.........</div>
+<div>
+<br /></div>
+<div>
+<br /></div>
+<pre class="brush:cpp; wrap-lines:false" >/*
+ * Course: CSE-326 System Programming Lab
+ * Assignment No: 02
+ * Assignment Name: ls — list directory contents
+ * SYNOPSIS: ls [-AacdFfhiklnoqRrSstuw1] [file . . .]
+ * Author: Sayef Azad Sakin
+ * Roll: 1563
+ * Language: c++
+ */
+ 
+#ifndef BLOCKSIZE
+#define BLOCKSIZE 512
+#endif
+#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstdlib&gt;
+#include &lt;cmath&gt;
+#include &lt;cstring&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include &lt;dirent.h&gt;
+#include &lt;fcntl.h&gt;
+#include &lt;sys/stat.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;pwd.h&gt;
+#include &lt;grp.h&gt;
+#include &lt;time.h&gt;
+#include &lt;climits&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+#define eps 1e-11
+#define mx 1000
+
+struct files{
+ string name, full_path;
+ struct stat st;
+ files(string ps, string s, struct stat &amp;ss){
+  full_path = ps;
+  name = s;
+  st = ss;
+ }
+};
+
+vector &lt; files &gt; name, dir_name[10], dir_path, rfile, rdir;
+vector &lt; files &gt;:: iterator it;
+bool flag[30];
+int tot_dir;
+char chk[] = {'A','a','c','d','F','f','h','i','k','l','n','o','q','R','r','S','s','t','u','w','1'};
+
+bool comp(const files &amp;a, const files &amp;b){
+ if(flag[15]){//-S
+  if(a.st.st_size == b.st.st_size){
+   if(flag[17]){//-t
+    if(a.st.st_mtime == b.st.st_mtime)return (a.name&lt;b.name);
+    return (a.st.st_mtime &lt; b.st.st_mtime);
+   }
+   return (a.name&lt;b.name);
+  }
+  return (a.st.st_size &gt; b.st.st_size);
+ }
+ if(flag[17]){//-t
+  if(a.st.st_mtime == b.st.st_mtime)return (a.name&lt;b.name);
+  return (a.st.st_mtime &lt; b.st.st_mtime);
+ }
+ if(flag[2]){//-c
+  if(a.st.st_ctime == b.st.st_ctime)return (a.name&lt;b.name);
+  return (a.st.st_ctime &lt; b.st.st_ctime);
+ }
+ if(flag[18]){//-u
+  if(a.st.st_atime == b.st.st_atime)return (a.name&lt;b.name);
+  return (a.st.st_atime &lt; b.st.st_atime);
+ }
+ return (a.name&lt;b.name);
+}
+
+int getfile(files fdes);
+int chkflag(char *str);
+void print(const files fdes);
+
+int main(int argc, char **argv){
+ int argpos, i, sz;
+ bool ok;
+ char path[mx], cwd[mx];
+ dirent *dirp;
+ DIR *dp;
+ struct stat f_stat;
+ //initialize();
+ //parsing starts here
+ ok = 0;
+ for(argpos = 1; argpos &lt; argc; argpos++){
+  if(argv[argpos][0]=='-'){
+   if(chkflag(argv[argpos])==-1){puts("argument error");return 2;}
+  }
+  else{
+   if (lstat(argv[argpos], &amp;f_stat) == -1){puts("statistics error");return -1;}
+   if(S_ISREG(f_stat.st_mode) || !strcmp(argv[argpos],".") || !strcmp(argv[argpos],".."))rfile.push_back(files(argv[argpos],argv[argpos],f_stat));
+   else if(S_ISDIR(f_stat.st_mode))rdir.push_back(files(argv[argpos],argv[argpos],f_stat));
+   ok = 1;
+  }
+ }
+ if(!ok){
+  if( !getcwd(cwd,mx) ) return 1;
+  
+  if( !(dp = opendir(cwd)) ){puts("error on opening current directory");return 3;}
+  while( (dirp = readdir(dp)) ){
+   strcpy(path,".");
+   strcat(path,"/");
+   strcat(path,dirp-&gt;d_name);
+   if (lstat(path, &amp;f_stat) == -1){puts("statistics error");return -1;}
+   if(S_ISREG(f_stat.st_mode) || !strcmp(dirp-&gt;d_name,".") || !strcmp(dirp-&gt;d_name,".."))rfile.push_back(files(path,dirp-&gt;d_name,f_stat));
+   else if(S_ISDIR(f_stat.st_mode))rdir.push_back(files(path,dirp-&gt;d_name,f_stat));
+  }
+  if( closedir(dp) &lt; 0 ){puts("can't close directory");return -1;}
+ }
+ //parsing ends here
+
+ //sorting starts here
+ sort(rfile.begin(),rfile.end(),comp);
+ sort(rdir.begin(),rdir.end(),comp);
+ if(flag[14]){//-r
+  reverse(rfile.begin(),rfile.end());
+  reverse(rdir.begin(),rdir.end());
+ }
+ //sorting ends here
+ 
+ sz = rfile.size();
+ for(i=0;i&lt;sz;i++)
+  print(rfile[i]);
+ if(!ok || flag[3]){//-d
+  sz = rdir.size();
+  for(i=0;i&lt;sz;i++)
+   print(rdir[i]);
+  return 0;
+ }
+ puts("");
+ sz = rdir.size();
+ 
+ if(ok || flag[13]){//-R
+  for(i=0;i&lt;sz;i++){
+   cout &lt;&lt; rdir[i].name &lt;&lt; ":(under this direcotry) " &lt;&lt; endl;
+   if(getfile(rdir[i])==-1)return 5;
+  }
+ }
+ return 0;
+}
+
+int getfile(files fdes){
+ dirent *dirp;
+ DIR *dp;
+ vector &lt; files &gt; tfile, tdir;
+ struct stat file_stat;
+ char path[mx], tpath[mx];
+ int sz, i;
+ strcpy(path,fdes.full_path.c_str());
+ if( !(dp = opendir(path)) ){puts("error on opening directory");return -1;}
+ while( (dirp = readdir(dp)) ){
+  strcpy(tpath,path);
+  sz = strlen(tpath);
+  if(tpath[sz-1]!='/'){
+   tpath[sz] = '/'; tpath[sz+1] = 0;
+  }
+  strcat(tpath,dirp-&gt;d_name);
+  //printf("%s\n",tpath);
+  if (lstat(tpath, &amp;file_stat) == -1){puts("statistics error");return -1;}
+  if(S_ISREG(file_stat.st_mode) || !strcmp(dirp-&gt;d_name,".") || !strcmp(dirp-&gt;d_name,".."))tfile.push_back(files(tpath,dirp-&gt;d_name,file_stat));
+  else if(S_ISDIR(file_stat.st_mode))tdir.push_back(files(tpath,dirp-&gt;d_name,file_stat));
+ }
+ if( closedir(dp) &lt; 0 ){puts("can't close directory");return -1;}
+ 
+ //sorting starts here
+ sort(tfile.begin(),tfile.end(),comp);
+ sort(tdir.begin(),tdir.end(),comp);
+ if(flag[14]){//-r
+  reverse(tfile.begin(),tfile.end());
+  reverse(tdir.begin(),tdir.end());
+ }
+ //sorting ends here
+ 
+ sz = tfile.size();
+ for(i=0;i&lt;sz;i++)
+  print(tfile[i]);
+ sz = tdir.size();
+ for(i=0;i&lt;sz;i++)
+  print(tdir[i]);
+ puts("");
+ if(flag[3])return 0;//-d
+ if(flag[13]){
+  sz = tdir.size();
+  for(i=0;i&lt;sz;i++){
+   cout &lt;&lt; tdir[i].name &lt;&lt; ":(under this direcotry) " &lt;&lt; endl;
+   if(getfile(tdir[i])==-1)return -1;
+  }
+ }
+ return 0;
+}
+
+int chkflag(char *str){
+ bool ok;
+ int i,j;
+ for(i = 1;str[i]; i++){
+  if(str[i]=='R' &amp;&amp; flag[3])continue;
+  ok = 0;
+  for(j=0;j&lt;21;j++){
+   if(chk[j]=='h' &amp;&amp; str[i]=='k')flag[j] = 0;
+   else if(chk[j]=='k' &amp;&amp; str[i]=='h')flag[j] = 0;
+   else if(chk[j]=='1' &amp;&amp; str[i]=='l')flag[j] = 0;
+   else if(chk[j]=='l' &amp;&amp; str[i]=='1')flag[j] = 0;
+   else if(chk[j]=='c' &amp;&amp; str[i]=='u')flag[j] = 0;
+   else if(chk[j]=='u' &amp;&amp; str[i]=='c')flag[j] = 0;
+   else if(chk[j]=='q' &amp;&amp; str[i]=='w')flag[j] = 0;
+   else if(chk[j]=='w' &amp;&amp; str[i]=='q')flag[j] = 0;
+   else if(chk[j]=='R' &amp;&amp; str[i]=='d')flag[j] = 0;
+   
+   if(chk[j]==str[i]){ok=1;break;}
+  }
+  if(ok)flag[j] = 1;
+  else return -1;
+ }
+ return 0;
+}
+
+void print(const files fdes){
+ double sz;
+ struct tm *ts;
+ char ptime[20];
+ struct passwd *ps;
+ struct group *gr;
+ sz = fdes.st.st_size;
+ if(!flag[1] &amp;&amp; (fdes.name == "." || fdes.name == ".."))return;
+ if(flag[7])printf("%u ",fdes.st.st_ino);//-i
+ if(flag[16]){//-s
+  sz = fdes.st.st_blocks*512;
+  if(!flag[6] &amp;&amp; !flag[8]){
+   sz /=1024;
+   printf("%5.0lf ",ceil(sz));
+  }
+ }
+ if(flag[6] &amp;&amp; flag[16]){//-h
+  if(sz&gt;1073741824 || fabs(sz-1073741824)&lt;eps){
+   sz /= 1073741824;
+   printf("%.1lfG ",sz+eps);
+  }
+  else if(sz&gt;1048576 || fabs(sz-1048576)&lt;eps){
+   sz /= 1048576;
+   printf("%.1lfM ",sz+eps);
+  }
+  else if(sz&gt;1024 || fabs(sz-1024)&lt;eps){
+   sz /= 1024;
+   printf("%.1lfK ",sz+eps);
+  }
+  else printf("%.0lf ",sz);
+ }
+ if(flag[8] &amp;&amp; flag[16]){//-k
+  sz /= 1024;
+  printf("%5.0lf ",ceil(sz));
+ }
+ if(flag[9] || flag[10] || flag[13]){//-l &amp; -n
+  //file mode
+  //entry type
+  if(S_ISBLK(fdes.st.st_mode))printf("b");
+  else if(S_ISCHR(fdes.st.st_mode))printf("c");
+  else if(S_ISDIR(fdes.st.st_mode))printf("d");
+  else if(S_ISLNK(fdes.st.st_mode))printf("l");
+  else if(S_ISSOCK(fdes.st.st_mode))printf("s");
+  else if(S_ISFIFO(fdes.st.st_mode))printf("p");
+  else if(S_ISREG(fdes.st.st_mode))printf("-");
+  //owner permission
+  printf((fdes.st.st_mode &amp; S_IRUSR)?"r":"-");
+  printf((fdes.st.st_mode &amp; S_IWUSR)?"w":"-");
+  if((S_ISREG(fdes.st.st_mode) || S_ISDIR(fdes.st.st_mode)) &amp;&amp; fdes.st.st_mode &amp; 0111)
+   printf((fdes.st.st_mode &amp; S_ISUID)?"s":"x");
+  else
+   printf((fdes.st.st_mode &amp; S_ISUID)?"S":"-");
+  //group permission
+  printf((fdes.st.st_mode &amp; S_IRGRP)?"r":"-");
+  printf((fdes.st.st_mode &amp; S_IWGRP)?"w":"-");
+  if((S_ISREG(fdes.st.st_mode) || S_ISDIR(fdes.st.st_mode)) &amp;&amp; fdes.st.st_mode &amp; 0111)
+   printf((fdes.st.st_mode &amp; S_ISGID)?"s":"x");
+  else
+   printf((fdes.st.st_mode &amp; S_ISGID)?"S":"-");
+  //other permission
+  printf((fdes.st.st_mode &amp; S_IROTH)?"r":"-");
+  printf((fdes.st.st_mode &amp; S_IWOTH)?"w":"-");
+  if((S_ISREG(fdes.st.st_mode) || S_ISDIR(fdes.st.st_mode)) &amp;&amp; fdes.st.st_mode &amp; 0111)
+   printf((fdes.st.st_mode &amp; S_ISVTX)?"t":"-");
+  else
+   printf((fdes.st.st_mode &amp; S_ISVTX)?"T":"-");
+  
+  //number of links
+  printf(" %u",fdes.st.st_nlink);
+  
+  //user name &amp; group name
+  if(flag[10])printf(" %5u%5u",fdes.st.st_uid,fdes.st.st_gid);
+  else{
+   ps = getpwuid(fdes.st.st_uid);
+   printf(" %s ",ps-&gt;pw_name);
+   if(!flag[13]){
+    gr = getgrgid(fdes.st.st_gid);
+    printf(" %s",gr-&gt;gr_name);
+   }
+  }
+  
+  //no of bytes
+  sz = fdes.st.st_size;
+  if(flag[6]){//-h
+   if(sz&gt;1073741824 || fabs(sz-1073741824)&lt;eps){
+    sz /= 1073741824;
+    printf("%10.1lfG ",sz+eps);
+   }
+   else if(sz&gt;1048576 || fabs(sz-1048576)&lt;eps){
+    sz /= 1048576;
+    printf("%10.1lfM ",sz+eps);
+   }
+   else if(sz&gt;1024 || fabs(sz-1024)&lt;eps){
+    sz /= 1024;
+    printf("%10.1lfK ",sz+eps);
+   }
+   else printf("%10.0lf ",sz);
+  }
+  else if(flag[8]){//-k
+   sz /= 1024;
+   printf("%10.0lf ",ceil(sz));
+  }
+  else printf("%10.0lf ",sz);
+  
+  //year-month-day hh:mm
+  ts = localtime(&amp;fdes.st.st_mtime);
+  strftime(ptime, sizeof(ptime), "%Y-%m-%d %H:%M", ts);
+  printf("%s ", ptime);
+ }
+ 
+ cout &lt;&lt; fdes.name;
+ if(flag[4]){//-F
+  if(S_ISDIR(fdes.st.st_mode))printf("/");
+  else if(S_ISREG(fdes.st.st_mode) &amp;&amp; fdes.st.st_mode &amp; 0111)printf("*");
+  else if(S_ISLNK(fdes.st.st_mode))printf("@");
+  //else if(S_IFWHT(fdes.st.st_mode))printf("@");
+  else if(S_ISSOCK(fdes.st.st_mode))printf("=");
+  else if(S_ISFIFO(fdes.st.st_mode))printf("|");
+ }
+ puts("");
+}
+</pre>
