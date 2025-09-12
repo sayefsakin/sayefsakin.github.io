@@ -20,16 +20,16 @@ full-width: true
 <!-- Tabs Section -->
 <div class="tabs">
     <div class="tab-buttons">
-        <button class="tab-button active" onclick="switchTab('education')">🎓 Education</button>
-        <button class="tab-button" onclick="switchTab('experience')">💼 Experience</button>
         <button class="tab-button" onclick="switchTab('projects')">🚀 Projects</button>
+        <button class="tab-button" onclick="switchTab('experience')">💼 Experience</button>
+        <button class="tab-button active" onclick="switchTab('education')">🎓 Education</button>
     </div>
 
     <div class="tab-content">
-        <div id="education" class="tab-pane active">
-            <h2 class="section-title">🎓 Education</h2>
-            <div id="educationContent" class="empty-state">
-                Load your JSONResume data to see your education history here.
+        <div id="projects" class="tab-pane">
+            <h2 class="section-title">🚀 Projects</h2>
+            <div id="projectsContent" class="empty-state">
+                Load your JSONResume data to see your projects here.
             </div>
         </div>
 
@@ -48,10 +48,10 @@ full-width: true
             </div>
         </div>
 
-        <div id="projects" class="tab-pane">
-            <h2 class="section-title">🚀 Projects</h2>
-            <div id="projectsContent" class="empty-state">
-                Load your JSONResume data to see your projects here.
+        <div id="education" class="tab-pane active">
+            <h2 class="section-title">🎓 Education</h2>
+            <div id="educationContent" class="empty-state">
+                Load your JSONResume data to see your education history here.
             </div>
         </div>
     </div>

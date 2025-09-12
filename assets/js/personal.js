@@ -370,13 +370,13 @@ function populateProjects() {
             html += `<div class="description">${project.description}</div>`;
         }
         
-        // if (project.highlights && project.highlights.length > 0) {
-        //     html += '<div class="description"><strong>Key Features:</strong><ul style="margin-left: 20px; margin-top: 5px;">';
-        //     project.highlights.forEach(highlight => {
-        //         html += `<li>${highlight}</li>`;
-        //     });
-        //     html += '</ul></div>';
-        // }
+        if (project.highlights && project.highlights.length > 0) {
+            html += '<div class="description"><strong>Key Features:</strong><ul style="margin-left: 20px; margin-top: 5px;">';
+            project.highlights.forEach(highlight => {
+                html += `<li>${highlight}</li>`;
+            });
+            html += '</ul></div>';
+        }
         
         if (project.keywords && project.keywords.length > 0) {
             html += '<div class="skills">';
