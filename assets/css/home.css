@@ -399,4 +399,8 @@ textarea:focus {
     .tab-content {
         padding: 20px;
     }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
 }
