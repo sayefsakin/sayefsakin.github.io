@@ -1,5 +1,60 @@
 ---
-layout: home
-title: My website
-subtitle: This is where I will tell my friends way too much about me
+layout: page
+css: /assets/css/home.css
+full-width: true
 ---
+<!-- Header Section -->
+<div class="header" id="header">
+    <img class="profile-img" id="profileImg" src="https://via.placeholder.com/120x120/667eea/ffffff?text=👤" alt="Profile">
+    <h1 id="name">Your Name</h1>
+    <p id="label">Your Professional Title</p>
+    <p id="summary">Load your JSONResume data to see your professional summary here.</p>
+    <div class="contact-info" id="contactInfo">
+        <div class="contact-item">📧 your.email@example.com</div>
+        <div class="contact-item">📱 +1-555-123-4567</div>
+        <div class="contact-item">🌐 yourwebsite.com</div>
+        <div class="contact-item">📍 Your City, Country</div>
+    </div>
+</div>
+
+<!-- Tabs Section -->
+<div class="tabs">
+    <div class="tab-buttons">
+        <button class="tab-button active" onclick="switchTab('education')">🎓 Education</button>
+        <button class="tab-button" onclick="switchTab('experience')">💼 Experience</button>
+        <button class="tab-button" onclick="switchTab('projects')">🚀 Projects</button>
+    </div>
+
+    <div class="tab-content">
+        <div id="education" class="tab-pane active">
+            <h2 class="section-title">🎓 Education</h2>
+            <div id="educationContent" class="empty-state">
+                Load your JSONResume data to see your education history here.
+            </div>
+        </div>
+
+        <div id="experience" class="tab-pane">
+            <h2 class="section-title">💼 Professional Experience</h2>
+            <div id="experienceContent" class="empty-state">
+                Load your JSONResume data to see your work experience here.
+            </div>
+            <h2 class="section-title">🔰 Internship Experience</h2>
+            <div id="iexperienceContent" class="empty-state">
+                Load your JSONResume data to see your work experience here.
+            </div>
+            <h2 class="section-title">🎗️ Volunteer Experience</h2>
+            <div id="vexperienceContent" class="empty-state">
+                Load your JSONResume data to see your work experience here.
+            </div>
+        </div>
+
+        <div id="projects" class="tab-pane">
+            <h2 class="section-title">🚀 Projects</h2>
+            <div id="projectsContent" class="empty-state">
+                Load your JSONResume data to see your projects here.
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/personal.js"></script>
