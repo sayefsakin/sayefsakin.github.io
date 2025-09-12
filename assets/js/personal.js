@@ -50,37 +50,58 @@ function populateHeader() {
         document.getElementById('label').textContent = basics.label;
     }
     
-    if (basics.summary) {
-        document.getElementById('summary').textContent = basics.summary;
-    }
-    
-    if (basics.image) {
-        document.getElementById('profileImg').src = basics.image;
+    if (basics.webSummary) {
+        document.getElementById('summary').textContent = basics.webSummary;
     }
     
     // Update contact info
     const contactInfo = document.getElementById('contactInfo');
     contactInfo.innerHTML = '';
-    
+
+    let html = '';
+    if (basics.profiles && basics.profiles.length > 0) {
+        basics.profiles.forEach(profile => {
+            if (profile.network && profile.url) {
+                if (profile.network === 'Blog') {
+                    return;
+                }
+                html += `<div class="contact-item">`
+                html += `<a href="${profile.url}" target="_blank" style="color: inherit; text-decoration: none;">`
+                if (profile.logo_path) {
+                    html += `<img src="${profile.logo_path}" alt="${profile.network}" style="width:24px;height:24px;vertical-align:middle;margin-right:6px;border-radius:4px;">`;
+                }
+                html += `</a></div>`;
+            }
+        });
+    }
     if (basics.email) {
-        contactInfo.innerHTML += `<div class="contact-item">📧 <a href="mailto:${basics.email}" style="color: inherit; text-decoration: none;">${basics.email}</a></div>`;
+        html += `<div class="contact-item">`;
+        html += `<a href="mailto:${basics.email}" style="color: inherit; text-decoration: none;">`;
+        html += `<img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Email_Shiny_Icon.svg" alt="email" style="width:24px;height:24px;vertical-align:middle;margin-right:6px;border-radius:4px;">`;
+        html += `</a></div>`;
     }
+
+    contactInfo.innerHTML += html;
     
-    if (basics.phone) {
-        contactInfo.innerHTML += `<div class="contact-item">📱 ${basics.phone}</div>`;
-    }
+    // if (basics.email) {
+    //     contactInfo.innerHTML += `<div class="contact-item">📧 <a href="mailto:${basics.email}" style="color: inherit; text-decoration: none;">${basics.email}</a></div>`;
+    // }
     
-    if (basics.website) {
-        contactInfo.innerHTML += `<div class="contact-item">🌐 <a href="${basics.website}" target="_blank" style="color: inherit; text-decoration: none;">${basics.website.replace('https://', '').replace('http://', '')}</a></div>`;
-    }
+    // if (basics.phone) {
+    //     contactInfo.innerHTML += `<div class="contact-item">📱 ${basics.phone}</div>`;
+    // }
     
-    if (basics.location) {
-        const location = basics.location;
-        const locationStr = [location.city, location.region, location.countryCode].filter(Boolean).join(', ');
-        if (locationStr) {
-            contactInfo.innerHTML += `<div class="contact-item">📍 ${locationStr}</div>`;
-        }
-    }
+    // if (basics.website) {
+    //     contactInfo.innerHTML += `<div class="contact-item">🌐 <a href="${basics.website}" target="_blank" style="color: inherit; text-decoration: none;">${basics.website.replace('https://', '').replace('http://', '')}</a></div>`;
+    // }
+    
+    // if (basics.location) {
+    //     const location = basics.location;
+    //     const locationStr = [location.city, location.region, location.countryCode].filter(Boolean).join(', ');
+    //     if (locationStr) {
+    //         contactInfo.innerHTML += `<div class="contact-item">📍 ${locationStr}</div>`;
+    //     }
+    // }
 }
 
 function populateEducation() {
@@ -97,14 +118,14 @@ function populateEducation() {
     education.forEach(edu => {
         const card = document.createElement('div');
         card.className = 'card education-card';
-        card.style.display = 'flex';
-        card.style.alignItems = 'flex-start';
+        // card.style.display = 'flex';
+        // card.style.alignItems = 'flex-start';
 
         // Image section
         const imgDiv = document.createElement('div');
         imgDiv.className = 'education-img';
-        imgDiv.style.marginRight = '20px';
-        imgDiv.style.flex = '0 0 60px';
+        // imgDiv.style.marginRight = '20px';
+        // imgDiv.style.flex = '0 0 60px';
 
         // Use edu.image if available, else fallback to a placeholder
         const imgSrc = `images/${edu.logo_path}` || 'https://via.placeholder.com/60x60/667eea/ffffff?text=🎓';
@@ -121,7 +142,7 @@ function populateEducation() {
         // Content section
         const contentDiv = document.createElement('div');
         contentDiv.className = 'education-content';
-        contentDiv.style.flex = '1';
+        // contentDiv.style.flex = '1';
 
         let html = '';
         html += `<div class="education-header"><div class="education-title">`;
@@ -143,7 +164,7 @@ function populateEducation() {
         if (edu.startDate || edu.endDate) {
             const start = edu.startDate ? new Date(edu.startDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short' }) : '';
             const end = edu.endDate ? new Date(edu.endDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short' }) : 'Present';
-            meta.push(`📅 ${start ? start + ' - ' + end : end}`);
+            meta.push(`${start ? start + ' - ' + end : end}`);
         }
         // if (edu.gpa) {
         //     meta.push(`🎯 GPA: ${edu.gpa}`);
@@ -198,27 +219,30 @@ function populateExperience(isInternship = false) {
         let html = '<div class="volunteer-header-meta"><div class="volunteer-header">';
         
         if (job.position) {
-            html += `<h3>${job.position}</h3>`;
+            html += `${job.position}`;
         }
-        
-        if (job.name) {
-            if (job.url) {
-                html += `<h4><a href="${job.url}" target="_blank" style="color: inherit; text-decoration: none;">${job.name}</a></h4>`;
-            } else {
-                html += `<h4>${job.name}</h4>`;
-            }
-        }
-        html += `</div>`;
+        html += '</div>';
+
         let meta = [];
         if (job.startDate || job.endDate) {
             const start = job.startDate ? new Date(job.startDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short' }) : '';
             const end = job.endDate ? new Date(job.endDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short' }) : 'Present';
-            meta.push(`📅 ${start ? start + ' - ' + end : end}`);
+            meta.push(`${start ? start + ' - ' + end : end}`);
         }
         if (meta.length > 0) {
             html += `<div class="meta">${meta.join(' • ')}</div>`;
         }
         html += `</div>`;
+
+        if (job.name) {
+            html += `<div class="volunteer-header-sub">`;
+            if (job.url) {
+                html += `<a href="${job.url}" target="_blank" style="color: inherit; text-decoration: none;">${job.name}</a>`;
+            } else {
+                html += `${job.name}`;
+            }
+            html += `</div>`;
+        }
 
         if (job.location) {
             html += `<div class="location">🚩 ${job.location}</div>`;
@@ -267,15 +291,7 @@ function populateVolunteering() {
         let html = '<div class="volunteer-header-meta"><div class="volunteer-header">';
         
         if (job.position) {
-            html += `<h3>${job.position}</h3>`;
-        }
-        
-        if (job.organization) {
-            if (job.url) {
-                html += `<h4><a href="${job.url}" target="_blank" style="color: inherit; text-decoration: none;">${job.organization}</a></h4>`;
-            } else {
-                html += `<h4>${job.organizationy}</h4>`;
-            }
+            html += `${job.position}`;
         }
         html += `</div>`;
 
@@ -283,13 +299,23 @@ function populateVolunteering() {
         if (job.startDate || job.endDate) {
             const start = job.startDate ? new Date(job.startDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : '';
             const end = job.endDate ? new Date(job.endDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : 'Present';
-            meta.push(`📅 ${start ? start + ' - ' + end : end}`);
+            meta.push(`${start ? start + ' - ' + end : end}`);
         }
         
         if (meta.length > 0) {
             html += `<div class="meta">${meta.join(' • ')}</div>`;
         }
         html += `</div>`;
+
+        if (job.organization) {
+            html += `<div class="volunteer-header-sub">`;
+            if (job.url) {
+                html += `<a href="${job.url}" target="_blank" style="color: inherit; text-decoration: none;">${job.organization}</a>`;
+            } else {
+                html += `${job.organizationy}`;
+            }
+            html += `</div>`;
+        }
 
         if (job.location) {
             html += `<div class="location">🚩 ${job.location}</div>`;
@@ -330,32 +356,43 @@ function populateProjects() {
         return;
     }
     
+    container.classList.add('project-grid');
     container.innerHTML = '';
     
     projects.forEach(project => {
         const card = document.createElement('div');
         card.className = 'card';
+
+        let html = '';
+        if(project.demo) {
+            html += `<div style="text-align: center; margin-bottom: 10px;">`;
+            if(project.detailedDemo) {
+                html += `<a href="${project.detailedDemo}" target="_blank" style="color: inherit; text-decoration: none;">`;
+            }
+            html += `<img src="${project.demo}" alt="${project.name}" style="width: 100%; height: auto; border-radius: 8px;"/>`;
+            if(project.detailedDemo) {
+                html += `</a>`;
+            }
+            html += `</div>`;
+        }
         
-        let html = '<div class="volunteer-header-meta"><div class="volunteer-header">';
+        html += '<div class="volunteer-header-meta"><div class="volunteer-header">';
         
         if (project.name) {
             if (project.url) {
-                html += `<h3><a href="${project.url}" target="_blank" style="color: inherit; text-decoration: none;">${project.name}</a></h3>`;
+                html += `<a href="${project.url}" target="_blank" style="color: inherit; text-decoration: none;">${project.name}</a>`;
             } else {
-                html += `<h3>${project.name}</h3>`;
+                html += `${project.name}`;
             }
         }
         
-        if (project.roles && project.roles.length > 0) {
-            html += `<h4>${project.roles.join(', ')}</h4>`;
-        }
         html += `</div>`;
 
         let meta = [];
         if (project.startDate || project.endDate) {
             const start = project.startDate ? new Date(project.startDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short' }) : '';
             const end = project.endDate ? new Date(project.endDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short' }) : 'Present';
-            meta.push(`📅 ${start ? start + ' - ' + end : end}`);
+            meta.push(`${start ? start + ' - ' + end : end}`);
         }
         if (project.type) {
             meta.push(`🏷️ ${project.type}`);
@@ -368,6 +405,10 @@ function populateProjects() {
         
         if (project.description) {
             html += `<div class="description">${project.description}</div>`;
+        }
+
+        if (project.roles && project.roles.length > 0) {
+            html += `<div>${project.roles.join(', ')}</div>`;
         }
         
         if (project.highlights && project.highlights.length > 0) {

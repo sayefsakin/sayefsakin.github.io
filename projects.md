@@ -16,8 +16,6 @@ Website: [https://github.com/hdc-arizona/traveler-integrated](https://github.com
 
 This is a web-based dashboard to correlate performance changes to source code modifications. This web-based dashboard was developed using Plotly and DASH to correlate scientific software performance changes with source code modifications. After collecting tracing and profiling data using TAU, I built an interfacing with MySQL database that enabled a flexible performance data storage with user-friendly query interface. Using this dashboard, conducted a preliminary source code history analysis of a scientific software.
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjiwKub1eA81zyvlgKkssb8g-110knmKQzqqbRMOX7ivb-vN4-RIKuYcMFr3nexkWLMthJ3orP2yLuoAdRjxCJ_CfltF_Zw2M8eIopAhTfSTESsDXpYC0kZv5sdoksfKhF3oPwGqRuc8XgGYNY_K9b7PBum4UEvoDtqDnvwPPKV5xraau02pKa9ng3PTALk/s1600/PerfAnalyzer.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjiwKub1eA81zyvlgKkssb8g-110knmKQzqqbRMOX7ivb-vN4-RIKuYcMFr3nexkWLMthJ3orP2yLuoAdRjxCJ_CfltF_Zw2M8eIopAhTfSTESsDXpYC0kZv5sdoksfKhF3oPwGqRuc8XgGYNY_K9b7PBum4UEvoDtqDnvwPPKV5xraau02pKa9ng3PTALk/s1600/PerfAnalyzer.png)
-
 Website: [https://github.com/sayefsakin/dsi/tree/main/tools/perf\_analyzer](https://github.com/sayefsakin/dsi/tree/main/tools/perf_analyzer)
 
 ### [AutoProfiler](https://github.com/pnnl/ExaGO/tree/develop/performance_analysis)

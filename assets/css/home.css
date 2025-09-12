@@ -28,6 +28,28 @@ body {
     text-align: center;
 }
 
+#name {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+#label {
+    font-size: 1.2rem;
+    color: #000000;
+    text-align: left;
+    margin-top: 0px;
+}
+
+#summary {
+    font-size: 1rem;
+    color: #000000;
+    max-width: 400px;
+    text-align: left;
+    margin-top: 0;
+}
+
 .profile-img {
     width: 120px;
     height: 120px;
@@ -52,10 +74,10 @@ body {
 
 .contact-info {
     display: flex;
-    justify-content: center;
-    gap: 30px;
+    justify-content: left;
+    gap: 10px;
     flex-wrap: wrap;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .contact-item {
@@ -164,6 +186,21 @@ body {
     text-align: left;
     align-items: left;
     color: #0c2e50;
+    font-weight: bold;
+    font-size: x-large;
+    vertical-align: top;
+    font-style: normal;
+}
+
+.volunteer-header-sub {
+    margin-top: 0;
+    margin-left: 0;
+    text-align: left;
+    align-items: left;
+    color: #0c2e50;
+    font-weight: bold;
+    font-size: large;
+    vertical-align: top;
     font-style: normal;
 }
 
@@ -175,6 +212,36 @@ body {
     flex-wrap: wrap;
     gap: 10px; */
 }
+
+.education-card {
+    display: flex;
+    /* justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 10px; */
+}
+
+.education-img {
+    margin-top: 0;
+    margin-left: 0;
+    align-items: left;
+    vertical-align: top;
+}
+
+.education-img img {
+    width: 60px;
+    height: 60px;
+    object-fit: scale-down;
+    border-radius: '8px';
+}
+
+.education-content {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+}
+
 
 .location {
     font-size: 0.9rem;
@@ -220,7 +287,6 @@ body {
     text-align: right;
     justify-content: right;
     font-style: normal;
-    width: 21%;
 }
 
 .card .description {
@@ -300,6 +366,12 @@ textarea:focus {
     color: #888;
     font-style: italic;
     padding: 5px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 20px;
 }
 
 @media (max-width: 768px) {
