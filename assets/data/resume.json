@@ -457,6 +457,20 @@
         "Published one journal and one conference paper from the results of this project."
       ],
       "url": "https://github.com/sayefsakin/dsi/tree/main/tools/perf_analyzer"
+    },
+    {
+      "isShown": false,
+      "name": "IssMan",
+      "startDate": "2013-05-01",
+      "endDate": "2019-06-30 ",
+      "description": "A punch-list application for onsite quality assurance, inspection, and tracking using photo documentation, drawing annotation, and report distribution.",
+      "highlights": [
+        "Designed responsive UI for cross platform (iOS and Android) mobile application.",
+        "Developed the synchronization module to ensure live update of images and data between server and client applications.",
+        "Managed a java based web server deoployed on Rackspace server and a MySQL database for data storage and retrieval.",
+        "Faciliated and handled user growth to 5000+ business users in 3 years."
+      ],
+      "url": "https://issman.com/"
     }
   ]
 }
