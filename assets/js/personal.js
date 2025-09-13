@@ -51,7 +51,7 @@ function populateHeader() {
     }
     
     if (basics.webSummary) {
-        document.getElementById('summary').textContent = basics.webSummary;
+        document.getElementById('summary').innerHTML = basics.webSummary;
     }
     
     // Update contact info
@@ -146,9 +146,6 @@ function populateEducation() {
 
         let html = '';
         html += `<div class="education-header"><div class="education-title">`;
-        if (edu.institution) {
-            html += `<div class="education-institution"><a href=${edu.url} target="_blank">${edu.institution}</a></div>`;
-        }
 
         html += `<div class="education-type">`
         if (edu.studyType && edu.area) {
@@ -158,7 +155,12 @@ function populateEducation() {
         } else if (edu.area) {
             html += `${edu.area}`;
         }
-        html += `</div></div>`;
+        html += `</div>`;
+
+        if (edu.institution) {
+            html += `<div class="education-institution"><a href=${edu.url} target="_blank">${edu.institution}</a></div>`;
+        }
+        html += `</div>`;
 
         let meta = [];
         if (edu.startDate || edu.endDate) {
@@ -180,7 +182,7 @@ function populateEducation() {
         }
 
         if (edu.courses && edu.courses.length > 0) {
-            html += '<div class="skills">';
+            html += '<div class="skills">Highlighted Courses: ';
             edu.courses.forEach(course => {
                 html += `<span class="skill">${course}</span>`;
             });

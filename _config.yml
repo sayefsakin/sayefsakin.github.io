@@ -20,6 +20,7 @@ author: Sayef Azad Sakin
 ###############################################
 
 navbar-links:
+  CV: "resume.html"
   About Me: "aboutme"
   Blogs: "blogs"
 
@@ -301,4 +302,4 @@ plugins:
 # 2fc73a3a967e97599c9763d05e564189
 
 # Custom variables
-resume_file: "assets/data/resume.json" # Path to your JSONResume file
+resume_file: "resume.html" # Path to your JSONResume file

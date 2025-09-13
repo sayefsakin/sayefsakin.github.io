@@ -8,7 +8,7 @@
     "url": "https://sayefsakin.github.io",
     "summary": "Data Visualization, Parallel & Distributed Computing, High Performance Computing, Data Management",
     "industrySummary": "Data Visualization, Data Management, Parallel & Distributed Computing, High Performance Computing",
-    "webSummary": "I build software analytics solutions and help people manage large data.",
+    "webSummary": "I build software analytics solutions and <br/>help people manage large data.",
     "location": {
       "address": "1034 University Village",
       "postalCode": "84108",
@@ -486,6 +486,14 @@
         "Faciliated and handled user growth to 5000+ business users in 3 years."
       ],
       "url": "https://issman.com/"
+    }
+  ],
+  "awards": [
+    {
+      "title": "ICT Fellowship",
+      "date": "2014-01-02",
+      "awarder": "The ministry of ICT, Government of Bangladesh",
+      "summary": "Awarded during my MS study. The Fellowship was awarded for outstanding research work in the field of network information and communication technology."
     }
   ]
 }
