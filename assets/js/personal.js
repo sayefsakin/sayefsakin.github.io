@@ -33,6 +33,7 @@ async function loadResumeData(jsonUrl = 'assets/data/resume.json') {
         populateExperience();
         populateExperience(true);
         populateProjects();
+        populatePublications();
     } catch (error) {
         alert('Invalid JSON format. Please check your data and try again.');
         console.error('JSON parsing error:', error);
@@ -427,6 +428,49 @@ function populateProjects() {
                 html += `<span class="skill">${keyword}</span>`;
             });
             html += '</div>';
+        }
+        
+        card.innerHTML = html;
+        container.appendChild(card);
+    });
+}
+
+function populatePublications() {
+    let work = resumeData.publications || [];
+    let container = document.getElementById('publicationContent');
+    
+    if (work.length === 0) {
+        container.innerHTML = '<div class="empty-state">No publication data available.</div>';
+        return;
+    }
+    
+    container.innerHTML = '';
+    
+    work.forEach(pub => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        
+        let html = '<div class="volunteer-header-meta"><div class="volunteer-header">';
+        
+        if (pub.name) {
+            if (pub.url) {
+                html += `<a href="${pub.url}" target="_blank" style="color: inherit; text-decoration: none;">${pub.name}</a>`;
+            } else {
+                html += `${pub.name}`;
+            }
+        }
+        html += '</div>';
+
+        let meta = [];
+        if (pub.releaseDate) {
+            html += `<div class="meta">${pub.releaseDate}</div>`;
+        }
+        html += `</div>`;
+        if (pub.publisher) {
+            html += `<div class="volunteer-header-sub">${pub.publisher}</div>`;
+        }
+        if (pub.summary) {
+            html += `<div class="description">${pub.summary}</div>`;
         }
         
         card.innerHTML = html;
