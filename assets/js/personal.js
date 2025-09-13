@@ -69,7 +69,7 @@ function populateHeader() {
                 html += `<div class="contact-item">`
                 html += `<a href="${profile.url}" target="_blank" style="color: inherit; text-decoration: none;">`
                 if (profile.logo_path) {
-                    html += `<img src="${profile.logo_path}" alt="${profile.network}" style="width:24px;height:24px;vertical-align:middle;margin-right:6px;border-radius:4px;">`;
+                    html += `<img class='contact-icons' src="${profile.logo_path}" alt="${profile.network}">`;
                 }
                 html += `</a></div>`;
             }
@@ -78,7 +78,7 @@ function populateHeader() {
     if (basics.email) {
         html += `<div class="contact-item">`;
         html += `<a href="mailto:${basics.email}" style="color: inherit; text-decoration: none;">`;
-        html += `<img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Email_Shiny_Icon.svg" alt="email" style="width:24px;height:24px;vertical-align:middle;margin-right:6px;border-radius:4px;">`;
+        html += `<img class='contact-icons' src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Email_Shiny_Icon.svg" alt="email">`;
         html += `</a></div>`;
     }
 
