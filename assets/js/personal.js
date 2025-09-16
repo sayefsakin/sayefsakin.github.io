@@ -414,9 +414,9 @@ function populateProjects() {
             html += `<div>${project.roles.join(', ')}</div>`;
         }
         
-        if (project.highlights && project.highlights.length > 0) {
+        if (project.webHighlights && project.webHighlights.length > 0) {
             html += '<div class="description"><strong>Key Features:</strong><ul style="margin-left: 20px; margin-top: 5px;">';
-            project.highlights.forEach(highlight => {
+            project.webHighlights.forEach(highlight => {
                 html += `<li>${highlight}</li>`;
             });
             html += '</ul></div>';

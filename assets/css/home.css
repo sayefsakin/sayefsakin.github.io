@@ -23,7 +23,7 @@ body {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    padding: 40px;
+    padding: 10px 40px;
     margin-bottom: 30px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -32,8 +32,8 @@ body {
 #name {
     font-size: 2.5rem;
     color: #2c3e50;
-    margin-bottom: 5px;
     text-align: left;
+    font-weight: bold;
 }
 
 #label {
@@ -44,11 +44,11 @@ body {
 }
 
 #summary {
-    font-size: 1rem;
-    color: #000000;
-    max-width: 400px;
+    font-size: 1.2rem;
+    color: #790303;
     text-align: left;
     margin-top: 0;
+    font-style: italic;
 }
 
 .profile-img {

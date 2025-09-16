@@ -7,8 +7,8 @@
     "phone": "(520)448-8596",
     "url": "https://sayefsakin.github.io",
     "summary": "Data Visualization, Parallel & Distributed Computing, High Performance Computing, Data Management",
-    "industrySummary": "Data Visualization, Data Management, Parallel & Distributed Computing, High Performance Computing",
-    "webSummary": "I help manage and visualize large data.",
+    "industrySummary": "PhD candidate in Computing with expertise in performance optimization, backend development, and unit testing. Having familiarity with secure coding practices and modern backend frameworks, experienced in building scalable, resilient, and user focused systems.",
+    "webSummary": "HIRE me to manage and visualize your large data.",
     "location": {
       "address": "1034 University Village",
       "postalCode": "84108",
@@ -22,7 +22,8 @@
         "network": "GitHub",
         "username": "sayefsakin",
         "url": "https://github.com/sayefsakin",
-        "logo_path": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Github_Topicon.svg"
+        "logo_path": "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg",
+        "logo_path_web": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Github_Topicon.svg"
       },
       {
         "isShown": true,
@@ -58,7 +59,7 @@
       "summary": "Developed solution to address the scale issue in visualizing large scale trace data generated from parallel program executions. Built a trace visual analysis tools Traveler and a event sequence data management tool ESeMan."
     },
     {
-      "isShown": true,
+      "isShown": false,
       "position": "Graduate Teaching Assistant (<a href='https://datasciencecourse.net/2024/syllabus/' target='__blank'>Introduction to Data Science</a>)",
       "name": "University of Utah",
       "url": "https://sci.utah.edu",
@@ -78,7 +79,7 @@
       "summary": "Designed node-link diagram and time-series charts to identify dependent and relevant program components in the Traveler project."
     },
     {
-      "isShown": false,
+      "isShown": true,
       "position": "Software Engineer",
       "name": "Structured Data Systems Limited",
       "url": "https://www.linkedin.com/company/structured-data-systems-limited/",
@@ -121,7 +122,7 @@
       "summary": "Conducted a comparative analysis with different performance analysis tools and investigated for a performance analysis setup within the continuing development and code integration process of ExaGO."
     },
     {
-      "isShown": false,
+      "isShown": true,
       "position": "Student Developer",
       "name": "Google Summer of Code program",
       "url": "https://summerofcode.withgoogle.com/",
@@ -336,11 +337,11 @@
       "name": "Programming Languages",
       "level": "Master",
       "keywords": [
-        "Python", "C", "C++", "BASH", "SQL", "Javascript", "Java", "Objective C"
+        "C", "C++", "Python", "Java", "BASH", "SQL", "Javascript", "Objective C"
       ]
     },
     {
-      "isShown": true,
+      "isShown": false,
       "name": "Data Analysis Packages",
       "level": "Master",
       "keywords": [
@@ -348,11 +349,11 @@
       ]
     },
     {
-      "isShown": true,
+      "isShown": false,
       "name": "Visualization Tools",
       "level": "Master",
       "keywords": [
-        "D3.js", "Plotly", "Dash", "Matplotlib", "Seaborn", "ggplot2"
+        "D3.js", "Plotly", "Dash", "Matplotlib", "Seaborn", "Altair"
       ]
     },
     {
@@ -372,11 +373,11 @@
       ]
     },
     {
-      "isShown": false,
-      "name": "Cloud & DevOps",
+      "isShown": true,
+      "name": "DevOps",
       "level": "Intermediate",
       "keywords": [
-        "AWS",  "Docker",  "GitHub Actions",  "CI/CD"
+        "Docker",  "GitHub Actions", "Gitflow",  "CI/CD"
       ]
     },
     {
@@ -400,13 +401,16 @@
   ],
   "projects": [
     {
-      "isShown": true,
+      "isShown": false,
       "name": "ESeMan",
       "startDate": "2024-01-01",
       "description": "an Event Sequence MANager for interactive visual analysis of events with tunable accuracy",
       "highlights": [
-        "Developed a data management system to address the challenge of balancing interactive performance and visual accuracy in visualizing large number of events.",
-        "Built interfacing to generate event summaries with varying visual accuracy.",
+        "Developed a data management system balancing interactive performance and visual accuracy in visualizing large number of events.",
+        "Achieved sub-100ms interactive response time while maintaining pixel-perfect visual accuracy."
+      ],
+      "webHighlights": [
+        "Developed a data management system balancing interactive performance and visual accuracy in visualizing large number of events.",
         "Achieved sub-100ms interactive response time while maintaining pixel-perfect visual accuracy.",
         "Published the results of this project as a full paper at IEEE LDAV 2025 workshop."
       ],
@@ -420,6 +424,11 @@
       "startDate": "2019-08-24",
       "description": "an integrated multi-view visualization platform for analyzing parallel program traces",
       "highlights": [
+        "Developed program analysis system with C++ and Python backend",
+        "Served data using REST API to scalable visualizations.",
+        "Enabled performance bottleneck detection in distributed systems."
+      ],
+      "webHighlights": [
         "Developed a visualization system to analyze trace data collected from a distributed array toolkit running a C++ runtime system.",
         "Designed web-based interactive node-link diagram, scalable time-series charts, and RESTful API backend.",
         "Enable faster navigation on large traces and easier identification of performance bottlenecks through interactive visualizations.",
@@ -434,10 +443,14 @@
       "startDate": "2024-06-17",
       "description": "a web-based dashboard to correlate performance changes to source code modifications",
       "highlights": [
-         "Developed a web-based dashboard, using Plotly and DASH, to correlate scientific software performance changes with source code modifications.",
-         "Built an interfacing with MySQL database that enabled a flexible performance data storage with user-friendly query interface.",
-         "Faciliatated automated performance data collection from multiple Git commits with different input configurations.",
-         "Submitted a short paper at the PMBS 2025 workshop highlighting the benefits of integrating Git metadata in the performance analysis workflow."
+        "Built dashboard using Plotly-Dash to correlate performance with Git commits.",
+        "Automated data collection across multiple configurations."
+      ],
+      "webHighlights": [
+        "Developed a web-based dashboard, using Plotly and DASH, to correlate scientific software performance changes with source code modifications.",
+        "Built an interfacing with MySQL database that enabled a flexible performance data storage with user-friendly query interface.",
+        "Faciliatated automated performance data collection from multiple Git commits with different input configurations.",
+        "Submitted a short paper at the PMBS 2025 workshop highlighting the benefits of integrating Git metadata in the performance analysis workflow."
       ],
       "url": "https://github.com/sayefsakin/dsi/tree/main/tools/perf_analyzer"
     },
@@ -449,10 +462,13 @@
       "endDate": "2023-08-11",
       "description": "a scripting tool for performance profiling of supercomputing applications",
       "highlights": [
-        "Automated the overall performance analysis pipeline of the <a href='https://github.com/pnnl/ExaGO' targe='__blank'>ExaGO</a>, a collection of software packages for solving power grid optimization problems.",
+        "Automated the performance analysis pipeline and unit testing of the <a href='https://github.com/pnnl/ExaGO' targe='__blank'>ExaGO</a>.",
+        "Enabled multi-platform (CPU, GPU) profiling by easy integration with TAU, HPCToolkit, and Nvidia Nsight."
+      ],
+      "webHighlights": [
+        "Developed a scripting tool to automate the performance profiling of ExaGO, a collection of software packages for solving large-scale power grid optimization problems.",
         "Enabled multi-platform (CPU, GPU) profiling by easy integration with TAU, HPCToolkit, and Nvidia Nsight.",
         "Enabled easy configuration of different profiling setups and software versions leveraging the Spack package manager.",
-        "Designed scripts to estimate the strong and weak scaling measurements of ExaGO on different Supercomputing platforms.",
         "Presented a poster on the impacts of this project at the ECP23 annual meeting."
       ],
       "url": "https://github.com/pnnl/ExaGO/tree/develop/performance_analysis"
@@ -469,10 +485,15 @@
         "Enabled assessment, monitoring, and simulation of the network with customizable bandwidth frequency and wireless channel profiles.",
         "Published one journal and one conference paper from the results of this project."
       ],
+      "webHighlights": [
+        "Developed a dedicated Network Simulator 3 (NS-3) module for wireless regional area networks.",
+        "Enabled assessment, monitoring, and simulation of the network with customizable bandwidth frequency and wireless channel profiles.",
+        "Published one journal and one conference paper from the results of this project."
+      ],
       "url": "https://sayefsakin.github.io/2018-02-02-a-dedicated-ns-3-module-for-ieee-80222/"
     },
     {
-      "isShown": false,
+      "isShown": true,
       "name": "IssMan",
       "demo": "https://issman.com/wp-content/uploads/2015/07/issman-issues-on-the-fly-1030x669.png",
       "detailedDemo": "https://issman.com/wp-content/uploads/2015/07/issman-screenshot-main.png",
@@ -481,7 +502,11 @@
       "description": "A punch-list application for onsite quality assurance, inspection, and tracking using photo documentation, drawing annotation, and report distribution.",
       "highlights": [
         "Designed responsive UI for cross platform (iOS and Android) mobile application.",
-        "Developed the synchronization module to ensure live update of images and data between server and client applications.",
+        "Implemented resilient synchronization module ensuring data consistency across thousands of users."
+      ],
+      "webHighlights": [
+        "Designed responsive UI for cross platform (iOS and Android) mobile application.",
+        "Implemented resilient synchronization module ensuring data consistency across thousands of users.",
         "Managed a java based web server deoployed on Rackspace server and a MySQL database for data storage and retrieval.",
         "Faciliated and handled user growth to 5000+ business users in 3 years."
       ],
