@@ -7,7 +7,7 @@
     "phone": "(520)448-8596",
     "url": "https://sayefsakin.github.io",
     "summary": "Data Visualization, Parallel & Distributed Computing, High Performance Computing, Data Management",
-    "industrySummary": "PhD candidate in Computing with expertise in performance optimization, backend development, and unit testing. Having familiarity with secure coding practices and modern backend frameworks, experienced in building scalable, resilient, and user focused systems.",
+    "industrySummary": "PhD candidate in Computing with research focus in developing software analytics tools. Have expertise in building scalable and reliable systems with practical insights to users.",
     "webSummary": "HIRE me to manage and visualize your large data.",
     "location": {
       "address": "1034 University Village",
@@ -22,7 +22,7 @@
         "network": "GitHub",
         "username": "sayefsakin",
         "url": "https://github.com/sayefsakin",
-        "logo_path": "images/github_logo.png",
+        "logo_path": "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg",
         "logo_path_web": "images/github_logo.png"
       },
       {
@@ -59,13 +59,13 @@
       "summary": "Developed solution to address the scale issue in visualizing large scale trace data generated from parallel program executions. Built a trace visual analysis tools Traveler and a event sequence data management tool ESeMan."
     },
     {
-      "isShown": false,
+      "isShown": true,
       "position": "Graduate Teaching Assistant (<a href='https://datasciencecourse.net/2024/syllabus/' target='__blank'>Introduction to Data Science</a>)",
       "name": "University of Utah",
       "url": "https://sci.utah.edu",
       "startDate": "2024-01-02",
       "endDate": "2024-05-13",
-      "location": "Salt Lake City, UT, USA",
+      "location": "USA",
       "summary": "Course: <a href='https://datasciencecourse.net/2024/syllabus/' target='__blank'>Introduction to Data Science</a>"
     },
     {
@@ -337,7 +337,7 @@
       "name": "Programming Languages",
       "level": "Master",
       "keywords": [
-        "C", "C++", "Python", "Java", "BASH", "SQL", "Javascript", "Objective C"
+        "Python", "C", "C++", "Java", "BASH", "SQL", "Javascript", "Objective C"
       ]
     },
     {
@@ -377,15 +377,15 @@
       "name": "DevOps",
       "level": "Intermediate",
       "keywords": [
-        "Docker",  "GitHub Actions", "Gitflow",  "CI/CD"
+        "Docker",  "GitHub Actions", "Gitflow",  "CI/CD", "AWS", "Kubernetes (familiarity)"
       ]
     },
     {
-      "isShown": false,
+      "isShown": true,
       "name": "Web Technologies",
       "level": "Intermediate",
       "keywords": [
-        "HTML5", "CSS3", "Flask", "Node.js", "Vite"
+        "Node.js", "HTML5", "CSS3", "Flask", "Vite"
       ]
     }
   ],
@@ -414,7 +414,7 @@
         "Achieved sub-100ms interactive response time while maintaining pixel-perfect visual accuracy.",
         "Published the results of this project as a full paper at IEEE LDAV 2025 workshop."
       ],
-      "url": "https://github.com/sayefsakin/eseman"
+      "url": "https://sayefsakin.github.io/observable.html"
     },
     {
       "isShown": true,
@@ -425,7 +425,7 @@
       "description": "an integrated multi-view visualization platform for analyzing parallel program traces",
       "highlights": [
         "Developed program analysis system with C++ and Python backend",
-        "Served data using REST API to scalable visualizations.",
+        "Served data using REST API to scalable analytics visualization.",
         "Enabled performance bottleneck detection in distributed systems."
       ],
       "webHighlights": [
@@ -441,10 +441,10 @@
       "name": "PerfAnalyzer",
       "demo": "images/peranalyzer.png",
       "startDate": "2024-06-17",
-      "description": "a web-based dashboard to correlate performance changes to source code modifications",
+      "description": "a web-based monitoring dashboard to correlate performance changes to source code",
       "highlights": [
         "Built dashboard using Plotly-Dash to correlate performance with Git commits.",
-        "Automated data collection across multiple configurations."
+        "Automated data collection pipelines across multiple configurations."
       ],
       "webHighlights": [
         "Developed a web-based dashboard, using Plotly and DASH, to correlate scientific software performance changes with source code modifications.",
@@ -462,8 +462,8 @@
       "endDate": "2023-08-11",
       "description": "a scripting tool for performance profiling of supercomputing applications",
       "highlights": [
-        "Automated the performance analysis pipeline and unit testing of the <a href='https://github.com/pnnl/ExaGO' targe='__blank'>ExaGO</a>.",
-        "Enabled multi-platform (CPU, GPU) profiling by easy integration with TAU, HPCToolkit, and Nvidia Nsight."
+        "Automated the performance profiling pipelines and unit testing of the <a href='https://github.com/pnnl/ExaGO' targe='__blank'>ExaGO</a>.",
+        "Enabled multi-platform (CPU, GPU) profiling by easy integration with TAU, HPCToolkit, and Nvidia Nsight leveraging the Spack package manager."
       ],
       "webHighlights": [
         "Developed a scripting tool to automate the performance profiling of ExaGO, a collection of software packages for solving large-scale power grid optimization problems.",
@@ -499,10 +499,10 @@
       "detailedDemo": "https://issman.com/wp-content/uploads/2015/07/issman-screenshot-main.png",
       "startDate": "2013-05-01",
       "endDate": "2019-06-30 ",
-      "description": "A punch-list application for onsite quality assurance, inspection, and tracking using photo documentation, drawing annotation, and report distribution.",
+      "description": "A punch-list application for onsite quality assurance, inspection, and tracking.",
       "highlights": [
         "Designed responsive UI for cross platform (iOS and Android) mobile application.",
-        "Implemented resilient synchronization module ensuring data consistency across thousands of users."
+        "Worked in Agile, cross-functional teams and implemented resilient synchronization module ensuring data consistency across thousands of users."
       ],
       "webHighlights": [
         "Designed responsive UI for cross platform (iOS and Android) mobile application.",
