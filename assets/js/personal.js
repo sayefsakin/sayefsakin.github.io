@@ -69,7 +69,7 @@ function populateHeader() {
                 html += `<div class="contact-item">`
                 html += `<a href="${profile.url}" target="_blank" style="color: inherit; text-decoration: none;">`
                 if (profile.logo_path) {
-                    html += `<img class='contact-icons' src="${profile.logo_path}" alt="${profile.network}">`;
+                    html += `<img class='contact-icons' src="${profile.logo_path_web}" alt="${profile.network}">`;
                 }
                 html += `</a></div>`;
             }

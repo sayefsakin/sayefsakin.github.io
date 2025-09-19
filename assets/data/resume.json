@@ -30,21 +30,24 @@
         "network": "LinkedIn",
         "username": "sasakin",
         "url": "https://linkedin.com/in/sasakin",
-        "logo_path": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Linkedin-logo-blue-In-square-40px.png"
+        "logo_path": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Linkedin-logo-blue-In-square-40px.png",
+        "logo_path_web": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Linkedin-logo-blue-In-square-40px.png"
       },
       {
         "isShown": true,
         "network": "Blog",
         "username": "sayefsakin",
         "url": "https://sayefsakin.github.io",
-        "logo_path": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Noun_project_Globe_icon_1109009.svg"
+        "logo_path": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Noun_project_Globe_icon_1109009.svg",
+        "logo_path_web": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Noun_project_Globe_icon_1109009.svg"
       },
       {
         "isShown": false,
         "network": "Google Scholar",
         "username": "sayefsakin",
         "url": "https://scholar.google.com/citations?user=ibQvb0oAAAAJ",
-        "logo_path": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg"
+        "logo_path": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg",
+        "logo_path_web": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg"
       }
     ]
   },
