@@ -59,17 +59,74 @@
       "url": "https://sci.utah.edu",
       "startDate": "2022-08-24",
       "location": "Salt Lake City, UT, USA",
-      "summary": "Developed solution to address the scale issue in visualizing large scale trace data generated from parallel program executions. Built a trace visual analysis tools Traveler and a event sequence data management tool ESeMan."
+      "summary": "Developed solution for interactive exploration of large event sequences and built a data management tool that balances interactivity with accuracy, named <a class='normalLink' href='https://github.com/sayefsakin/eseman' target='__blank'>ESeMan</a>.",
+      "academicSummary": "Supervisor: <a class='normalLink' href='https://kisaacs.github.io/' target='__blank'>Katherine E. Isaacs</a>"
     },
     {
       "isShown": true,
-      "position": "Graduate Teaching Assistant (<a href='https://datasciencecourse.net/2024/syllabus/' target='__blank'>Introduction to Data Science</a>)",
+      "position": "Graduate Student Intern",
+      "name": "Los Alamos National Laboratory",
+      "url": "https://www.lanl.gov/engage/collaboration/nsec",
+      "startDate": "2025-06-16",
+      "endDate":  "2025-08-15",
+      "location": "Los Alamos, NM, USA",
+      "summary": "Streamline performance data collection and visualization to identify performance issues in scientific software.",
+      "academicSummary": "Information Science and Technology Institute, Supervisor: <a class='normalLink' href='https://sites.google.com/site/jamesahrens/jamesahrens' target='__blank'>James Ahrens</a>"
+    },
+    {
+      "isShown": true,
+      "position": "Graduate Student Intern",
+      "name": "Los Alamos National Laboratory",
+      "url": "https://www.lanl.gov/engage/collaboration/nsec",
+      "startDate": "2024-06-17",
+      "endDate":  "2024-12-31",
+      "location": "Los Alamos, NM, USA",
+      "summary": "Developed a web-based dashboard to correlate scientific software performance changes with source code modifications.",
+      "academicSummary": "Information Science and Technology Institute, Supervisor: <a class='normalLink' href='https://sites.google.com/site/jamesahrens/jamesahrens' target='__blank'>James Ahrens</a>"
+    },
+    {
+      "isShown": true,
+      "position": "Graduate Teaching Assistant",
       "name": "University of Utah",
       "url": "https://sci.utah.edu",
       "startDate": "2024-01-02",
       "endDate": "2024-05-13",
       "location": "USA",
-      "summary": "Course: <a href='https://datasciencecourse.net/2024/syllabus/' target='__blank'>Introduction to Data Science</a>"
+      "summary": "Course: <a class='normalLink' href='https://datasciencecourse.net/2024/syllabus/' target='__blank'>Introduction to Data Science</a>"
+    },
+    {
+      "isShown": true,
+      "position": "PhD Intern",
+      "name": "Pacific Northwest National Laboratory",
+      "url": "https://www.pnnl.gov/",
+      "startDate": "2023-06-06",
+      "endDate":  "2023-08-11",
+      "location": "Remote (Richland, WA, USA)",
+      "summary":
+        "Worked on the ExaGO project, a collection of software packages for solving large-scale power grid optimization problems. Integrated code optimizations, created unit tests to run and test code on HPC platforms.",
+      "academicSummary": "Project: <a class='normalLink' href='https://github.com/pnnl/ExaGO' target='__blank'>ExaGO</a>, Supervisor: <a class='normalLink' href='https://www.pnnl.gov/people/chris-oehmen' target='__blank'>Chris Oehmen</a>"
+    },
+    {
+      "isShown": true,
+      "position": "Visiting Graduate Student",
+      "name": "Argonne National Laboratory",
+      "url": "https://www.anl.gov/",
+      "startDate": "2022-06-06",
+      "endDate":  "2022-08-19",
+      "location": "Remote (Lemont, IL, USA)",
+      "summary": "Conducted a comparative analysis with different performance analysis tools and investigated for a performance analysis setup within the continuing development and code integration process.",
+      "academicSummary": "Project: <a class='normalLink' href='https://github.com/pnnl/ExaGO' target='__blank'>ExaGO</a>, Supervisor: <a class='normalLink' href='https://www.anl.gov/profile/michel-schanen' target='__blank'>Michel Schanen</a>"
+    },
+    {
+      "isShown": true,
+      "position": "Student Developer",
+      "name": "Google Summer of Code program",
+      "url": "https://summerofcode.withgoogle.com/",
+      "startDate": "2020-06-01",
+      "endDate":  "2020-08-24",
+      "location": "Remote (Louisiana State University, USA)",
+      "summary": "Worked on making the existing integrated visualization system for asynchronous multi-task execution more illustrative, interactive, and responsive by reducing visual lagging, adding new linked visualizations.",
+      "academicSummary": "Ste||ar Group, Supervisor: <a class='normalLink' href='https://scholar.google.com/citations?user=UeYH3K0AAAAJ' target='__blank'>Katherine E. Isaacs</a>"
     },
     {
       "isShown": true,
@@ -79,7 +136,8 @@
       "startDate": "2019-08-24",
       "endDate": "2022-05-22",
       "location": "Tucson, AZ, USA",
-      "summary": "Designed node-link diagram and time-series charts to identify dependent and relevant program components in the Traveler project."
+      "summary": "Enhanced the visual interface of <a class='normalLink' href='https://github.com/hdc-arizona/traveler-integrated' target='__blank'>Traveler</a> to identify dependent and relevant parallel program components.",
+      "academicSummary": "Supervisor: <a class='normalLink' href='https://scholar.google.com/citations?user=UeYH3K0AAAAJ' target='__blank'>Katherine E. Isaacs</a>"
     },
     {
       "isShown": true,
@@ -89,10 +147,30 @@
       "startDate": "2016-02-01",
       "endDate":  "2019-06-30",
       "location": "Dhaka, Bangladesh",
-      "summary": "System Analyst (System designing, planning, applicability, and scalability testing), System Administrator (Server upgrading, monitoring, and troubleshooting), Database & Storage Management (Monitoring, load balancing, backup, and migration), Application Server Developer (API designing, upgrading, performance enhancing), Technical Team Lead (Sprint planning, Task distribution and scheduling, Progress tracking, Reporting)"
+      "summary": "Designed responsive UI for cross platform (iOS and Android) mobile application. Worked in Agile, cross-functional teams and implemented resilient synchronization module ensuring data consistency across thousands of users."
+    },
+    {
+      "isShown": true,
+      "position": "Junior Software Engineer (Part Time)",
+      "name": "Structured Data Systems Limited",
+      "url": "https://www.linkedin.com/company/structured-data-systems-limited/",
+      "startDate": "2013-05-01",
+      "endDate":  "2016-01-31",
+      "location": "Dhaka, Bangladesh",
+      "summary": "Developed cross platform punch-list application for onsite quality assurance, inspection, and tracking using photo documentation, drawing annotation, and report distribution."
     }
   ],
   "internship": [
+    {
+      "isShown": true,
+      "position": "Graduate Student Intern",
+      "name": "Los Alamos National Laboratory",
+      "url": "https://www.lanl.gov/engage/collaboration/nsec",
+      "startDate": "2025-06-16",
+      "endDate":  "2025-08-15",
+      "location": "Los Alamos, NM, USA",
+      "summary": "Developed a web-based dashboard, PerfAnalyzer, to correlate scientific software performance changes with source code modifications."
+    },
     {
       "isShown": true,
       "position": "Graduate Student Intern",
@@ -206,7 +284,7 @@
       "logo_path": "UU-Logo-CTR_RGB.png",
       "alt_name": "utah",
       "startDate": "2022-08-24",
-      "score": "4.00/4.00",
+      "score": "4.00/4.00 (Defended; Degree Pending)",
       "courses": [
         "Principles of Machine Learning",
         "Text Retrieval & Web Search",
@@ -217,20 +295,43 @@
         "Geometric Algorithms",
         "Teaching Assistant: Introduction to Data Science"
       ],
-      "summary": "Thesis: Event Sequence Visualization: Design Considerations and Data Management Techniques</br>Advisor: <a href='https://scholar.google.com/citations?user=sYt1rjsAAAAJ' target='__blank'>Katherine E. Isaacs</a>",
+      "summary": "Thesis: Event Sequence Visualization Design Considerations and Data Management Techniques</br>Advisor: <a class='normalLink' href='https://scholar.google.com/citations?user=sYt1rjsAAAAJ' target='__blank'>Katherine E. Isaacs</a>",
       "url": "https://sci.utah.edu"
     },
     {
       "isShown": true,
+      "institution": "College of Science, University of Arizona, USA",
+      "studyType": "",
+      "area": "Computer Science",
+      "logo_path": "UU-Logo-CTR_RGB.png",
+      "alt_name": "arizona",
+      "startDate": "2019-08-19",
+      "endDate": "2022-05-20",
+      "score": "3.33/4.00",
+      "courses": [
+        "Principles of Machine Learning",
+        "Text Retrieval & Web Search",
+        "Advanced Data Visualization",
+        "Design and Analysis of Algorithms",
+        "Parallel & Distributed Computing",
+        "Introduction to Computer Vision",
+        "Geometric Algorithms",
+        "Teaching Assistant: Introduction to Data Science"
+      ],
+      "url": "https://www.cs.arizona.edu/",
+      "summary": "Completed 27 credit hours toward Ph.D., GPA of transferred coursework: 3.67/4.00"
+    },
+    {
+      "isShown": true,
       "institution": "Department of Computer Science & Engineering, University of Dhaka, Bangladesh",
-      "studyType": "Master of Science",
+      "studyType": "M.S.",
       "area": "Computer Science & Engineering",
       "logo_path": "Dhaka_University_logo.svg",
       "alt_name": "University of Dhaka",
       "startDate": "2014-01-20",
       "endDate": "2016-05-20",
       "score": "3.65/4.00",
-      "summary": "Thesis: Game Theoretic Downlink Resource Scheduling in Self-coexisting Cognitive Radio Networks</br>Advisor: <a href='https://scholar.google.com/citations?user=1yMUb7wAAAAJ'  target='__blank'>Md. Abdur Razzaque</a>",
+      "summary": "Thesis: Game Theoretic Downlink Resource Scheduling in Self-coexisting Cognitive Radio Networks</br>Advisor: <a class='normalLink' href='https://scholar.google.com/citations?user=1yMUb7wAAAAJ'  target='__blank'>Md. Abdur Razzaque</a>",
       "courses": [  
         "Image Processing",
         "Knowledge Based Systems",
@@ -242,14 +343,13 @@
     {
       "isShown": true,
       "institution": "Department of Computer Science & Engineering, University of Dhaka, Bangladesh",
-      "studyType": "Bachelor of Science",
+      "studyType": "B.S.",
       "area": "Computer Science & Engineering",
       "logo_path": "Dhaka_University_logo.svg",
       "alt_name": "University of Dhaka",
       "startDate": "2009-02-01",
       "endDate": "2013-08-30",
       "score": "3.63/4.00",
-      "summary": "Thesis: A Distributed Algorithm for Generating Prime Numbers using MapReduce</br>Advisor: <a href='https://scholar.google.fr/citations?user=-P-CCEQAAAAJ'  target='__blank'>Syed Faisal Hasan</a>",
       "courses": [
         "Artificial Intelligence", 
         "Computer Graphics",
@@ -271,67 +371,104 @@
   "publications": [
     {
       "isShown": true,
+      "name": "PerfAnalyzer: Revealing Performance Trends using Version Oriented Visual Analysis of Scientific Software",
+      "summary": "<b>Sayef Azad Sakin</b>, James Ahrens",
+      "releaseDate": "Nov 2025",
+      "publisher": "To appear in the 16th International Workshop on Performance Modeling, Benchmarking and Simulation of High Performance Computer Systems (PMBS)"
+    },
+    {
+      "isShown": true,
       "name": "Managing Data for Scalable and Interactive Event Sequence Visualization",
       "summary": "<b>Sayef Azad Sakin</b>, Katherine E. Isaacs",
-      "releaseDate": "2025",
-      "publisher": "The 15th IEEE Workshop on Large Data Analysis and Visualization (LDAV)",
+      "releaseDate": "Nov 2025",
+      "publisher": "To appear in The 15th IEEE Workshop on Large Data Analysis and Visualization (LDAV)",
       "url": "https://arxiv.org/abs/2508.03974"
     },
     {
       "isShown": true,
       "name": "A Literature-based Visualization Task Taxonomy for Gantt Charts",
       "summary": "<b>Sayef Azad Sakin</b>, Katherine E. Isaacs",
-      "releaseDate": "2024",
-      "publisher": "IEEE Visualization and Visual Analytics (VIS)",
+      "releaseDate": "Oct 2024",
+      "publisher": "2024 IEEE Visualization and Visual Analytics (VIS), St. Pete Beach, FL, USA, 2024, pp. 236-240",
       "url": "https://ieeexplore.ieee.org/abstract/document/10771138/"
     },
     {
       "isShown": true,
       "name": "Traveler: Navigating Task Parallel Traces for Performance Analysis",
       "summary": "<b>Sayef Azad Sakin</b>, Alex Bigelow, R Tohid, Connor Scully-Allison, Carlos Scheidegger, Steven R Brandt, Christopher Taylor, Kevin A Huck, Hartmut Kaiser, Katherine E Isaacs",
-      "releaseDate": "2022",
-      "publisher": "IEEE Visualization and Visual Analytics (VIS)",
+      "releaseDate": "Sep 2022",
+      "publisher": "IEEE Transactions on Visualization and Computer Graphics, vol. 29, no. 1, pp. 788-797",
       "url": "https://ieeexplore.ieee.org/abstract/document/9904447/"
     },
     {
       "isShown": true,
       "name": "Halide Code Generation Framework in Phylanx",
       "summary": "R Tohid, Shahrzad Shirzad, Christopher Taylor, <b>Sayef Azad Sakin</b>, Katherine E Isaacs, Hartmut Kaiser",
-      "releaseDate": "2022",
-      "publisher": "Euro-Par 2022: Parallel Processing Workshops",
+      "releaseDate": "Aug 2022",
+      "publisher": "Euro-Par 2022: Parallel Processing Workshops. Euro-Par 2022. Lecture Notes in Computer Science, vol 13835. Springer, Cham.",
       "url": "https://link.springer.com/chapter/10.1007/978-3-031-31209-0_3"
     },
     {
       "isShown": true,
       "name": "Distributed Asynchronous Array Computing with the JetLag Environment",
       "summary": "Steven R Brandt, Bita Hasheminezhad, Nanmiao Wu, <b>Sayef Azad Sakin</b>, Alex R Bigelow, Katherine E Isaacs, Kevin Huck, Hartmut Kaiser",
-      "releaseDate": "2020",
-      "publisher": "IEEE/ACM 9th Workshop on Python for High-Performance and Scientific Computing (PyHPC)",
+      "releaseDate": "Nov 2020",
+      "publisher": "2020 IEEE/ACM 9th Workshop on Python for High-Performance and Scientific Computing (PyHPC), GA, USA, 2020, pp. 49-57",
       "url": "https://ieeexplore.ieee.org/abstract/document/9307944/"
     },
     {
       "isShown": true,
       "name": "Jetlag: An interactive, asynchronous array computing environment",
       "summary": "Steven R Brandt, Alex Bigelow, <b>Sayef Azad Sakin</b>, Katy Williams, Katherine E Isaacs, Kevin Huck, Rod Tohid, Bibek Wagle, Shahrzad Shirzad, Hartmut Kaiser",
-      "releaseDate": "2020",
-      "publisher": "Practice and Experience in Advanced Research Computing (PEARC)",
+      "releaseDate": "Jul 2020",
+      "publisher": "In Practice and Experience in Advanced Research Computing 2020: Catch the Wave (PEARC '20). Association for Computing Machinery, New York, NY, USA, 8–12.",
       "url": "https://dl.acm.org/doi/abs/10.1145/3311790.3396657"
     },
     {
       "isShown": true,
       "name": "Self-coexistence among IEEE 802.22 networks: Distributed allocation of power and channel",
       "summary": "<b>Sayef Azad Sakin</b>, Md Abdur Razzaque, Mohammad Mehedi Hassan, Atif Alamri, Nguyen H Tran, Giancarlo Fortino",
-      "releaseDate": "2017",
-      "publisher": "Sensors Journal, MDPI",
+      "releaseDate": "Dec 2017",
+      "publisher": "Sensors 2017, 17, 2838",
       "url": "https://www.mdpi.com/1424-8220/17/12/2838"
     },
     {
-      "isShown": false,
+      "isShown": true,
       "name": "Game theoretic downlink resource scheduling for self-coexisting cognitive radio networks",
       "summary": "<b>Sayef Azad Sakin</b>, Abdur Razzaque",
-      "releaseDate": "2016",
-      "publisher": "International Conference on Networking Systems and Security (NSysS)",
+      "releaseDate": "Jan 2016",
+      "publisher": "2016 International Conference on Networking Systems and Security (NSysS), Dhaka, Bangladesh, pp. 1-7",
       "url": "https://ieeexplore.ieee.org/abstract/document/7400697/"
+    }
+  ],
+  "posters": [
+    {
+      "isShown": true,
+      "name": "Code History Integration with Performance Data",
+      "summary": "Location: Los Alamos, NM, USA",
+      "releaseDate": "Aug 2024",
+      "publisher": "Presentation Talk at Los Alamos National Laboratory"
+    },
+    {
+      "isShown": true,
+      "name": "DevOps for ExaScale - ExaSGD's Journey (Spack & Dependency Management)",
+      "summary": "Location: Richland, WA, USA",
+      "releaseDate": "Jul 2023",
+      "publisher": "Presentation Talk at PNNL TechFest 2023"
+    },
+    {
+      "isShown": true,
+      "name": "Performance Portability in Heterogeneous Computing Environments",
+      "summary": "Location: Houston, TX, USA",
+      "releaseDate": "Jan 2023",
+      "publisher": "Poster Presentation at ECP Annual Meeting 2023"
+    },
+    {
+      "isShown": true,
+      "name": "Designing scalable timeline charts for millions of tasks",
+      "summary": "Location: Tucson, AZ, USA",
+      "releaseDate": "Oct 2021",
+      "publisher": "Lightning Talk at IEEE VIS 2021 (AZ Satellite Event)"
     }
   ],
   "skills": [
@@ -511,7 +648,7 @@
         "Designed responsive UI for cross platform (iOS and Android) mobile application.",
         "Implemented resilient synchronization module ensuring data consistency across thousands of users.",
         "Managed a java based web server deoployed on Rackspace server and a MySQL database for data storage and retrieval.",
-        "Faciliated and handled user growth to 5000+ business users in 3 years."
+        "Facilitated and handled user growth to 5000+ business users in 3 years."
       ],
       "url": "https://issman.com/"
     }
