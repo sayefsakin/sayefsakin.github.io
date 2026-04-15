@@ -54,10 +54,21 @@
   "work": [
     {
       "isShown": true,
+      "position": "Graduate Student Intern",
+      "name": "Los Alamos National Laboratory",
+      "url": "https://www.lanl.gov/engage/collaboration/nsec",
+      "startDate": "2026-01-22",
+      "location": "Los Alamos, NM, USA",
+      "summary": "Streamline performance data collection and visualization to identify performance issues in scientific software.",
+      "academicSummary": "Information Science and Technology Institute, Supervisor: <a class='normalLink' href='https://sites.google.com/site/jamesahrens/jamesahrens' target='__blank'>James Ahrens</a>"
+    },
+    {
+      "isShown": true,
       "position": "Graduate Research Assistant",
       "name": "University of Utah",
       "url": "https://sci.utah.edu",
       "startDate": "2022-08-24",
+      "endDate":  "2025-12-31",
       "location": "Salt Lake City, UT, USA",
       "summary": "Developed solution for interactive exploration of large event sequences and built a data management tool that balances interactivity with accuracy, named <a class='normalLink' href='https://github.com/sayefsakin/eseman' target='__blank'>ESeMan</a>.",
       "academicSummary": "Supervisor: <a class='normalLink' href='https://kisaacs.github.io/' target='__blank'>Katherine E. Isaacs</a>"
@@ -284,6 +295,7 @@
       "logo_path": "UU-Logo-CTR_RGB.png",
       "alt_name": "utah",
       "startDate": "2022-08-24",
+      "endDate": "2025-12-31",
       "score": "4.00/4.00 (Defended; Degree Pending)",
       "courses": [
         "Principles of Machine Learning",
@@ -374,7 +386,8 @@
       "name": "PerfAnalyzer: Revealing Performance Trends using Version Oriented Visual Analysis of Scientific Software",
       "summary": "<b>Sayef Azad Sakin</b>, James Ahrens",
       "releaseDate": "Nov 2025",
-      "publisher": "To appear in the 16th International Workshop on Performance Modeling, Benchmarking and Simulation of High Performance Computer Systems (PMBS)"
+      "publisher": "16th International Workshop on Performance Modeling, Benchmarking and Simulation of High Performance Computer Systems (PMBS) held in conjunction with SC26",
+      "url": "https://dl.acm.org/doi/abs/10.1145/3731599.3769279"
     },
     {
       "isShown": true,
