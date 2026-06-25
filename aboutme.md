@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Sayef Azad Sakin
-subtitle: Graduate Research Assistant
+subtitle: Postdoctoral Researcher
 ---
 
 I am a Postdoctoral Researcher, advised by [Dr. James Ahrens](https://sites.google.com/site/jamesahrens/james-ahrens-bio), in [National Security Education Center](https://www.lanl.gov/engage/collaboration/nsec) at the Los Alamos National Laboratory. My current research is focused on _Data Visualization, High Performance Computing, Parallel Computing, and Data Management._
