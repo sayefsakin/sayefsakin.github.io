@@ -1,20 +1,20 @@
 {
   "basics": {
     "name": "Sayef Azad Sakin",
-    "label": "PhD Candidate in Computing",
+    "label": "Postdoctoral Researcher",
     "image": "images/my_pic.jpg",
     "email": "sayefsakin@sci.utah.edu",
     "phone": "(520)448-8596",
     "url": "https://sayefsakin.github.io",
     "summary": "Data Visualization, Parallel & Distributed Computing, High Performance Computing, Data Management",
-    "industrySummary": "PhD candidate in Computing with research focus in developing software analytics tools. Have expertise in building scalable and reliable systems with practical insights to users.",
-    "webSummary": "HIRE me to manage and visualize your large data.",
+    "industrySummary": "I am a Postdoctoral Researcher in National Security Education Center at the Los Alamos National Laboratory.",
+    "webSummary": "Postdoctoral Researcher",
     "location": {
-      "address": "1034 University Village",
-      "postalCode": "84108",
-      "city": "SLC",
+      "address": "2035 Calle Lorca, Apt 23",
+      "postalCode": "87505",
+      "city": "Santa Fe",
       "countryCode": "US",
-      "region": "Utah"
+      "region": "New Mexico"
     },
     "profiles": [
       {
@@ -54,13 +54,24 @@
   "work": [
     {
       "isShown": true,
+      "position": "Postdoctoral Researcher",
+      "name": "Los Alamos National Laboratory",
+      "url": "https://www.lanl.gov/engage/collaboration/nsec",
+      "startDate": "2026-06-08",
+      "location": "Los Alamos, NM, USA",
+      "summary": "Working on scientific data provenance with version and user access control. Facilitating cosmological ensemble analysis using visualization.",
+      "academicSummary": "Information Science and Technology Institute, Advisor: <a class='normalLink' href='https://sites.google.com/site/jamesahrens/jamesahrens' target='__blank'>James Ahrens</a>"
+    },
+    {
+      "isShown": true,
       "position": "Graduate Student Intern",
       "name": "Los Alamos National Laboratory",
       "url": "https://www.lanl.gov/engage/collaboration/nsec",
       "startDate": "2026-01-22",
+      "endDate": "2026-06-05",
       "location": "Los Alamos, NM, USA",
       "summary": "Enabling version control with provenance and user access control. Facilitating cosmological ensemble analysis using visualization.",
-      "academicSummary": "Information Science and Technology Institute, Supervisor: <a class='normalLink' href='https://sites.google.com/site/jamesahrens/jamesahrens' target='__blank'>James Ahrens</a>"
+      "academicSummary": "Information Science and Technology Institute, Advisor: <a class='normalLink' href='https://sites.google.com/site/jamesahrens/jamesahrens' target='__blank'>James Ahrens</a>"
     },
     {
       "isShown": true,
@@ -68,7 +79,7 @@
       "name": "University of Utah",
       "url": "https://sci.utah.edu",
       "startDate": "2022-08-24",
-      "endDate":  "2025-12-31",
+      "endDate":  "2026-05-31",
       "location": "Salt Lake City, UT, USA",
       "summary": "Developed solution for interactive exploration of large event sequences and built a data management tool that balances interactivity with accuracy, named <a class='normalLink' href='https://github.com/sayefsakin/eseman' target='__blank'>ESeMan</a>.",
       "academicSummary": "Supervisor: <a class='normalLink' href='https://kisaacs.github.io/' target='__blank'>Katherine E. Isaacs</a>"
@@ -177,10 +188,21 @@
       "position": "Graduate Student Intern",
       "name": "Los Alamos National Laboratory",
       "url": "https://www.lanl.gov/engage/collaboration/nsec",
+      "startDate": "2026-01-22",
+      "endDate": "2026-06-05",
+      "location": "Los Alamos, NM, USA",
+      "summary": "Enabling version control with provenance and user access control. Facilitating cosmological ensemble analysis using visualization.",
+      "academicSummary": "Information Science and Technology Institute, Advisor: <a class='normalLink' href='https://sites.google.com/site/jamesahrens/jamesahrens' target='__blank'>James Ahrens</a>"
+    },
+    {
+      "isShown": true,
+      "position": "Graduate Student Intern",
+      "name": "Los Alamos National Laboratory",
+      "url": "https://www.lanl.gov/engage/collaboration/nsec",
       "startDate": "2025-06-16",
       "endDate":  "2025-08-15",
       "location": "Los Alamos, NM, USA",
-      "summary": "Developed a web-based dashboard, PerfAnalyzer, to correlate scientific software performance changes with source code modifications."
+      "summary": "Conducted case study with PerfAnalyzer in identifying performance changes of CloverLeaf simulations and correlating with source code modifications."
     },
     {
       "isShown": true,
@@ -296,7 +318,7 @@
       "alt_name": "utah",
       "startDate": "2022-08-24",
       "endDate": "2025-12-31",
-      "score": "4.00/4.00 (Defended; Degree Pending)",
+      "score": "4.00/4.00",
       "courses": [
         "Principles of Machine Learning",
         "Text Retrieval & Web Search",
@@ -392,10 +414,10 @@
     {
       "isShown": true,
       "name": "Managing Data for Scalable and Interactive Event Sequence Visualization",
-      "summary": "<b>Honorbale Mention for Best Paper Award!!! Sayef Azad Sakin</b>, Katherine E. Isaacs",
+      "summary": "<b style='color: red;'>Honorbale Mention for Best Paper Award!!!</b> <b>Sayef Azad Sakin</b>, Katherine E. Isaacs",
       "releaseDate": "Nov 2025",
-      "publisher": "The 15th IEEE Workshop on Large Data Analysis and Visualization (LDAV)",
-      "url": "https://arxiv.org/abs/2508.03974"
+      "publisher": "2025 IEEE 15th Symposium on Large Data Analysis and Visualization (LDAV)",
+      "url": "https://ieeexplore.ieee.org/abstract/document/11298848"
     },
     {
       "isShown": true,
